@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Preaviso, terreno</title>
+  <meta name="description" content="Las alertas del día para quien está en terreno: qué hacer, en qué orden y quién.">
+  <meta name="theme-color" content="#1d2a33">
+  <link rel="icon" href="img/marca.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/movil.css">
+</head>
+<body class="movil">
+  <header class="m-cabecera">
+    <div class="m-marca"><img src="img/marca.svg" alt="" width="30" height="30"><span>Preaviso</span><span class="m-modo">Terreno</span></div>
+    <p id="m-resumen" class="m-resumen">Cargando las alertas…</p>
+  </header>
+  <p id="m-aviso-datos" class="m-aviso-datos" hidden></p>
+  <div id="m-nueva" class="m-nueva" role="alert" hidden></div>
+  <main id="m-contenido" tabindex="-1"></main>
+  <nav class="m-pestanas" aria-label="Secciones">
+    <button data-pestana="pendientes">Por hacer <span id="m-n-pendientes" class="m-cuenta"></span></button>
+    <button data-pestana="hechas">Hechas <span id="m-n-hechas" class="m-cuenta"></span></button>
+    <button data-pestana="ajustes">Ajustes</button>
+  </nav>
+  <script type="module" src="js/movil.js"></script>
+</body>
+</html>

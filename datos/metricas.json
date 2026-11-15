@@ -1,0 +1,10 @@
+{
+ "contrato": "0.2",
+ "ejemplo": true,
+ "modelo": null,
+ "periodo_prueba": null,
+ "auc": null,
+ "precision_media": null,
+ "captura_top10": null,
+ "nota": "Pendiente: todavía no hay modelo validado."
+}

@@ -1,0 +1,44 @@
+{
+ "contrato": "0.2",
+ "ejemplo": true,
+ "generado_utc": "2026-11-14T03:00:00Z",
+ "periodo": {
+  "desde": "2000-11",
+  "hasta": "2025-12"
+ },
+ "regiones": [
+  "05101",
+  "05109",
+  "05801",
+  "05804",
+  "05102",
+  "05601",
+  "05501",
+  "05802",
+  "13501",
+  "13503",
+  "06101",
+  "06201",
+  "06204",
+  "06205",
+  "07301",
+  "07101",
+  "07102",
+  "07201",
+  "16101",
+  "16201",
+  "08111",
+  "08101",
+  "08109",
+  "08306",
+  "08301",
+  "08202"
+ ],
+ "archivos": {
+  "regiones": "regiones.geojson",
+  "calendario": "calendario/{region_id}.json",
+  "riesgo": "riesgo/ultimo.json",
+  "focos": "focos/{region_id}.csv",
+  "metricas": "metricas.json"
+ }
+}

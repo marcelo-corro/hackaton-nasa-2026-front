@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preaviso, riesgo de incendios</title>
+  <meta name="description" content="Riesgo de incendio por comuna a 24 horas, 48 horas y 7 días, incendios activos del satélite con su zona probable de avance y el acierto del modelo. Apoyo a la decisión.">
+  <link rel="icon" href="img/icono.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/despacho.css">
+</head>
+<body>
+  <a class="salto" href="#abrir-cola">Saltar a las prioridades</a>
+  <header class="barra">
+    <a class="marca" href="index.html"><img class="logo-emblema" src="img/logo-emblema.png" alt="" width="839" height="658"><img class="logo-nombre" src="img/logo-nombre.png" alt="Preaviso" width="1277" height="234"><small>Riesgo de incendios</small></a>
+    <div class="ctl">
+      <div class="grupo" role="radiogroup" aria-label="Horizonte" id="horizontes"></div>
+      <p class="periodo" id="periodo"></p>
+      <label class="campo">Región
+        <select id="region"></select>
+      </label>
+      <a class="ir-plat" href="plataforma.html">Riesgo por comuna y sectores &rarr;</a>
+    </div>
+    <span class="sello" id="sello" hidden>7 días: orientativo</span>
+  </header>
+
+  <main class="sala">
+    <aside class="tablero" id="tablero" aria-label="Resumen y acierto del modelo"></aside>
+    <section class="centro" aria-label="Mapa">
+      <div id="mapa" class="mapa"></div>
+      <button type="button" class="abrir-cola" id="abrir-cola" aria-expanded="false" aria-controls="cola">Prioridades <b id="btn-cola-n"></b> <span class="flecha" aria-hidden="true"></span></button>
+      <section class="cola" id="cola" aria-labelledby="cola-t" tabindex="-1" hidden>
+        <h2 id="cola-t" class="etq">Prioridades</h2>
+        <ol id="lista" class="lista"></ol>
+      </section>
+      <div class="ley" id="ley"></div>
+      <aside class="tarjeta" id="tarjeta" aria-live="polite" aria-label="Detalle de lo elegido" hidden></aside>
+    </section>
+  </main>
+  <p class="aviso">Apoyo a la decisión: la probabilidad no es una certeza ni una orden operativa. No emite alertas a la población. Datos: focos NASA FIRMS (MODIS y VIIRS) y clima NASA POWER, publicados por el back del equipo. <a href="plataforma.html#vista=metodologia">Metodología y fuentes</a></p>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script type="module" src="js/despacho.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+{
+ "extension": "propuesta, no está en el contrato 0.2",
+ "ejemplo": true,
+ "items": [
+  {
+   "id": "faenas",
+   "nombre": "Faenas al aire libre con riesgo de incendio",
+   "aplica_a": [
+    "faena"
+   ],
+   "variable": "prob_foco",
+   "unidad": "probabilidad de foco",
+   "umbral_preparacion": 0.18,
+   "umbral_activacion": 0.3,
+   "dias_preparacion": 2,
+   "dias_activacion": 1,
+   "freno": "Si el pronóstico baja del umbral de preparación, se levanta el aviso.",
+   "acciones_preparacion": [
+    {
+     "texto": "Revisar vías de salida y punto de encuentro de la faena",
+     "quien": "Jefatura de faena"
+    },
+    {
+     "texto": "Confirmar teléfonos de contacto de cada cuadrilla",
+     "quien": "Prevención de riesgos"
+    }
+   ],
+   "acciones_activacion": [
+    {
+     "texto": "Suspender soldadura, esmerilado y quemas",
+     "quien": "Jefatura de faena"
+    },
+    {
+     "texto": "Dejar un vehículo listo para evacuar",
+     "quien": "Jefatura de faena"
+    },
+    {
+     "texto": "Avisar al centro de salud más cercano de la mutualidad",
+     "quien": "Prevención de riesgos"
+    }
+   ]
+  },
+  {
+   "id": "humo",
+   "nombre": "Humo sobre centros de trabajo",
+   "aplica_a": [
+    "faena",
+    "colegio"
+   ],
+   "variable": "pm25_humo",
+   "unidad": "µg/m³ de partículas finas",
+   "umbral_preparacion": 35,
+   "umbral_activacion": 55,
+   "dias_preparacion": 2,
+   "dias_activacion": 1,
+   "freno": "Si la estación local marca menos de 35 µg/m³ en la mañana, se levanta el aviso.",
+   "acciones_preparacion": [
+    {
+     "texto": "Verificar existencia de mascarillas con filtro",
+     "quien": "Prevención de riesgos"
+    },
+    {
+     "texto": "Identificar a trabajadores con asma o enfermedad pulmonar",
+     "quien": "Prevención de riesgos"
+    }
+   ],
+   "acciones_activacion": [
+    {
+     "texto": "Reprogramar el trabajo pesado al aire libre",
+     "quien": "Jefatura de faena"
+    },
+    {
+     "texto": "Entregar mascarillas y habilitar una sala cerrada",
+     "quien": "Prevención de riesgos"
+    }
+   ]
+  },
+  {
+   "id": "salud",
+   "nombre": "Refuerzo respiratorio en la red de salud",
+   "aplica_a": [
+    "salud"
+   ],
+   "variable": "urgencias_resp_extra_pct",
+   "unidad": "% de alza en urgencias respiratorias",
+   "umbral_preparacion": 10,
+   "umbral_activacion": 18,
+   "dias_preparacion": 3,
+   "dias_activacion": 1,
+   "freno": "Si el alza esperada baja de 10 %, se vuelve a la dotación habitual.",
+   "acciones_preparacion": [
+    {
+     "texto": "Revisar existencia de inhaladores y oxígeno",
+     "quien": "Dirección del centro"
+    },
+    {
+     "texto": "Listar pacientes respiratorios crónicos para contacto del equipo clínico",
+     "quien": "Dirección del centro"
+    }
+   ],
+   "acciones_activacion": [
+    {
+     "texto": "Reforzar el turno de urgencia respiratoria",
+     "quien": "Dirección del centro"
+    },
+    {
+     "texto": "Ofrecer control por teleconsulta a pacientes crónicos",
+     "quien": "Dirección del centro"
+    }
+   ]
+  },
+  {
+   "id": "establecimiento",
+   "nombre": "Centro de salud o residencia en zona de riesgo",
+   "aplica_a": [
+    "salud",
+    "eleam"
+   ],
+   "variable": "prob_foco",
+   "unidad": "probabilidad de foco",
+   "umbral_preparacion": 0.22,
+   "umbral_activacion": 0.34,
+   "dias_preparacion": 3,
+   "dias_activacion": 1,
+   "freno": "Si el pronóstico baja del umbral de preparación, se levanta el aviso.",
+   "acciones_preparacion": [
+    {
+     "texto": "Revisar el plan de evacuación y el transporte para personas con movilidad reducida",
+     "quien": "Encargado de emergencias"
+    },
+    {
+     "texto": "Despejar vegetación seca en el entorno inmediato",
+     "quien": "Dirección del centro"
+    }
+   ],
+   "acciones_activacion": [
+    {
+     "texto": "Coordinar con el municipio el lugar de traslado",
+     "quien": "Encargado de emergencias"
+    },
+    {
+     "texto": "Dejar lista la ficha y los medicamentos de cada residente",
+     "quien": "Dirección del centro"
+    }
+   ]
+  }
+ ]
+}

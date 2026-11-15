@@ -1,0 +1,166 @@
+{
+ "contrato": "0.2",
+ "ejemplo": true,
+ "calculado_utc": "2026-11-14T03:00:00Z",
+ "valido_para": "2026-11-15",
+ "horizonte_horas": 24,
+ "modelo": "ejemplo (números inventados)",
+ "items": [
+  {
+   "region_id": "05101",
+   "prob_foco": 0.289,
+   "percentil": 78,
+   "nivel": "alto"
+  },
+  {
+   "region_id": "05109",
+   "prob_foco": 0.324,
+   "percentil": 82,
+   "nivel": "muy_alto"
+  },
+  {
+   "region_id": "05801",
+   "prob_foco": 0.333,
+   "percentil": 83,
+   "nivel": "muy_alto"
+  },
+  {
+   "region_id": "05804",
+   "prob_foco": 0.236,
+   "percentil": 71,
+   "nivel": "alto"
+  },
+  {
+   "region_id": "05102",
+   "prob_foco": 0.249,
+   "percentil": 72,
+   "nivel": "alto"
+  },
+  {
+   "region_id": "05601",
+   "prob_foco": 0.191,
+   "percentil": 65,
+   "nivel": "alto"
+  },
+  {
+   "region_id": "05501",
+   "prob_foco": 0.185,
+   "percentil": 64,
+   "nivel": "alto"
+  },
+  {
+   "region_id": "05802",
+   "prob_foco": 0.216,
+   "percentil": 68,
+   "nivel": "alto"
+  },
+  {
+   "region_id": "13501",
+   "prob_foco": 0.18,
+   "percentil": 63,
+   "nivel": "medio"
+  },
+  {
+   "region_id": "13503",
+   "prob_foco": 0.25,
+   "percentil": 72,
+   "nivel": "alto"
+  },
+  {
+   "region_id": "06101",
+   "prob_foco": 0.075,
+   "percentil": 50,
+   "nivel": "bajo"
+  },
+  {
+   "region_id": "06201",
+   "prob_foco": 0.121,
+   "percentil": 56,
+   "nivel": "medio"
+  },
+  {
+   "region_id": "06204",
+   "prob_foco": 0.117,
+   "percentil": 55,
+   "nivel": "medio"
+  },
+  {
+   "region_id": "06205",
+   "prob_foco": 0.253,
+   "percentil": 73,
+   "nivel": "alto"
+  },
+  {
+   "region_id": "07301",
+   "prob_foco": 0.051,
+   "percentil": 47,
+   "nivel": "bajo"
+  },
+  {
+   "region_id": "07101",
+   "prob_foco": 0.046,
+   "percentil": 46,
+   "nivel": "bajo"
+  },
+  {
+   "region_id": "07102",
+   "prob_foco": 0.129,
+   "percentil": 57,
+   "nivel": "medio"
+  },
+  {
+   "region_id": "07201",
+   "prob_foco": 0.153,
+   "percentil": 60,
+   "nivel": "medio"
+  },
+  {
+   "region_id": "16101",
+   "prob_foco": 0.081,
+   "percentil": 51,
+   "nivel": "medio"
+  },
+  {
+   "region_id": "16201",
+   "prob_foco": 0.109,
+   "percentil": 54,
+   "nivel": "medio"
+  },
+  {
+   "region_id": "08111",
+   "prob_foco": 0.119,
+   "percentil": 55,
+   "nivel": "medio"
+  },
+  {
+   "region_id": "08101",
+   "prob_foco": 0.138,
+   "percentil": 58,
+   "nivel": "medio"
+  },
+  {
+   "region_id": "08109",
+   "prob_foco": 0.182,
+   "percentil": 64,
+   "nivel": "alto"
+  },
+  {
+   "region_id": "08306",
+   "prob_foco": 0.155,
+   "percentil": 60,
+   "nivel": "medio"
+  },
+  {
+   "region_id": "08301",
+   "prob_foco": 0.124,
+   "percentil": 56,
+   "nivel": "medio"
+  },
+  {
+   "region_id": "08202",
+   "prob_foco": 0.162,
+   "percentil": 61,
+   "nivel": "medio"
+  }
+ ]
+}

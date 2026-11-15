@@ -1,0 +1,248 @@
+{
+ "extension": "propuesta, no está en el contrato 0.2",
+ "ejemplo": true,
+ "items": [
+  {
+   "fecha": "2026-11-11",
+   "region_id": "07301",
+   "comuna": "Curicó",
+   "protocolo": "salud",
+   "anticipacion_horas": 24,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-11-09",
+   "region_id": "08202",
+   "comuna": "Arauco",
+   "protocolo": "humo",
+   "anticipacion_horas": 24,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-11-07",
+   "region_id": "05501",
+   "comuna": "Quillota",
+   "protocolo": "establecimiento",
+   "anticipacion_horas": 48,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-11-06",
+   "region_id": "05102",
+   "comuna": "Casablanca",
+   "protocolo": "humo",
+   "anticipacion_horas": 24,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "No hubo foco ni humo sobre el umbral",
+   "resultado": "falsa_alarma"
+  },
+  {
+   "fecha": "2026-11-03",
+   "region_id": "05109",
+   "comuna": "Viña del Mar",
+   "protocolo": "humo",
+   "anticipacion_horas": 48,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-11-02",
+   "region_id": "13501",
+   "comuna": "Melipilla",
+   "protocolo": "faenas",
+   "anticipacion_horas": 48,
+   "aviso": true,
+   "accion_tomada": false,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-10-30",
+   "region_id": "08301",
+   "comuna": "Los Ángeles",
+   "protocolo": "salud",
+   "anticipacion_horas": 24,
+   "aviso": true,
+   "accion_tomada": false,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-10-28",
+   "region_id": "07201",
+   "comuna": "Cauquenes",
+   "protocolo": "establecimiento",
+   "anticipacion_horas": 24,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-10-26",
+   "region_id": "06101",
+   "comuna": "Rancagua",
+   "protocolo": "establecimiento",
+   "anticipacion_horas": 48,
+   "aviso": true,
+   "accion_tomada": false,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-10-24",
+   "region_id": "08101",
+   "comuna": "Concepción",
+   "protocolo": "salud",
+   "anticipacion_horas": 24,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-10-23",
+   "region_id": "05801",
+   "comuna": "Quilpué",
+   "protocolo": "salud",
+   "anticipacion_horas": 48,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "No hubo foco ni humo sobre el umbral",
+   "resultado": "falsa_alarma"
+  },
+  {
+   "fecha": "2026-10-20",
+   "region_id": "16201",
+   "comuna": "Quirihue",
+   "protocolo": "faenas",
+   "anticipacion_horas": 48,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "No hubo foco ni humo sobre el umbral",
+   "resultado": "falsa_alarma"
+  },
+  {
+   "fecha": "2026-10-18",
+   "region_id": "08306",
+   "comuna": "Nacimiento",
+   "protocolo": "humo",
+   "anticipacion_horas": 24,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-10-16",
+   "region_id": "16201",
+   "comuna": "Quirihue",
+   "protocolo": "salud",
+   "anticipacion_horas": 24,
+   "aviso": true,
+   "accion_tomada": false,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-10-15",
+   "region_id": "07201",
+   "comuna": "Cauquenes",
+   "protocolo": "faenas",
+   "anticipacion_horas": 24,
+   "aviso": true,
+   "accion_tomada": false,
+   "que_paso": "No hubo foco ni humo sobre el umbral",
+   "resultado": "falsa_alarma"
+  },
+  {
+   "fecha": "2026-10-13",
+   "region_id": "06201",
+   "comuna": "Pichilemu",
+   "protocolo": "faenas",
+   "anticipacion_horas": 24,
+   "aviso": true,
+   "accion_tomada": false,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-10-10",
+   "region_id": "16201",
+   "comuna": "Quirihue",
+   "protocolo": "humo",
+   "anticipacion_horas": 0,
+   "aviso": false,
+   "accion_tomada": false,
+   "que_paso": "Hubo foco y no se había avisado",
+   "resultado": "sin_aviso"
+  },
+  {
+   "fecha": "2026-10-09",
+   "region_id": "05501",
+   "comuna": "Quillota",
+   "protocolo": "humo",
+   "anticipacion_horas": 24,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  },
+  {
+   "fecha": "2026-10-06",
+   "region_id": "06204",
+   "comuna": "Marchigüe",
+   "protocolo": "establecimiento",
+   "anticipacion_horas": 0,
+   "aviso": false,
+   "accion_tomada": false,
+   "que_paso": "Hubo foco y no se había avisado",
+   "resultado": "sin_aviso"
+  },
+  {
+   "fecha": "2026-10-05",
+   "region_id": "08202",
+   "comuna": "Arauco",
+   "protocolo": "salud",
+   "anticipacion_horas": 48,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "No hubo foco ni humo sobre el umbral",
+   "resultado": "falsa_alarma"
+  },
+  {
+   "fecha": "2026-10-02",
+   "region_id": "08101",
+   "comuna": "Concepción",
+   "protocolo": "faenas",
+   "anticipacion_horas": 48,
+   "aviso": true,
+   "accion_tomada": false,
+   "que_paso": "No hubo foco ni humo sobre el umbral",
+   "resultado": "falsa_alarma"
+  },
+  {
+   "fecha": "2026-09-30",
+   "region_id": "05102",
+   "comuna": "Casablanca",
+   "protocolo": "faenas",
+   "anticipacion_horas": 24,
+   "aviso": true,
+   "accion_tomada": true,
+   "que_paso": "Hubo foco o humo sobre el umbral",
+   "resultado": "acierto"
+  }
+ ]
+}

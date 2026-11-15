@@ -1,0 +1,2717 @@
+{
+ "extension": "propuesta, no está en el contrato 0.2",
+ "ejemplo": true,
+ "nota": "Números inventados. La comparación real es la prueba 0 del plan de validación.",
+ "fuentes": {
+  "motor": "Motor propio",
+  "gwis": "GWIS, peligro por clima",
+  "boton_rojo": "CONAF, Botón Rojo",
+  "focos_observados": "NASA FIRMS, focos vistos ese día"
+ },
+ "items": [
+  {
+   "region_id": "05101",
+   "nombre": "Valparaíso",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 6
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 7
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "muy_alto",
+     "gwis": "alto",
+     "boton_rojo": true,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 5
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "bajo",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 7
+    }
+   ]
+  },
+  {
+   "region_id": "05109",
+   "nombre": "Viña del Mar",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 7
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "alto",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": true,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "muy_alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 6
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 5
+    }
+   ]
+  },
+  {
+   "region_id": "05801",
+   "nombre": "Quilpué",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": true,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 5
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "alto",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 5
+    }
+   ]
+  },
+  {
+   "region_id": "05804",
+   "nombre": "Villa Alemana",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "alto",
+     "gwis": "muy_alto",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "alto",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 1
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": true,
+     "focos_observados": 5
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "muy_alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "05102",
+   "nombre": "Casablanca",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "muy_alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 6
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 5
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 5
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "05601",
+   "nombre": "San Antonio",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "alto",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 5
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "05501",
+   "nombre": "Quillota",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 1
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 6
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 6
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "alto",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "05802",
+   "nombre": "Limache",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 4
+    }
+   ]
+  },
+  {
+   "region_id": "13501",
+   "nombre": "Melipilla",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 1
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 6
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "13503",
+   "nombre": "Curacaví",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 6
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "bajo",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 4
+    }
+   ]
+  },
+  {
+   "region_id": "06101",
+   "nombre": "Rancagua",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "06201",
+   "nombre": "Pichilemu",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "alto",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "bajo",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "bajo",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 5
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 5
+    }
+   ]
+  },
+  {
+   "region_id": "06204",
+   "nombre": "Marchigüe",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 7
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 5
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "muy_alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": true,
+     "focos_observados": 7
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "muy_alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 5
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "06205",
+   "nombre": "Navidad",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "07301",
+   "nombre": "Curicó",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 1
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "bajo",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 1
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "07101",
+   "nombre": "Talca",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 1
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 1
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "07102",
+   "nombre": "Constitución",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "alto",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 6
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "muy_alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "muy_alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "muy_alto",
+     "gwis": "muy_alto",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "07201",
+   "nombre": "Cauquenes",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": true,
+     "focos_observados": 7
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "alto",
+     "gwis": "muy_alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "16101",
+   "nombre": "Chillán",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 1
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 1
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 3
+    }
+   ]
+  },
+  {
+   "region_id": "16201",
+   "nombre": "Quirihue",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "muy_alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 6
+    }
+   ]
+  },
+  {
+   "region_id": "08111",
+   "nombre": "Tomé",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "muy_alto",
+     "gwis": "muy_alto",
+     "boton_rojo": true,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "muy_alto",
+     "gwis": "muy_alto",
+     "boton_rojo": true,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "muy_alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 6
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "08101",
+   "nombre": "Concepción",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "bajo",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 2
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "08109",
+   "nombre": "Santa Juana",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "muy_alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "muy_alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": true,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 5
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "muy_alto",
+     "gwis": "muy_alto",
+     "boton_rojo": true,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "08306",
+   "nombre": "Nacimiento",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 5
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "alto",
+     "gwis": "muy_alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": true,
+     "focos_observados": 8
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 1
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 2
+    }
+   ]
+  },
+  {
+   "region_id": "08301",
+   "nombre": "Los Ángeles",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 1
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 4
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "medio",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 1
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  },
+  {
+   "region_id": "08202",
+   "nombre": "Arauco",
+   "dias": [
+    {
+     "fecha": "2026-10-31",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-01",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 3
+    },
+    {
+     "fecha": "2026-11-02",
+     "motor": "alto",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-03",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-04",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-05",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-06",
+     "motor": "bajo",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-07",
+     "motor": "alto",
+     "gwis": "muy_alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-08",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-09",
+     "motor": "medio",
+     "gwis": "bajo",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-10",
+     "motor": "bajo",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-11",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-12",
+     "motor": "medio",
+     "gwis": "alto",
+     "boton_rojo": false,
+     "focos_observados": 0
+    },
+    {
+     "fecha": "2026-11-13",
+     "motor": "alto",
+     "gwis": "medio",
+     "boton_rojo": false,
+     "focos_observados": 0
+    }
+   ]
+  }
+ ]
+}

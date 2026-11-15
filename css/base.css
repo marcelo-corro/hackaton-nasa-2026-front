@@ -1,0 +1,106 @@
+/* Base compartida por la maqueta (index.html) y la ficha de producto (producto.html). */
+:root {
+  /* Fondo de bruma costera, tinta de pizarra y azul de litoral para lo que se puede tocar. */
+  --bruma: #e8ecee;
+  --papel: #f7f9f9;
+  --blanco: #ffffff;
+  --pizarra: #1d2a33;
+  --pizarra-2: #51616c;
+  --linea: #c7d1d6;
+  --litoral: #1f6e8c;
+  --litoral-osc: #164f66;
+
+  /* Riesgo de foco: del pasto verde a la brasa. */
+  --n-bajo: #a9c2b0;
+  --n-medio: #e6c75a;
+  --n-alto: #e08a2e;
+  --n-muy_alto: #bf3326;
+  /* Humo: ceniza cada vez más densa. */
+  --n-h0: #dcd8e1;
+  --n-h1: #b3a6be;
+  --n-h2: #7c688a;
+  --n-h3: #48334f;
+  /* Salud: el mismo azul del litoral, más cargado. */
+  --n-s0: #d2e4ea;
+  --n-s1: #93c0d1;
+  --n-s2: #4c93ae;
+  --n-s3: #1a5c77;
+  --n-nd: #d5dbde;
+  /* Presión de ignición humana: del papel al óxido. */
+  --n-i0: #ece4d6;
+  --n-i1: #d6b98c;
+  --n-i2: #b07a3c;
+  --n-i3: #7a4416;
+  /* Los seis factores de la prioridad. */
+  --f-foco: #bf3326;
+  --f-exposicion: #1d2a33;
+  --f-humo: #7c688a;
+  --f-interfaz: #5f8f6b;
+  --f-anticipacion: #1f6e8c;
+  --f-confianza: #c9a227;
+  /* Calendario de focos: rampa cividis, apta para daltonismo. El cero va aparte. */
+  --cv-0: #eef1f2;
+  --cv-1: #fee838;
+  --cv-2: #c8b866;
+  --cv-3: #948e77;
+  --cv-4: #666970;
+  --cv-5: #35456c;
+  --cv-6: #00224e;
+
+  --titulo: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --texto: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ancho: 78rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bruma);
+  color: var(--pizarra);
+  font: 400 1rem/1.5 var(--texto);
+  font-variant-numeric: tabular-nums;
+}
+
+h1, h2, h3 { font-family: var(--titulo); line-height: 1.12; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(1.75rem, 1.3rem + 1.9vw, 2.6rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: 1rem; font-weight: 700; }
+p { margin: 0; }
+
+a { color: var(--litoral-osc); text-underline-offset: 0.18em; }
+a:hover { color: var(--pizarra); }
+
+:focus-visible { outline: 3px solid var(--litoral); outline-offset: 2px; border-radius: 2px; }
+
+.salto { position: absolute; left: -999px; top: 0; background: var(--pizarra); color: var(--blanco); padding: 0.6rem 1rem; z-index: 2000; }
+.salto:focus { left: 0; }
+
+.nota { color: var(--pizarra-2); font-size: 0.9rem; }
+
+.n-bajo { background: var(--n-bajo); } .n-medio { background: var(--n-medio); }
+.n-alto { background: var(--n-alto); } .n-muy_alto { background: var(--n-muy_alto); }
+.n-h0, .h0 { background: var(--n-h0); } .n-h1, .h1 { background: var(--n-h1); }
+.n-h2, .h2 { background: var(--n-h2); } .n-h3, .h3 { background: var(--n-h3); }
+.n-s0, .s0 { background: var(--n-s0); } .n-s1, .s1 { background: var(--n-s1); }
+.n-s2, .s2 { background: var(--n-s2); } .n-s3, .s3 { background: var(--n-s3); }
+.n-nd, .nd { background: var(--n-nd); }
+.n-i0 { background: var(--n-i0); } .n-i1 { background: var(--n-i1); } .n-i2 { background: var(--n-i2); } .n-i3 { background: var(--n-i3); }
+.f-foco { background: var(--f-foco); } .f-exposicion { background: var(--f-exposicion); } .f-humo { background: var(--f-humo); }
+.f-interfaz { background: var(--f-interfaz); } .f-anticipacion { background: var(--f-anticipacion); } .f-confianza { background: var(--f-confianza); }
+.cv-0 { background: var(--cv-0); } .cv-1 { background: var(--cv-1); } .cv-2 { background: var(--cv-2); } .cv-3 { background: var(--cv-3); }
+.cv-4 { background: var(--cv-4); } .cv-5 { background: var(--cv-5); } .cv-6 { background: var(--cv-6); }
+.cv-nd { background: repeating-linear-gradient(135deg, #ffffff 0 3px, #dfe5e8 3px 6px); }
+.c-baja { background: #dfe7e2; } .c-normal { background: #b6ccbc; } .c-alta { background: var(--n-alto); } .c-extrema { background: var(--n-muy_alto); color: var(--blanco); }
+
+.enlace { font: inherit; color: var(--litoral-osc); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: 0.18em; }
+.enlace:hover { color: var(--pizarra); }
+.enlace[aria-current="true"] { font-weight: 700; color: var(--pizarra); text-decoration: none; }
+.solo-lectores { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+[hidden] { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

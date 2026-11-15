@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preaviso, informe interno de producto</title>
+<meta name="description" content="Informe interno: problemas identificados, cómo se resuelven y dónde se agrega valor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bruma: #e8ecee; --papel: #f7f9f9; --blanco: #ffffff; --pizarra: #1d2a33; --pizarra-2: #51616c; --linea: #c7d1d6;
+  --litoral: #1f6e8c; --litoral-osc: #164f66;
+  --ok: #2f6b4a; --ok-fondo: #dcebe1; --parcial: #7a5a00; --parcial-fondo: #f3e7bd; --inf: #164f66; --inf-fondo: #d7e7ee; --sin: #8a2a20; --sin-fondo: #f2d9d5;
+  --titulo: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --texto: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 1rem; }
+body { margin: 0; background: var(--bruma); color: var(--pizarra); font: 400 1rem/1.55 var(--texto); font-variant-numeric: tabular-nums; }
+h1, h2, h3 { font-family: var(--titulo); line-height: 1.15; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3rem); font-weight: 800; letter-spacing: -0.025em; }
+h2 { font-size: 1.55rem; font-weight: 800; letter-spacing: -0.015em; padding-top: 0.4rem; border-top: 3px solid var(--pizarra); }
+h3 { font-size: 1.08rem; font-weight: 700; margin-top: 1.4rem; }
+p { margin: 0.6rem 0 0; max-width: 72ch; }
+ul, ol { margin: 0.6rem 0 0; padding-left: 1.25rem; max-width: 76ch; }
+li { margin-bottom: 0.35rem; }
+a { color: var(--litoral-osc); text-underline-offset: 0.18em; }
+a:hover { color: var(--pizarra); }
+:focus-visible { outline: 3px solid var(--litoral); outline-offset: 2px; border-radius: 2px; }
+sup { font-size: 0.72em; line-height: 0; }
+sup a { text-decoration: none; font-weight: 700; padding: 0 0.05em; }
+code { font: 0.9em ui-monospace, "SFMono-Regular", Menlo, monospace; background: var(--papel); padding: 0.05rem 0.3rem; border-radius: 3px; }
+
+.pagina { max-width: 82rem; margin: 0 auto; padding: 0 clamp(1rem, 3vw, 2.5rem) 4rem; display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 0 clamp(1.5rem, 3vw, 3.5rem); }
+.cabecera { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--linea); margin-bottom: 2rem; }
+.marca { display: inline-flex; align-items: center; gap: 0.6rem; font: 800 1.3rem/1 var(--titulo); letter-spacing: -0.02em; color: var(--pizarra); text-decoration: none; }
+.boton { display: inline-block; font: 700 0.95rem/1 var(--texto); background: var(--pizarra); color: var(--blanco); padding: 0.7rem 1rem; border-radius: 4px; text-decoration: none; }
+.boton:hover { background: var(--litoral-osc); color: var(--blanco); }
+
+.indice { position: sticky; top: 1rem; align-self: start; max-height: calc(100vh - 2rem); overflow-y: auto; font-size: 0.93rem; }
+.indice strong { display: block; font: 700 0.85rem/1 var(--texto); color: var(--pizarra-2); margin-bottom: 0.6rem; }
+.indice ol { list-style: none; padding: 0; margin: 0; counter-reset: s; }
+.indice li { margin: 0; counter-increment: s; }
+.indice li:first-child { counter-increment: none; }
+.indice li:first-child a::before { content: ""; }
+.indice a { display: block; padding: 0.38rem 0.6rem; text-decoration: none; color: var(--pizarra); border-left: 3px solid var(--linea); }
+.indice a::before { content: counter(s) ". "; color: var(--pizarra-2); }
+.indice a:hover { border-left-color: var(--pizarra); background: var(--papel); }
+
+main section { padding-top: 2.6rem; }
+main > section:first-child { padding-top: 0; }
+.meta { display: flex; flex-wrap: wrap; gap: 0.3rem 1.6rem; margin-top: 0.9rem; font-size: 0.92rem; color: var(--pizarra-2); }
+.entrada { font-size: 1.1rem; margin-top: 1rem; max-width: 62ch; }
+
+.chip { display: inline-block; font: 700 0.78rem/1 var(--texto); padding: 0.22rem 0.5rem; border-radius: 3px; white-space: nowrap; vertical-align: 0.08em; }
+.c-ok { background: var(--ok-fondo); color: var(--ok); }
+.c-parcial { background: var(--parcial-fondo); color: var(--parcial); }
+.c-inf { background: var(--inf-fondo); color: var(--inf); }
+.c-sin { background: var(--sin-fondo); color: var(--sin); }
+.leyenda-chips { display: grid; gap: 0.4rem; margin-top: 0.9rem; max-width: 66ch; font-size: 0.93rem; }
+.leyenda-chips div { display: grid; grid-template-columns: 6.2rem 1fr; gap: 0.8rem; align-items: baseline; }
+
+.caja { background: var(--blanco); border-top: 3px solid var(--pizarra); padding: 1rem 1.2rem 1.1rem; margin-top: 1rem; }
+.caja ul { margin-top: 0.3rem; }
+
+.tabla-caja { overflow-x: auto; margin-top: 1rem; background: var(--blanco); border-top: 3px solid var(--pizarra); }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 46rem; }
+th, td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--linea); vertical-align: top; }
+thead th { font-weight: 700; font-size: 0.82rem; color: var(--pizarra-2); background: var(--papel); position: sticky; top: 0; }
+tbody th { font-weight: 700; }
+td p, th p { margin: 0; }
+.nota { color: var(--pizarra-2); font-size: 0.92rem; }
+
+.ficha { background: var(--blanco); border-top: 3px solid var(--pizarra); margin-top: 1.1rem; padding: 1rem 1.2rem 0.6rem; }
+.ficha h3 { margin: 0 0 0.6rem; display: flex; gap: 0.7rem; align-items: baseline; }
+.ficha h3 .id { font: 800 1rem/1 var(--titulo); color: var(--pizarra-2); min-width: 2.2rem; }
+.ficha dl { margin: 0; display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 0; font-size: 0.95rem; }
+.ficha dt { padding: 0.5rem 0.8rem 0.5rem 0; border-top: 1px solid var(--linea); color: var(--pizarra-2); font-weight: 700; font-size: 0.88rem; }
+.ficha dd { margin: 0; padding: 0.5rem 0; border-top: 1px solid var(--linea); }
+.ficha dd p { margin: 0 0 0.3rem; max-width: none; }
+
+.p1 { color: var(--ok); font-weight: 700; } .p2 { color: var(--litoral-osc); font-weight: 700; } .p3 { color: var(--pizarra-2); font-weight: 700; }
+.no { color: var(--sin); font-weight: 700; } .si { color: var(--ok); font-weight: 700; }
+.fuentes ol { columns: 2; column-gap: 2.5rem; font-size: 0.88rem; padding-left: 1.6rem; max-width: none; }
+.fuentes li { break-inside: avoid; overflow-wrap: anywhere; margin-bottom: 0.45rem; }
+.fuentes h3 { font-size: 0.95rem; color: var(--pizarra-2); margin-top: 1.2rem; }
+.pie { grid-column: 1 / -1; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--linea); font-size: 0.88rem; color: var(--pizarra-2); }
+
+@media (max-width: 62rem) {
+  .pagina { grid-template-columns: minmax(0, 1fr); }
+  .indice { position: static; max-height: none; margin-bottom: 1.5rem; }
+  .indice ol { columns: 2; }
+  .fuentes ol { columns: 1; }
+}
+@media (max-width: 40rem) {
+  .ficha dl { grid-template-columns: 1fr; }
+  .ficha dt { border-top: 1px solid var(--linea); padding-bottom: 0; }
+  .ficha dd { border-top: 0; padding-top: 0.1rem; }
+  .indice ol { columns: 1; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  body { background: #fff; font-size: 10pt; }
+  .indice, .boton { display: none; }
+  .pagina { display: block; }
+  .ficha, .caja, .tabla-caja { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="pagina">
+
+<header class="cabecera">
+  <a class="marca" href="index.html" aria-label="Preaviso, abrir la maqueta">
+    <svg width="30" height="30" viewBox="0 0 68 68" aria-hidden="true"><rect width="68" height="68" rx="15" fill="#1d2a33"/><rect x="11" y="38" width="7" height="18" rx="2" fill="#e6c75a"/><rect x="21" y="26" width="7" height="30" rx="2" fill="#e08a2e"/><rect x="31" y="12" width="7" height="44" rx="2" fill="#bf3326"/><rect x="41" y="24" width="7" height="32" rx="2" fill="#e08a2e" opacity=".55"/><rect x="51" y="36" width="7" height="20" rx="2" fill="#e6c75a" opacity=".55"/></svg>
+    <span>Preaviso</span>
+  </a>
+  <a class="boton" href="index.html">Abrir la maqueta</a>
+</header>
+
+<nav class="indice" aria-label="Contenido del informe">
+  <strong>Contenido</strong>
+  <ol>
+    <li><a href="#alcance">Alcance y método</a></li>
+    <li><a href="#resumen">Resumen</a></li>
+    <li><a href="#problemas">Problemas identificados</a></li>
+    <li><a href="#cadena">Cadena de datos</a></li>
+    <li><a href="#herramientas">Herramientas existentes</a></li>
+    <li><a href="#valor">Dónde se agrega valor</a></li>
+    <li><a href="#funciones">Definición del producto</a></li>
+    <li><a href="#candidatos">Candidatos evaluados</a></li>
+    <li><a href="#riesgos">Riesgos de fracaso</a></li>
+    <li><a href="#validacion">Plan de validación</a></li>
+    <li><a href="#brechas">Brechas de evidencia</a></li>
+    <li><a href="#decisiones">Decisiones del equipo</a></li>
+    <li><a href="#fuentes">Fuentes</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<section id="alcance">
+  <h1>Preaviso: informe interno de producto</h1>
+  <div class="meta"><span>Equipo AIVital, NASA Space Apps 2026</span><span>14 de noviembre de 2026</span><span>Borrador v2, con la definición del producto</span></div>
+  <p class="entrada">Este documento ordena qué problemas encontramos, qué ya existe para resolverlos, cómo los resolvería el producto y dónde estaría el valor que agregamos. No es material de venta. Cada afirmación lleva su fuente y una etiqueta de qué tan firme es.</p>
+
+  <h3>Cómo leer las etiquetas</h3>
+  <div class="leyenda-chips">
+    <div><span class="chip c-ok">Respaldado</span><span>Lo dice un estudio revisado por pares, documentación oficial o una norma, y lo leímos completo.</span></div>
+    <div><span class="chip c-parcial">Parcial</span><span>Fuente única, de un vendedor, de prensa, de opinión, o de un contexto distinto al nuestro (otro país, otro evento).</span></div>
+    <div><span class="chip c-inf">Inferencia</span><span>Conclusión nuestra a partir de lo anterior. No está escrita en ninguna fuente.</span></div>
+    <div><span class="chip c-sin">Sin verificar</span><span>Lo buscamos y no pudimos confirmarlo.</span></div>
+  </div>
+
+  <h3>Cómo se produjo</h3>
+  <ul>
+    <li>La búsqueda y lectura de fuentes la hicieron agentes lectores. Las citas se comprobaron contra el texto original con un verificador automático. En unos pocos pasajes largos el verificador no pudo copiar el texto y quedaron sin comprobar. Los textos de fuentes de vendedores se tratan como lo que dicen de sí mismos.</li>
+    <li>Los puntajes de la sección 7 vienen de un revisor independiente que es un modelo de IA, puesto a buscar fallas en cada idea durante dos rondas. Son juicios, no mediciones.</li>
+    <li>El análisis de mercado y de evidencia usó solo fuentes de internet. Del repo del back solo se leyeron el contrato y el README, para armar la maqueta.</li>
+    <li><strong>No sabemos qué predice hoy el motor propio</strong> (riesgo por zona, punto de inicio o avance del fuego) ni con qué acierto. El repo del back declara el modelo de riesgo a 24 y 48 horas como pendiente. Varias conclusiones dependen de eso y se marcan. La guía del front que escribió el equipo del back dice que el modelo anticipa cómo se propaga un incendio activo y que no predice dónde empieza uno. Al 14 de noviembre de 2026 el archivo de riesgo que publica el back viene vacío.</li>
+  </ul>
+</section>
+
+<section id="resumen">
+  <h2>1. Resumen</h2>
+  <div class="caja">
+    <ul>
+      <li><strong>Problema central.</strong> Las herramientas de incendios que leímos terminan en un mapa, una detección o una simulación. Lo que no encontramos es una que le diga a un cliente qué hacer, con qué responsable y con cuántos días de anticipación, en sectores como salud o seguridad laboral. Technosylva sí cubre acciones para agencias de incendios y eléctricas.<sup><a href="#r6">6</a></sup> <span class="chip c-parcial">Parcial</span></li>
+      <li><strong>Lo que ya es público o gratuito.</strong> Focos casi en tiempo real<sup><a href="#r12">12</a></sup>, peligro por clima hasta 9 días<sup><a href="#r13">13</a></sup>, un criterio diario de zonas críticas<sup><a href="#r8">8</a>, <a href="#r11">11</a></sup>, un mapa nacional de riesgo a 10 metros<sup><a href="#r9">9</a></sup> y pronóstico de humo a 5 días<sup><a href="#r14">14</a></sup>. <span class="chip c-ok">Respaldado</span> lo que ofrecen. <span class="chip c-inf">Inferencia</span> que no conviene competir en esas capas.</li>
+      <li><strong>Competidor directo del motor.</strong> El centro europeo del clima corre desde 2023 un modelo global de probabilidad de incendio de 9 km a 10 días. Su resultado diario llega a usuarios registrados y países miembros, y no encontramos acceso abierto. Su receta sí es abierta.<sup><a href="#r19">19</a>, <a href="#r20">20</a>, <a href="#r21">21</a></sup> <span class="chip c-ok">Respaldado</span></li>
+      <li><strong>Valor propuesto.</strong> Traducir el pronóstico a consecuencias para personas, anticipar con protocolos que tienen umbral, acción, responsable y freno, y cerrar el ciclo con un registro de aciertos y falsas alarmas. <span class="chip c-inf">Inferencia</span></li>
+      <li><strong>Mejor entrada comercial hoy.</strong> Mutualidades de seguridad laboral. Están obligadas a actuar por fases desde la alerta roja.<sup><a href="#r29">29</a></sup> <span class="chip c-ok">Respaldado</span> Que paguen por anticipar días no está comprobado. <span class="chip c-sin">Sin verificar</span></li>
+      <li><strong>Humo y salud.</strong> El efecto existe y hay un sistema público que lo pronostica en Canadá.<sup><a href="#r22">22</a>, <a href="#r23">23</a></sup> En Chile no medimos aún si el motor mejora esa estimación. Es la segunda prueba del plan.</li>
+      <li><strong>No construir.</strong> Detección con hardware, simulación de avance del fuego y mapas estáticos de riesgo. Sí adoptar de otros: alertas por WhatsApp y correo, nivel de confianza por aviso, informe diario a hora fija, conexión por API.</li>
+      <li><strong>Condición previa de todo.</strong> Comparar el motor contra lo gratuito (prueba 0 de la sección 9). Si no lo supera, el producto se sostiene solo en la capa de acciones y se discute si el motor es insumo y no producto.</li>
+      <li><strong>Impacto en dinero.</strong> El ahorro que generaría Preaviso no está medido. Lo que sí tiene cifra es el costo de llegar tarde: un fondo de reconstrucción de hasta $800.000 millones tras el incendio de Valparaíso de 2024<sup><a href="#r53">53</a></sup> y $156 mil millones de presupuesto del plan contra incendios de la temporada 2024-2025.<sup><a href="#r54">54</a></sup> El detalle está en la <a href="#valor">sección 5</a>.</li>
+      <li><strong>Definición del producto.</strong> Preaviso ordena por prioridad las comunas donde una organización tiene personas, y le manda a cada responsable una alerta con sus tareas. Tiene una plataforma web para quien decide y una app de Android para quien está en terreno. El detalle está en la <a href="#funciones">sección 6</a>.</li>
+      <li><strong>Acierto del motor.</strong> Se mide y se publica, pero pertenece al pitch, no a las funciones del producto.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="problemas">
+  <h2>2. Problemas identificados</h2>
+  <p>Ocho problemas. Cada ficha dice quién lo sufre, qué evidencia hay, qué tan firme es, qué lo cubre hoy y qué responde el producto.</p>
+
+  <article class="ficha">
+    <h3><span class="id">P1</span>Los pronósticos terminan en un mapa o una alerta, no en acciones</h3>
+    <dl>
+      <dt>Quién lo sufre</dt><dd>Cualquier organización con lugares o personas expuestas que no es una agencia de incendios: mutualidades, redes de salud, colegios, empresas con faenas.</dd>
+      <dt>Evidencia</dt><dd>OroraTech detecta, pronostica peligro a 9 días y simula propagación.<sup><a href="#r2">2</a></sup> Pano AI detecta humo con cámaras propias.<sup><a href="#r3">3</a></sup> FIRMS y GWIS entregan focos y peligro.<sup><a href="#r12">12</a>, <a href="#r13">13</a></sup> Technosylva sí ofrece módulos de respuesta, corte preventivo de energía y manejo de vegetación, para agencias y eléctricas.<sup><a href="#r6">6</a></sup></dd>
+      <dt>Certeza</dt><dd><span class="chip c-parcial">Parcial</span> Leímos páginas de producto y documentación, no probamos las herramientas ni hablamos con usuarios.</dd>
+      <dt>Cobertura hoy</dt><dd>Agencias y eléctricas, con Technosylva. En salud y seguridad laboral no encontramos nada equivalente.</dd>
+      <dt>Respuesta</dt><dd>Protocolos con gatillo (F1), puntos del cliente (F2) y parte diario (F3).</dd>
+    </dl>
+  </article>
+
+  <article class="ficha">
+    <h3><span class="id">P2</span>Quienes están obligados a actuar parten cuando la alerta ya existe</h3>
+    <dl>
+      <dt>Quién lo sufre</dt><dd>Mutualidades (ACHS, Mutual de Seguridad, IST, ISL), municipios y servicios de emergencia.</dd>
+      <dt>Evidencia</dt><dd>La SUSESO instruyó a las mutualidades a actuar en tres fases desde la declaración de alerta roja: respuesta inmediata, evaluación de riesgos a 72 horas y atención de salud mental al mes. Para identificar centros de trabajo afectados remite a un visor público.<sup><a href="#r29">29</a></sup> En California, el empleador debe medir la exposición al humo en cada turno cuando el índice de calidad del aire por PM2,5 llega a 151.<sup><a href="#r30">30</a></sup> En las dos fuentes chilenas leídas de seguridad laboral no apareció una norma equivalente para el humo. En Viña del Mar 2024 las alertas al celular salieron al menos 20 minutos después de que el fuego llegó a viviendas, según la comisión investigadora citada en una columna de opinión.<sup><a href="#r43">43</a>, <a href="#r44">44</a></sup></dd>
+      <dt>Certeza</dt><dd><span class="chip c-ok">Respaldado</span> para las obligaciones de la SUSESO. <span class="chip c-parcial">Parcial</span> para Viña, por ser columna de opinión.</dd>
+      <dt>Cobertura hoy</dt><dd>Reactiva: parte con la alerta roja.</dd>
+      <dt>Respuesta</dt><dd>Anticipar de 1 a 5 días con preparación y activación por etapas (F1, F3).</dd>
+    </dl>
+  </article>
+
+  <article class="ficha">
+    <h3><span class="id">P3</span>El humo aumenta las urgencias respiratorias con desfase y nadie lo anticipa en Chile</h3>
+    <dl>
+      <dt>Quién lo sufre</dt><dd>Redes de salud, servicios de urgencia, pacientes crónicos, menores de 5 años y mayores de 65.</dd>
+      <dt>Evidencia</dt><dd>Un metaanálisis encontró +0,36 % de urgencias respiratorias y +0,25 % de hospitalizaciones respiratorias por cada 1 µg/m³ de humo fino, el mismo día. En lo cardiovascular el efecto no fue significativo y los desfases no se pudieron agrupar.<sup><a href="#r23">23</a></sup> Una revisión describe alzas respiratorias con 1 a 3 días de desfase.<sup><a href="#r24">24</a></sup> En Columbia Británica, el sistema BCAPS pronostica cada mañana para hoy y mañana las dispensaciones de inhaladores por área de salud. En la temporada extrema de 2018 acertó dentro de ±20 % en 71 % de los casos.<sup><a href="#r22">22</a></sup> En Biobío, un estudio midió 33 % más casos respiratorios en centros de comunas y semanas con incendio.<sup><a href="#r25">25</a></sup></dd>
+      <dt>Certeza</dt><dd><span class="chip c-ok">Respaldado</span> en dirección del efecto. <span class="chip c-parcial">Parcial</span> en magnitud para Chile: el estudio de Biobío usa una variable de "hubo incendio" y no humo medido, y su ajuste es bajo (R² 0,22).</dd>
+      <dt>Cobertura hoy</dt><dd>BCAPS cubre Canadá y es público. No encontramos un sistema equivalente en Chile ni un producto comercial. <span class="chip c-sin">Sin verificar</span> como ausencia: la búsqueda fue acotada.</dd>
+      <dt>Respuesta</dt><dd>Capa de humo y salud (F4), condicionada a la prueba 3.</dd>
+    </dl>
+  </article>
+
+  <article class="ficha">
+    <h3><span class="id">P4</span>El pronóstico gratuito de humo es grueso y poco confiable por ciudad</h3>
+    <dl>
+      <dt>Quién lo sufre</dt><dd>Quien necesite saber cuánto humo llegará a un lugar concreto.</dd>
+      <dt>Evidencia</dt><dd>El pronóstico de Copernicus tiene resolución de unos 40 km.<sup><a href="#r14">14</a></sup> En un estudio de EE. UU., ningún pronóstico dio más información que mirar la lectura de la estación en la mañana para saber si el día siguiente tendría humo alto, y seis pronósticos subestimaron la tendencia en un evento.<sup><a href="#r17">17</a></sup> En el incendio Williams Flats de 2019, la correlación con PM2,5 de superficie fue menor a 0,35 en todos los modelos evaluados.<sup><a href="#r18">18</a></sup></dd>
+      <dt>Certeza</dt><dd><span class="chip c-ok">Respaldado</span> en EE. UU. <span class="chip c-sin">Sin verificar</span> en Chile: no hay evaluación contra estaciones chilenas.</dd>
+      <dt>Cobertura hoy</dt><dd>Dato gratuito y global, sin corrección local.</dd>
+      <dt>Respuesta</dt><dd>Usarlo como capa regional corregida con las estaciones de calidad del aire. No prometer cifras por comuna.</dd>
+    </dl>
+  </article>
+
+  <article class="ficha">
+    <h3><span class="id">P5</span>El pronóstico de humo parte de los incendios ya vistos</h3>
+    <dl>
+      <dt>Quién lo sufre</dt><dd>Todo cálculo de salud que dependa del humo a más de un día.</dd>
+      <dt>Evidencia</dt><dd>La documentación vigente dice que las emisiones se derivan de satélites del día anterior al inicio del pronóstico.<sup><a href="#r14">14</a></sup> Una presentación de 2017 decía que los pronósticos a 5 días suponían emisiones persistentes, y un estudio de 2018 propone reemplazar esa persistencia por un modelo.<sup><a href="#r15">15</a>, <a href="#r16">16</a></sup> Desde mayo de 2026 usan una versión nueva del sistema de emisiones.<sup><a href="#r52">52</a></sup></dd>
+      <dt>Certeza</dt><dd><span class="chip c-sin">Sin verificar</span> cómo trata hoy los incendios futuros. Leímos tres textos técnicos y ninguno dice que los pronostique.</dd>
+      <dt>Cobertura hoy</dt><dd>Desconocida.</dd>
+      <dt>Respuesta</dt><dd>Hipótesis de valor V4: que la probabilidad de incendios nuevos del motor mejore el humo a 2 a 5 días. Depende de la prueba 0 y de confirmar el punto con el equipo de Copernicus.</dd>
+    </dl>
+  </article>
+
+  <article class="ficha">
+    <h3><span class="id">P6</span>Las falsas alarmas desgastan la confianza en los avisos</h3>
+    <dl>
+      <dt>Quién lo sufre</dt><dd>Quien recibe avisos y debe decidir si actúa.</dd>
+      <dt>Evidencia</dt><dd>El sistema de Entel Ocean tuvo muchos falsos positivos al inicio, por lluvia o asados.<sup><a href="#r5">5</a></sup> OroraTech reconoce que los falsos positivos son parte de la detección y entrega un puntaje de confianza.<sup><a href="#r2">2</a></sup> Los métodos tradicionales de peligro sobrestiman el riesgo alto y generan falsas alarmas, según los autores del modelo europeo.<sup><a href="#r19">19</a></sup> Los protocolos de acción anticipatoria nombran la falta de entendimiento y de financiamiento entre sus desafíos.<sup><a href="#r46">46</a></sup></dd>
+      <dt>Certeza</dt><dd><span class="chip c-parcial">Parcial</span> Dos de las fuentes son de los propios vendedores o autores del modelo.</dd>
+      <dt>Cobertura hoy</dt><dd>Puntajes de confianza en detección. No vimos registro de acciones ni de resultado por aviso.</dd>
+      <dt>Respuesta</dt><dd>Freno explícito en cada protocolo, confianza por aviso y registro de resultados (F1, F5).</dd>
+    </dl>
+  </article>
+
+  <article class="ficha">
+    <h3><span class="id">P7</span>Casi todos los incendios en Chile los origina una persona y no hay predicción dirigida a eso</h3>
+    <dl>
+      <dt>Quién lo sufre</dt><dd>Servicios de prevención, municipios, agricultores y empresas con faenas.</dd>
+      <dt>Evidencia</dt><dd>En promedio 99 % de los incendios forestales lo produce el ser humano. En 2.194 siniestros investigados de una temporada, 66 % fue accidental y 31 % intencional. Dentro de los accidentales, 15 % vino de quema de desechos, 10 % de faenas agrícolas y 8 % de fallas eléctricas.<sup><a href="#r41">41</a></sup> Las zonas donde se juntan ciudad y vegetación son el 5 % del territorio, concentran el 80 % de la población y registran el 60 % de los incendios.<sup><a href="#r31">31</a></sup> Un modelo de ocurrencia en Chile encontró que la distancia a líneas eléctricas, caminos y zonas de interfaz urbano-forestal estuvo entre los mejores predictores, y rindió peor en la zona central (AUC 0,68).<sup><a href="#r42">42</a></sup></dd>
+      <dt>Certeza</dt><dd><span class="chip c-parcial">Parcial</span> Las cifras vienen de prensa que cita a CONAF, y los datos de causas del modelo llegan solo hasta 2019. No encontramos evidencia de cuánto reduce el daño un patrullaje o una restricción en días de riesgo.</dd>
+      <dt>Cobertura hoy</dt><dd>Sin herramienta pública que dirija la prevención por día. <span class="chip c-sin">Sin verificar</span></dd>
+      <dt>Respuesta</dt><dd>Prevención dirigida de igniciones (F7), prioridad baja hasta saber qué predice el motor.</dd>
+    </dl>
+  </article>
+
+  <article class="ficha">
+    <h3><span class="id">P8</span>El acierto de las herramientas públicas no es visible</h3>
+    <dl>
+      <dt>Quién lo sufre</dt><dd>Quien debe decidir cuánto confiar en un pronóstico.</dd>
+      <dt>Evidencia</dt><dd>Las páginas de CONAF que leímos sobre Botón Rojo y el análisis nacional no publican su acierto. El mapa nacional fija los pesos de sus variables por consulta a expertos.<sup><a href="#r8">8</a>, <a href="#r9">9</a></sup> OroraTech no declara su tasa de falsos positivos y sus cifras de satélites y resolución difieren entre secciones de su propia página.<sup><a href="#r2">2</a></sup></dd>
+      <dt>Certeza</dt><dd><span class="chip c-parcial">Parcial</span> CONAF puede medirlo internamente. Que no lo publique no prueba que no lo sepa.</dd>
+      <dt>Cobertura hoy</dt><dd>Ninguna pública en lo leído.</dd>
+      <dt>Respuesta</dt><dd>Medir y publicar el acierto propio. Va al pitch, no a las funciones del producto.</dd>
+    </dl>
+  </article>
+</section>
+
+<section id="cadena">
+  <h2>3. Cadena de datos: del foco a la acción</h2>
+  <p>Cada eslabón consume el resultado del anterior. El humo entra como dato de entrada del cálculo de salud, igual que en el sistema de Columbia Británica, que combina historia de humo, historia de un indicador de salud y pronóstico de humo.<sup><a href="#r22">22</a></sup></p>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">Eslabón</th><th scope="col">Entra</th><th scope="col">Sale</th><th scope="col">Calidad conocida</th><th scope="col">Brecha</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1. Riesgo de foco</th><td>Focos MODIS y VIIRS de NASA FIRMS (MODIS 1 km, VIIRS 375 m)<sup><a href="#r12">12</a></sup>, clima, comunas.</td><td>Probabilidad de foco por comuna a 24 y 48 horas.</td><td><span class="chip c-sin">Sin verificar</span> El back declara las métricas como pendientes.</td><td>Qué predice el motor y con qué acierto frente a GWIS, Botón Rojo y el modelo europeo.</td></tr>
+        <tr><th scope="row">2. Humo</th><td>Pronóstico de Copernicus, PM2,5 en superficie, 5 días, unos 40 km.<sup><a href="#r14">14</a></sup></td><td>Humo esperado por comuna y día.</td><td><span class="chip c-ok">Respaldado</span> como guía general en EE. UU.<sup><a href="#r17">17</a></sup></td><td>Sin evaluación en Chile. Licencia de uso no verificada. Tratamiento de incendios futuros no verificado.</td></tr>
+        <tr><th scope="row">3. Salud</th><td>Humo esperado, atenciones diarias de urgencia respiratoria, coeficiente de efecto.</td><td>Alza esperada de urgencias respiratorias.</td><td><span class="chip c-ok">Respaldado</span> el coeficiente en otros países.<sup><a href="#r23">23</a></sup> <span class="chip c-parcial">Parcial</span> en Chile.<sup><a href="#r25">25</a></sup></td><td>Acceso actual a datos diarios por establecimiento y su atraso. Un estudio de 2017 obtuvo datos diarios de una comuna desde la plataforma del DEIS.<sup><a href="#r26">26</a></sup> Recalibrar desfase y no linealidad.</td></tr>
+        <tr><th scope="row">4. Exposición del cliente</th><td>Puntos que sube el cliente: centros de trabajo, consultorios, residencias, colegios.</td><td>Qué puntos quedan expuestos cada día.</td><td><span class="chip c-inf">Inferencia</span></td><td>Cómo se cargan, quién los mantiene y qué datos personales entran.</td></tr>
+        <tr><th scope="row">5. Acción</th><td>Protocolos del cliente: umbral, anticipación, acción, responsable, freno.</td><td>Lista de acciones del día por responsable.</td><td><span class="chip c-parcial">Parcial</span> El método existe en inundaciones y calor.<sup><a href="#r46">46</a></sup> No encontramos casos con incendios o humo.</td><td>Evidencia de cuánto daño evita cada acción en este tipo de evento.</td></tr>
+        <tr><th scope="row">6. Registro</th><td>Aviso emitido, acción tomada, resultado observado.</td><td>Aciertos, falsas alarmas, ajuste de umbrales.</td><td><span class="chip c-inf">Inferencia</span></td><td>Definir "resultado observado" para humo y para foco.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="herramientas">
+  <h2>4. Herramientas existentes y qué hacemos con cada una</h2>
+  <p>La lista de partida tenía 13 enlaces. Se leyeron 9, y de ellos la plataforma de planes comunales de CONAF no se pudo leer. EFFIS, INPE Queimadas, Global Forest Watch y NASA Worldview no se leyeron. Que GWIS y los productos de CONAF sean gratuitos para el cliente no está verificado en las páginas leídas. El mercado es amplio: CB Insights mapeó 130 empresas en 15 mercados en 2025 y la inteligencia de riesgo de incendios tiene el mejor puntaje medio de salud entre los mercados específicos de incendio.<sup><a href="#r1">1</a></sup></p>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">Herramienta</th><th scope="col">Qué entrega</th><th scope="col">Escala y horizonte</th><th scope="col">Límites vistos</th><th scope="col">Decisión</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">NASA FIRMS<sup><a href="#r12">12</a></sup></th><td>Focos activos de MODIS, VIIRS y satélites geoestacionarios. Alertas por correo. Capas de peligro de EE. UU. y Canadá.</td><td>MODIS 1 km, VIIRS 375 m. Datos en menos de 3 horas. Geoestacionarios cada 10 minutos, a 2 km.</td><td>La posición es el centro del píxel y no la del fuego. Pierde fuegos pequeños. No sirve para estimar área quemada.</td><td class="si">Usar como dato de entrada. Adoptar las alertas.</td></tr>
+        <tr><th scope="row">GWIS<sup><a href="#r13">13</a></sup></th><td>Índice de peligro por clima (FWI) con tres modelos meteorológicos.</td><td>8 km hasta 9 días, 10 km hasta 3 días y 28 km a 6 días. Mapas web y descarga.</td><td>Solo clima. No incorpora combustible ni igniciones.</td><td class="si">Vara de medida del motor.</td></tr>
+        <tr><th scope="row">CONAF, Botón Rojo<sup><a href="#r8">8</a>, <a href="#r11">11</a></sup></th><td>Marca territorios con probabilidad de ignición ≥ 70 % y viento ≥ 20 km/h entre 14:00 y 18:59, con pronóstico GFS.</td><td>Mapas de pronóstico actualizados lunes, miércoles y viernes.</td><td>Escala y acierto no publicados en lo leído. El criterio sale de un boletín regional que lo reproduce.</td><td class="si">Vara de medida del motor.</td></tr>
+        <tr><th scope="row">CONAF, análisis nacional<sup><a href="#r9">9</a></sup></th><td>Mapa de riesgo de todo Chile, con zonas de interfaz. Descargable como shapefile.</td><td>10 m. Actualización 2024 de una primera versión de 2021.</td><td>Estático. Pesos de variables fijados por expertos.</td><td class="si">Usar como capa. No competir.</td></tr>
+        <tr><th scope="row">CONAF, planes comunales<sup><a href="#r10">10</a></sup></th><td>Instrumentos para diagnosticar y planificar la prevención en una comuna.</td><td>226 planes vigentes, según CONAF.</td><td>No pudimos leer la plataforma de evaluación prioritaria.</td><td class="p3">Sin decisión.</td></tr>
+        <tr><th scope="row">Copernicus CAMS<sup><a href="#r14">14</a></sup></th><td>Pronóstico global de composición atmosférica, con PM2,5.</td><td>Unos 40 km, 5 días. Corrida de las 00 UTC garantizada a las 10:00 UTC.</td><td>Ver P4 y P5.</td><td class="si">Integrar como capa de entrada.</td></tr>
+        <tr><th scope="row">Modelo de probabilidad de incendio, ECMWF<sup><a href="#r19">19</a>, <a href="#r20">20</a>, <a href="#r21">21</a></sup></th><td>Probabilidad diaria de fuego activo por celda. Combina clima, combustible e igniciones humanas.</td><td>9 km. Hasta 10 días en el caso canadiense del paper.</td><td>Resultado diario para usuarios de ECMWF y países miembros. Los cuadernos abiertos no reproducen el sistema operativo. No predice tamaño ni propagación.</td><td class="si">Vara de medida y fuente de ideas. Su lección: unir clima, combustible e igniciones mejoró el acierto hasta 30 %.</td></tr>
+        <tr><th scope="row">OroraTech<sup><a href="#r2">2</a></sup></th><td>Detección satelital, peligro a 9 días, simulación de avance, alertas, API.</td><td>Cifras de satélites y resolución inconsistentes en su página.</td><td>Sin tasa de falsos positivos. Ya vende en Chile: ARAUCO es cliente y tiene oficina regional y distribuidor.</td><td class="no">No competir en detección.</td></tr>
+        <tr><th scope="row">Pano AI<sup><a href="#r3">3</a></sup></th><td>Cámaras con IA que detectan humo, triangulación, vista de situación.</td><td>Cámaras propias en torres.</td><td>No declara predicción previa al fuego.</td><td class="no">No competir.</td></tr>
+        <tr><th scope="row">IronFire<sup><a href="#r4">4</a></sup></th><td>Cámaras convertidas en detectores, sensores IoT, robots para cortafuegos. Dice predecir riesgos.</td><td>No declara cifras.</td><td>Sin clientes nombrados ni precios.</td><td class="no">No competir. Seguir.</td></tr>
+        <tr><th scope="row">Entel Ocean<sup><a href="#r5">5</a></sup></th><td>Sensores IoT en árboles con el gobierno. Detección 12 minutos antes que las torres, según la empresa.</td><td>Artículo de 2020.</td><td>Muchos falsos positivos al inicio.</td><td class="no">No competir.</td></tr>
+        <tr><th scope="row">Technosylva<sup><a href="#r6">6</a>, <a href="#r7">7</a></sup></th><td>Riesgo por activo, respuesta a emergencias, corte preventivo de energía, manejo de vegetación, vista de situación.</td><td>Clientes: CAL FIRE y eléctricas de EE. UU. CONAF implementó su simulador Wildfire Analyst.</td><td>Sin precios. Su estudio con CAL FIRE tiene autores de la propia empresa.<sup><a href="#r45">45</a></sup></td><td class="si">Adoptar funciones. No construir el simulador.</td></tr>
+        <tr><th scope="row">BCAPS, Columbia Británica<sup><a href="#r22">22</a></sup></th><td>Pronóstico diario de demanda respiratoria por humo, para 30 usuarios de salud pública.</td><td>Hoy y mañana.</td><td>No se evaluó si cambió decisiones. Subestimó los episodios severos.</td><td class="si">Modelo a seguir en la capa de salud.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Funciones de otros que adoptamos</h3>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">Función</th><th scope="col">Quién la tiene</th><th scope="col">Decisión</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Alertas por WhatsApp, SMS y correo</th><td>OroraTech<sup><a href="#r2">2</a></sup>, FIRMS<sup><a href="#r12">12</a></sup></td><td class="si">Adoptar</td></tr>
+        <tr><th scope="row">Confianza declarada en cada aviso</th><td>OroraTech<sup><a href="#r2">2</a></sup></td><td class="si">Adoptar</td></tr>
+        <tr><th scope="row">Informe diario a hora fija</th><td>BCAPS<sup><a href="#r22">22</a></sup></td><td class="si">Adoptar</td></tr>
+        <tr><th scope="row">Pronóstico diario para ubicar recursos por adelantado</th><td>Technosylva con CAL FIRE<sup><a href="#r45">45</a></sup></td><td class="si">Adoptar como lista priorizada</td></tr>
+        <tr><th scope="row">Clima, combustible e igniciones humanas juntos</th><td>Modelo de ECMWF<sup><a href="#r19">19</a></sup></td><td class="si">Adoptar en el motor</td></tr>
+        <tr><th scope="row">Conexión por API a sistemas del cliente</th><td>OroraTech<sup><a href="#r2">2</a></sup></td><td class="si">Adoptar</td></tr>
+        <tr><th scope="row">Simulación del avance del fuego</th><td>Technosylva, OroraTech</td><td class="no">No construir</td></tr>
+        <tr><th scope="row">Detección con hardware propio</th><td>OroraTech, Pano AI, IronFire, Entel Ocean</td><td class="no">No construir</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="valor">
+  <h2>5. Dónde se agrega valor</h2>
+  <p>Cuatro hipótesis. Ninguna está probada. Cada una dice qué problema ataca, qué necesita y qué la invalida.</p>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">Hipótesis</th><th scope="col">Ataca</th><th scope="col">Necesita</th><th scope="col">La invalida</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">V1. Traducir el riesgo a consecuencias para personas: salud, trabajadores, residentes.</th><td>P3, P4</td><td>Datos de salud diarios, pronóstico de humo corregido, coeficiente recalibrado.</td><td>Que el motor no mejore la estimación (prueba 3) o que los datos de salud no lleguen a tiempo.</td></tr>
+        <tr><th scope="row">V2. Anticipar con protocolos en lugar de reaccionar a la alerta.</th><td>P1, P2, P6</td><td>Un cliente que defina umbrales y acciones. Puntos cargados. Parte diario.</td><td>Que las mutualidades digan que la ventana de 72 horas no les duele o que les basta el visor público (prueba 2).</td></tr>
+        <tr><th scope="row">V3. Cerrar el ciclo con registro de aciertos, falsas alarmas y acciones tomadas.</th><td>P6, P8</td><td>Definir qué cuenta como acierto. Que el cliente registre lo que hizo.</td><td>Que el cliente no use el registro. Sin él no hay ajuste de umbrales.</td></tr>
+        <tr><th scope="row">V4. Aportar al pronóstico de humo la probabilidad de incendios que aún no empiezan.</th><td>P5</td><td>Un motor que supere a lo gratuito, y confirmar cómo trata hoy Copernicus los incendios futuros.</td><td>La prueba 0, o que Copernicus ya lo resuelva.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="nota">Todas las hipótesis son <span class="chip c-inf">Inferencia</span>. V1 tiene el mejor respaldo en la literatura. V2 tiene el mejor respaldo normativo. V4 depende de la prueba 0.</p>
+
+  <h3>Valor en dinero</h3>
+  <p>No medimos cuánto ahorra o cuánto valor genera Preaviso. Esta tabla reúne lo que sí tiene fuente, para dimensionar el problema y acotar lo que una anticipación podría valer.</p>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">Dato</th><th scope="col">Cifra</th><th scope="col">Alcance y certeza</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Fondo de reconstrucción tras el incendio de Valparaíso de 2024</th><td>Hasta $800.000 millones, financiado con medidas que recaudan cerca de $640 mil millones<sup><a href="#r53">53</a></sup></td><td><span class="chip c-ok">Respaldado</span> Es el tope de un fondo fiscal, no una medición del daño.</td></tr>
+        <tr><th scope="row">Daño a viviendas e infraestructura en ese incendio</th><td>US$723,5 millones: más de US$273,5 millones en viviendas y US$450 millones en otra infraestructura<sup><a href="#r55">55</a></sup></td><td><span class="chip c-parcial">Parcial</span> Estimación preliminar de un centro universitario a una semana del incendio. Sus autores dicen que puede subir.</td></tr>
+        <tr><th scope="row">Incendios de 2023</th><td>US$278 millones de costo fiscal y US$197,7 millones de impacto en el PIB regional<sup><a href="#r55">55</a></sup></td><td><span class="chip c-parcial">Parcial</span> Estimación anterior del mismo centro, citada en su informe de 2024. No leímos el informe original.</td></tr>
+        <tr><th scope="row">Plan de Acción contra Incendios Forestales, temporada 2024-2025</th><td>$156 mil millones, $8 mil millones más que la temporada anterior, con 3 mil brigadistas y 77 aeronaves<sup><a href="#r54">54</a></sup></td><td><span class="chip c-ok">Respaldado</span> Es presupuesto de combate. El mismo comunicado dice que habrá que poner un énfasis parecido en prevenir.</td></tr>
+        <tr><th scope="row">Retorno de la alerta temprana</th><td>Entre 4 y 36 dólares de beneficio por dólar invertido en información hidrometeorológica y alerta temprana en países en desarrollo<sup><a href="#r56">56</a></sup></td><td><span class="chip c-parcial">Parcial</span> Es un orden de magnitud global para tormentas, inundaciones y olas de calor. No incluye incendios y depende de que la gente confíe en el aviso.</td></tr>
+        <tr><th scope="row">Caso prudente</th><td>El aviso y las medidas tomadas redujeron el costo de una inundación en 6 %<sup><a href="#r56">56</a></sup></td><td><span class="chip c-parcial">Parcial</span> Un caso de inundación citado en el mismo estudio.</td></tr>
+        <tr><th scope="row">Costo de salud del humo</th><td>US$36.000 por hospitalización respiratoria, con gasto médico e ingresos perdidos. Entre US$11.000 y US$20.000 millones al año por exposición de corto plazo<sup><a href="#r57">57</a></sup></td><td><span class="chip c-parcial">Parcial</span> Estados Unidos, 2008 a 2012, dólares de 2010. El total incluye muertes valoradas con el valor estadístico de una vida de US$10,1 millones.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><span class="chip c-inf">Inferencia</span> Cada 1 % del daño estimado del incendio de Valparaíso equivale a US$7,2 millones, y cada 1 % del presupuesto de combate equivale a $1.560 millones. Son equivalencias aritméticas sobre las cifras de la tabla. No prueban que Preaviso evite ese daño, ya que sus acciones protegen personas y faenas y no viviendas.</p>
+  <p><span class="chip c-sin">Sin verificar</span> No encontramos el costo de una atención de urgencia o de una hospitalización respiratoria en Chile, el costo de un día de faena detenida, una cifra oficial del daño total de las temporadas 2023 y 2024, ni un estudio del beneficio de la alerta temprana específico para incendios. Las pérdidas declaradas por ARAUCO y CMPC tampoco quedaron confirmadas.</p>
+  <p>Para medir el valor propio, el piloto debe registrar tres cosas en dinero: el costo de un día de faena detenida o reprogramada, los días de trabajo perdidos por humo o evacuación y las atenciones de urgencia de los centros del cliente.</p>
+</section>
+
+<section id="funciones">
+  <h2>6. Definición del producto: niveles, dos fronts, funciones y datos</h2>
+  <p>Esta sección define qué es Preaviso al 14 de noviembre de 2026. Reúne las decisiones del equipo y lo que ya está construido en la maqueta.</p>
+
+  <h3>En una frase</h3>
+  <p>Preaviso ordena los incendios y el humo que vienen según cuánto afectan a las personas de una organización, y le manda a cada responsable una alerta con sus tareas, días antes.</p>
+
+  <h3>Niveles</h3>
+  <p>El equipo ordenó el producto en cuatro niveles. Los dos primeros ya existen en herramientas públicas y de competidores, por lo que Preaviso los usa como base y pone su esfuerzo en el tercero.</p>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">Nivel</th><th scope="col">Qué hace</th><th scope="col">Quién ya lo hace</th><th scope="col">En Preaviso</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">1. Mirar</th><td>Mostrar los focos y su historia.</td><td>NASA FIRMS<sup><a href="#r12">12</a></sup>, CONAF<sup><a href="#r9">9</a></sup></td><td>Ficha de comuna con 25 años de focos por mes en una serie que corrige el cambio de satélite. Datos reales en 345 comunas. Mapa con contornos reales.</td></tr>
+        <tr><th scope="row">2. Predecir</th><td>Estimar el riesgo de los próximos días.</td><td>GWIS<sup><a href="#r13">13</a></sup>, Botón Rojo<sup><a href="#r8">8</a></sup>, modelo de ECMWF<sup><a href="#r19">19</a></sup>, OroraTech<sup><a href="#r2">2</a></sup></td><td>Riesgo de foco del motor, que sigue en validación. Humo y alza respiratoria, hoy con datos de ejemplo. Prioridad por comuna con seis factores.</td></tr>
+        <tr><th scope="row">3. Actuar</th><td>Decir qué hacer, quién lo hace y cuándo.</td><td>Technosylva, para agencias de incendios y eléctricas<sup><a href="#r6">6</a></sup></td><td>Protocolos con umbral y freno, parte diario, alertas a la app de terreno y por WhatsApp. Es el foco del producto y responde al problema P2.</td></tr>
+        <tr><th scope="row">4. Aprender y contrastar</th><td>Medir aciertos y falsas alarmas, proponer ajustes y comparar el motor con las fuentes públicas.</td><td>No lo vimos en lo leído.</td><td>Registro con sugerencias de umbral y vista de contraste. <span class="chip c-inf">Inferencia</span> Es una propuesta del equipo para el siguiente nivel.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>En el cuarto nivel la plataforma propone y una persona decide. Automatizar acciones sin una persona sumaría riesgo legal. <span class="chip c-inf">Inferencia</span> El contraste solo puede usar datos públicos, ya que los de OroraTech, Pano AI e IronFire son propietarios.</p>
+
+  <h3>Dos fronts para dos personas</h3>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col"></th><th scope="col">Plataforma web</th><th scope="col">App de Android</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Para quién</th><td>Quien decide y coordina: prevención de riesgos, dirección de una red de salud.</td><td>Quien está en terreno: jefatura de faena, encargado de emergencias.</td></tr>
+        <tr><th scope="row">Qué hace</th><td>Ve el parte, la prioridad, el mapa y sus puntos. Define umbrales y pesos. Revisa el registro y el contraste. Envía el parte.</td><td>Recibe la alerta, ve las tareas de su rol, marca lo hecho y avisa a su equipo por WhatsApp.</td></tr>
+        <tr><th scope="row">Cuándo se usa</th><td>Cada mañana.</td><td>Cuando llega una alerta.</td></tr>
+        <tr><th scope="row">Estado</th><td>Hecha, con nueve vistas.</td><td>Hecha. La versión de prueba se instaló en un teléfono y mostró la alerta de un evento simulado el 14 de noviembre de 2026.</td></tr>
+        <tr><th scope="row">Límite actual</th><td>Umbrales, pesos y casillas quedan guardados en el navegador de cada persona.</td><td>Avisa con la app abierta, ya que revisa el pronóstico cada minuto. Con la app cerrada el aviso llega por WhatsApp. El envío funciona con un script y falta programarlo.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Prioridad por factores</h3>
+  <p>Cada comuna recibe un puntaje de 0 a 100 en su día más exigente. Desde 60 puntos queda en alerta y desde 40 en atención. La plataforma muestra cuánto aporta cada factor y deja mover los pesos.</p>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">Factor</th><th scope="col">Peso de partida</th><th scope="col">Qué mide</th></tr></thead>
+      <tbody><tr><th scope="row">Probabilidad de foco</th><td>30</td><td>Probabilidad de fuego en la comuna ese día. Llega al máximo con 50 %.</td></tr><tr><th scope="row">Personas expuestas</th><td>25</td><td>Personas en los puntos de la organización en esa comuna, frente a su comuna con más personas.</td></tr><tr><th scope="row">Humo esperado</th><td>15</td><td>Partículas finas de humo esperadas. Llega al máximo con 100 µg/m³.</td></tr><tr><th scope="row">Casas junto a vegetación</th><td>10</td><td>Parte de la comuna donde se juntan viviendas y vegetación.</td></tr><tr><th scope="row">Cercanía en el tiempo</th><td>10</td><td>Mañana pesa más que dentro de cinco días.</td></tr><tr><th scope="row">Confianza del pronóstico</th><td>10</td><td>Un pronóstico de confianza alta pesa más que uno de confianza baja.</td></tr></tbody>
+    </table>
+  </div>
+  <p><span class="chip c-inf">Inferencia</span> Los pesos y los cortes son una propuesta del equipo y no salen de una medición. Se ajustan con el registro de cada cliente.</p>
+
+  <h3>Funciones</h3>
+  <p>Prioridad 1 es lo que sostiene la hipótesis V2. Prioridad 2 sale cuando exista dato real. Prioridad 3 espera una decisión.</p>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">ID</th><th scope="col">Función</th><th scope="col">Responde a</th><th scope="col">Origen</th><th scope="col">Maqueta</th><th scope="col">Prioridad</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">F1</th><td>Protocolos con gatillo: umbral, anticipación, acciones, responsable, freno.</td><td>P1, P2, P6</td><td>Método de acción anticipatoria<sup><a href="#r46">46</a></sup></td><td>Hecha, con datos de ejemplo</td><td class="p1">1</td></tr>
+        <tr><th scope="row">F2</th><td>Mis puntos: lugares del cliente y su exposición diaria.</td><td>P1, P2</td><td>Technosylva, riesgo por activo<sup><a href="#r6">6</a></sup></td><td>Hecha, sin carga real</td><td class="p1">1</td></tr>
+        <tr><th scope="row">F3</th><td>Parte diario: qué activar, qué preparar y qué vigilar, con casillas de acciones hechas y las tres comunas de mayor puntaje arriba.</td><td>P1, P2</td><td>BCAPS<sup><a href="#r22">22</a></sup></td><td>Hecha</td><td class="p1">1</td></tr>
+        <tr><th scope="row">F4</th><td>Capa de humo y salud: humo esperado y alza respiratoria por comuna.</td><td>P3, P4, P5</td><td>BCAPS, Copernicus</td><td>Hecha, con coeficiente fijo y humo de ejemplo</td><td class="p2">2, condicionada a la prueba 3</td></tr>
+        <tr><th scope="row">F5</th><td>Registro de resultados: aciertos, falsas alarmas, acción tomada y sugerencia de qué umbral mover.</td><td>P6, P8</td><td>Propia</td><td>Hecha</td><td class="p2">2</td></tr>
+        <tr><th scope="row">F6</th><td>Envío del parte por WhatsApp, correo y API.</td><td>P2</td><td>OroraTech<sup><a href="#r2">2</a></sup></td><td>Parcial. La web abre WhatsApp o el correo con el parte ya escrito. Un script manda las alertas nuevas por el servicio de WhatsApp del equipo, probado el 14 de noviembre de 2026. Falta decidir a quién se envía, programarlo y la API</td><td class="p1">1</td></tr>
+        <tr><th scope="row">F7</th><td>Prevención dirigida de igniciones: cercanía a líneas eléctricas, caminos y edificaciones, con una acción sugerida.</td><td>P7</td><td>Estudio de igniciones en Chile<sup><a href="#r42">42</a></sup></td><td>Hecha como capa de ejemplo en el mapa y en la ficha de comuna</td><td class="p3">3, depende de qué predice el motor</td></tr>
+        <tr><th scope="row">F8</th><td>Prioridad: comunas ordenadas por seis factores con peso editable.</td><td>P1, P2</td><td>Technosylva con CAL FIRE<sup><a href="#r45">45</a></sup></td><td>Hecha</td><td class="p1">1</td></tr>
+        <tr><th scope="row">F9</th><td>Alertas al teléfono: app de Android con vibración, tareas por rol y casilla de hecho.</td><td>P2</td><td>OroraTech<sup><a href="#r2">2</a></sup></td><td>Hecha, versión de prueba</td><td class="p1">1</td></tr>
+        <tr><th scope="row">F10</th><td>Historia de focos por comuna: calendario de 25 años, serie armonizada frente a la cruda, mes contra lo normal, total por año y descarga de focos.</td><td>Desafío de Space Apps</td><td>Guía del front del equipo del back</td><td>Hecha, con datos reales</td><td class="p1">1</td></tr>
+        <tr><th scope="row">F11</th><td>Contraste: el motor al lado de GWIS, Botón Rojo y los focos de FIRMS, con aciertos y falsas alarmas de cada uno.</td><td>P6, P8</td><td>Propia</td><td>Hecha, con datos de ejemplo</td><td class="p2">2, depende de la prueba 0</td></tr>
+        <tr><th scope="row">F12</th><td>Aporte de cada familia de datos al riesgo: clima, combustible e igniciones.</td><td>P8</td><td>Modelo de ECMWF<sup><a href="#r19">19</a></sup></td><td>Hecha, con datos de ejemplo</td><td class="p3">3</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Qué se tomó de la guía del front del back</h3>
+  <p>El equipo del back escribió una guía para una app de calendario de focos por comuna. Preaviso la usa como su primer nivel y le suma la acción.</p>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">Elemento de la guía</th><th scope="col">Decisión</th><th scope="col">Cómo quedó</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Ficha de comuna con calendario de años por meses</th><td class="si">Adoptado</td><td>Vista Comunas, con el detalle de cada mes al tocarlo.</td></tr>
+        <tr><th scope="row">Selector de serie y botón "Ver sin armonizar"</th><td class="si">Adoptado</td><td>Armonizada, sin armonizar, MODIS y VIIRS. Marca el año en que entra VIIRS.</td></tr>
+        <tr><th scope="row">Tarjeta "este mes contra lo normal"</th><td class="si">Adoptado</td><td>Usa la mediana histórica que trae el contrato 0.2.</td></tr>
+        <tr><th scope="row">Total por año y rango de años</th><td class="si">Adoptado</td><td>Barras por año y dos selectores.</td></tr>
+        <tr><th scope="row">Descarga de focos en CSV según el rango</th><td class="si">Adoptado</td><td>Se filtra en el navegador.</td></tr>
+        <tr><th scope="row">Buscador de comunas y enlace compartible</th><td class="si">Adoptado</td><td>La dirección con <code>?comuna=05109</code> abre la ficha de Viña del Mar.</td></tr>
+        <tr><th scope="row">Riesgo con "Modelo en validación" y aviso de que anticipa propagación</th><td class="si">Adoptado</td><td>En el parte y en la ficha.</td></tr>
+        <tr><th scope="row">Página de fuentes con el agradecimiento oficial a NASA FIRMS</th><td class="si">Adoptado</td><td>Vista "Acerca de y fuentes".</td></tr>
+        <tr><th scope="row">Una sola dirección de datos, aviso de datos de ejemplo y de serie provisional</th><td class="si">Adoptado</td><td>El front lee los datos reales del back y usa los de la maqueta como respaldo.</td></tr>
+        <tr><th scope="row">Rampa de color apta para daltonismo y niveles con texto</th><td class="si">Adoptado</td><td>Rampa cividis por cuantiles.</td></tr>
+        <tr><th scope="row">Nombre "Calendario de Fuego"</th><td>Parcial</td><td>Su pregunta titula la vista Comunas. El producto se llama Preaviso.</td></tr>
+        <tr><th scope="row">Textos en inglés para la demo</th><td>Pendiente</td><td>La demo de Space Apps se pide en inglés.</td></tr>
+        <tr><th scope="row">Comparar dos comunas, ranking y modo presentación</th><td>No hecho</td><td>La guía los deja para el final.</td></tr>
+        <tr><th scope="row">Notificaciones fuera de alcance</th><td>No se sigue</td><td>Las alertas son el centro de Preaviso.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Archivos que consume el front</h3>
+  <p>El back publica archivos estáticos según el contrato 0.2. Desde el 14 de noviembre de 2026 trae datos reales de 345 comunas en contornos, calendario y focos. El riesgo y las métricas vienen vacíos. Los archivos de la extensión los propuso el front y hay que acordarlos con el back.</p>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">Archivo</th><th scope="col">Contenido</th><th scope="col">Estado</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><code>manifest.json</code></th><td>Versión, período y rutas.</td><td>Real, contrato 0.2</td></tr>
+        <tr><th scope="row"><code>regiones.geojson</code></th><td>Contorno de cada comuna.</td><td>Real, 345 comunas</td></tr>
+        <tr><th scope="row"><code>riesgo/ultimo.json</code></th><td>Probabilidad de foco a 24 horas por comuna.</td><td>Publicado sin comunas. El modelo está pendiente.</td></tr>
+        <tr><th scope="row"><code>calendario/{id}.json</code></th><td>Focos por mes, MODIS, VIIRS y armonizados.</td><td>Real, con mediana histórica. Método declarado: factor único de 2012 a 2017.</td></tr>
+        <tr><th scope="row"><code>focos/{id}.csv</code></th><td>Focos individuales para descargar.</td><td>Real</td></tr>
+        <tr><th scope="row"><code>metricas.json</code></th><td>Acierto del modelo.</td><td>En <code>null</code> hasta validar.</td></tr>
+        <tr><th scope="row"><code>ext/pronostico.json</code></th><td>Cinco días por comuna: foco, humo, alza de urgencias, casas junto a vegetación, presión de ignición, aporte por familia de datos y lo que dicen GWIS y Botón Rojo.</td><td>Propuesta del front</td></tr>
+        <tr><th scope="row"><code>ext/contraste.json</code></th><td>Catorce días pasados: qué dijo cada fuente y cuántos focos se vieron.</td><td>Propuesta del front</td></tr>
+        <tr><th scope="row"><code>ext/puntos.json</code></th><td>Lugares del cliente. En producción sería una carga del cliente.</td><td>Propuesta del front</td></tr>
+        <tr><th scope="row"><code>ext/protocolos.json</code></th><td>Umbrales y acciones.</td><td>Propuesta del front</td></tr>
+        <tr><th scope="row"><code>ext/registro.json</code></th><td>Avisos y resultados.</td><td>Propuesta del front</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="candidatos">
+  <h2>7. Candidatos de negocio evaluados</h2>
+  <p>Dos rondas de revisión crítica. Los puntajes de 1 a 5 son del revisor: A es cliente con dolor y presupuesto comprobados, B es diferenciación frente a competidores y a lo gratuito, C es factibilidad para este equipo en 6 a 12 meses sin hardware ni capital. Son juicios de un modelo de IA, no mediciones.</p>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">Candidato</th><th scope="col">Cliente</th><th scope="col">A / B / C</th><th scope="col">Veredicto</th><th scope="col">Razón principal y condición para revivir</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Aviso anticipado a mutualidades</th><td>ACHS, Mutual, IST, ISL</td><td>3 / 2 / 3</td><td class="si">Firme con condiciones</td><td>Hay obligación de la SUSESO y presupuesto probable.<sup><a href="#r29">29</a></sup> Son solo cuatro compradores y existe un visor público gratuito. El motor podría ser prescindible si basta FIRMS más cercanía.</td></tr>
+        <tr><th scope="row">Demanda respiratoria por humo</th><td>Servicios de salud, SEREMI</td><td>2 / 3 / 4</td><td class="p2">En pausa como producto, la prueba 3 sigue</td><td>Efecto pequeño por unidad de humo<sup><a href="#r23">23</a></sup>, un estudio dice que los incendios afectan poco la operación de urgencias<sup><a href="#r24">24</a></sup> y el comprador estatal es lento.<sup><a href="#r40">40</a></sup> Revive si el motor mejora el error al menos 15 % en semanas con incendio y un servicio acepta un piloto.</td></tr>
+        <tr><th scope="row">Riesgo por establecimiento de salud</th><td>Redes de salud</td><td>1 / 2 / 4</td><td class="p3">Dormida</td><td>No encontramos cifras de establecimientos afectados por incendios en Chile ni norma específica. El Minsal activó en 2024 un comité de riesgo.<sup><a href="#r27">27</a></sup> Evidencia indirecta, de un huracán en Florida: evacuar residencias asistidas se asoció a 16 % más visitas a urgencias en 30 días, sin diferencia en mortalidad.<sup><a href="#r28">28</a></sup> Revive con un evento que afecte un establecimiento o una norma. Se integra como función de F2.</td></tr>
+        <tr><th scope="row">Cumplimiento de la ley de incendios</th><td>Propietarios, forestales, municipios</td><td>1 / 2 / 2</td><td class="p3">Dormida</td><td>La Cámara despachó el informe de la comisión mixta el 3 de noviembre de 2026 por 77 votos contra 51. No alcanzó el quórum de 78 en algunas normas, el gobierno anunció un veto, las normas de interfaz quedaron en empate y no regirá este verano porque faltan reglamentos.<sup><a href="#r32">32</a>, <a href="#r33">33</a></sup> El texto de 2023 hacía responsables a los propietarios en zonas de interfaz, exigía plan de manejo preventivo en áreas de amenaza alta o crítica y fijaba multas de hasta 10.000 UTM, y puede haber cambiado.<sup><a href="#r31">31</a></sup> Solo 70 de 345 municipios tenían plan de reducción de riesgo de desastres a agosto de 2024.<sup><a href="#r34">34</a></sup> Revive con promulgación y reglamentos publicados.</td></tr>
+        <tr><th scope="row">Eléctricas</th><td>Distribuidoras y transmisoras</td><td>3 / 1 / 1</td><td class="no">Descartada</td><td>La circular de la SEC exige monitorear árboles, no usar un modelo.<sup><a href="#r35">35</a></sup> Enel ya inspecciona con helicóptero, drones y LiDAR en Santiago.<sup><a href="#r38">38</a></sup> La multa conocida es de 150 UTM.<sup><a href="#r36">36</a></sup> En EE. UU. y Reino Unido las eléctricas ya contratan startups de IA para mapear riesgo a lo largo de sus líneas, y enterrar líneas cuesta más de 3 millones de dólares por milla.<sup><a href="#r39">39</a></sup> Hay dolor real: CGE recibió una condena de $1.769 millones en primera instancia por un incendio de 2016.<sup><a href="#r37">37</a></sup> Revive si una distribuidora licita un servicio de riesgo de vegetación.</td></tr>
+        <tr><th scope="row">Alerta de evacuación</th><td>SENAPRED, municipios</td><td>3 / 1 / 2 en la ronda 1</td><td class="no">Descartada</td><td>La falla de Viña del Mar fue de entrega de la alerta, según lo leído.<sup><a href="#r43">43</a></sup> Vender al Estado es lento y estacional.<sup><a href="#r40">40</a></sup> Un error en una alerta de evacuación tiene costo legal alto. <span class="chip c-inf">Inferencia</span></td></tr>
+        <tr><th scope="row">Puntaje de riesgo para carbono forestal</th><td>Desarrolladores de créditos</td><td>1 / 3 / 3 en la ronda 1</td><td class="no">Descartada</td><td>No encontramos un cliente que pague. La evidencia leída es de bosques de EE. UU.<sup><a href="#r48">48</a></sup></td></tr>
+        <tr><th scope="row">Seguros paramétricos de incendio</th><td>Aseguradoras y reaseguradoras</td><td>2 / 3 / 2 en la ronda 1</td><td class="no">Descartada</td><td>El gatillo por perímetro falla porque las pavesas saltan la línea medida, y no hay estándar regulatorio para el riesgo de base.<sup><a href="#r49">49</a></sup> Las pérdidas aseguradas de los incendios de Los Ángeles de 2025 fueron de unos 40.000 millones de dólares, de la misma fuente.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="riesgos">
+  <h2>8. Riesgos de fracaso</h2>
+  <p>Ejercicio de pre-mortem: se supone que en 18 meses el producto fracasó y se buscan las causas probables. La técnica puede señalar amenazas que no son reales, así que cada riesgo dice en qué se apoya.<sup><a href="#r51">51</a></sup> Los porcentajes son de un análisis de autopsias de startups de 2017, donde una startup puede tener varias causas.<sup><a href="#r50">50</a></sup></p>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">Riesgo</th><th scope="col">Causa frecuente de fracaso</th><th scope="col">En qué se apoya</th><th scope="col">Qué lo reduce</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">El motor no supera a lo gratuito.</th><td>Superados por la competencia, 19 %</td><td>GWIS, Botón Rojo y el modelo europeo ya existen.<sup><a href="#r13">13</a>, <a href="#r19">19</a></sup></td><td>Prueba 0.</td></tr>
+        <tr><th scope="row">Nadie paga por anticipar días.</th><td>Sin necesidad de mercado, 42 %</td><td>La obligación de la SUSESO es reactiva.<sup><a href="#r29">29</a></sup> <span class="chip c-inf">Inferencia</span></td><td>Prueba 2, entrevistas.</td></tr>
+        <tr><th scope="row">Pocos compradores posibles.</th><td>Sin modelo de negocio, 17 %</td><td>Son cuatro mutualidades.<sup><a href="#r29">29</a></sup></td><td>Definir un segundo cliente antes de construir.</td></tr>
+        <tr><th scope="row">Ciclo de venta largo y poca caja.</th><td>Se acabó la caja, 29 %</td><td>Vender a gobierno es lento y estacional en Canadá.<sup><a href="#r40">40</a></sup> <span class="chip c-parcial">Parcial</span> para Chile.</td><td>Decidir cuántos meses de caja se dedican a validar.</td></tr>
+        <tr><th scope="row">Los datos de salud no llegan a tiempo o no se pueden usar.</th><td>No aparece en la lista de causas</td><td>No verificamos el atraso actual ni la granularidad de los datos del DEIS.<sup><a href="#r26">26</a></sup></td><td>Prueba 1 sobre acceso a datos.</td></tr>
+        <tr><th scope="row">El efecto del humo es pequeño y el comprador no ve el beneficio.</th><td>Sin necesidad de mercado, 42 %</td><td>Un estudio concluye que los incendios afectan poco la operación de urgencias.<sup><a href="#r24">24</a></sup></td><td>Prueba 3 y un piloto retrospectivo gratuito.</td></tr>
+        <tr><th scope="row">Responsabilidad por un aviso erróneo o por no avisar.</th><td>Trabas legales, 8 %</td><td><span class="chip c-inf">Inferencia</span> No encontramos fuente.</td><td>Consulta legal antes de enviar avisos a pacientes o trabajadores.</td></tr>
+        <tr><th scope="row">El pronóstico de humo no sirve a escala local.</th><td>No aparece en la lista de causas</td><td>Ver P4.<sup><a href="#r17">17</a>, <a href="#r18">18</a></sup></td><td>Corregir con estaciones y no prometer por comuna.</td></tr>
+        <tr><th scope="row">El marco legal cambia o se frena.</th><td>Mal momento, 13 %</td><td>La ley sigue sin promulgar.<sup><a href="#r32">32</a>, <a href="#r33">33</a></sup></td><td>No depender de ella: está en pausa.</td></tr>
+        <tr><th scope="row">Dependencia de datos de terceros.</th><td>No aparece en la lista de causas</td><td>La licencia de uso de Copernicus no se verificó y el resultado del modelo europeo es restringido.<sup><a href="#r20">20</a></sup></td><td>Leer la licencia antes de comprometerse.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="validacion">
+  <h2>9. Plan de validación</h2>
+  <p>Los umbrales de muerte son propuestas del revisor y del equipo, no cifras de una fuente. Ninguna prueba se ha iniciado.</p>
+  <div class="tabla-caja">
+    <table>
+      <thead><tr><th scope="col">Prueba</th><th scope="col">Qué se hace</th><th scope="col">Plazo</th><th scope="col">Se detiene si</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">0. El motor contra lo gratuito</th><td>Comparar acierto y anticipación del motor con GWIS, Botón Rojo y el modelo europeo en las temporadas 2022-23 y 2023-24, con datos abiertos.</td><td>2 a 3 semanas</td><td>No acierta más o gana menos de un día de anticipación. Detiene toda la línea que dependa del motor.</td></tr>
+        <tr><th scope="row">1. Acceso a datos de salud</th><td>Confirmar si el DEIS publica atenciones de urgencia respiratoria diarias por comuna o establecimiento, desde qué año, con qué atraso y en qué formato. Confirmar acceso a calidad del aire.</td><td>1 semana</td><td>No hay datos por comuna o establecimiento con atraso de hasta 7 días.</td></tr>
+        <tr><th scope="row">2. Necesidad en mutualidades</th><td>8 a 10 entrevistas con prevención de riesgos o gerencias de las cuatro mutualidades y una con la SUSESO.</td><td>4 semanas</td><td>Menos de 2 mutualidades dicen que la ventana de 72 horas les duele y que pagarían por anticipar días, o todas responden que el visor público les basta.</td></tr>
+        <tr><th scope="row">3. Humo y urgencias</th><td>Con datos del DEIS en 10 comunas o más, comparar una base (día de la semana, estación, temperatura) contra la base más la señal de incendio del motor.</td><td>4 a 6 semanas</td><td>El motor reduce el error menos de 10 % en semanas con incendio. La prueba 1 debe pasar antes.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="nota">Orden: prueba 0 y prueba 1 corren en paralelo. La prueba 2 no depende de ninguna. La prueba 3 espera a la 0 y a la 1.</p>
+</section>
+
+<section id="brechas">
+  <h2>10. Brechas de evidencia</h2>
+  <p>Lo que buscamos y no pudimos confirmar.</p>
+  <div class="caja">
+    <ul>
+      <li>Qué predice el motor y con qué acierto.</li>
+      <li>Cómo trata hoy Copernicus los incendios futuros en el pronóstico de humo, y su licencia de uso.</li>
+      <li>Si el resultado diario del modelo europeo se puede ver desde Chile.</li>
+      <li>Atraso, granularidad y formato actuales de las atenciones de urgencia del DEIS, y acceso actual a las estaciones de calidad del aire.</li>
+      <li>El efecto del humo sobre urgencias en Chile con humo medido. Solo hay un estudio con la variable "hubo incendio".</li>
+      <li>Cuánto reducen el daño las acciones anticipadas en incendios o humo: patrullaje, restricción de quemas, cortes preventivos de energía. El retorno de hasta 3 dólares por dólar viene de agricultura y es cita de segunda mano.<sup><a href="#r47">47</a></sup></li>
+      <li>Ningún caso de acción anticipatoria con gatillo de pronóstico aplicado a incendios o humo.</li>
+      <li>Precios y financiamiento de los competidores. Qué usan hoy CONAF, SENAPRED, Arauco y CMPC para predecir.</li>
+      <li>Si el visor público que usan las mutualidades les basta.</li>
+      <li>Una norma chilena que obligue al empleador a actuar por humo. No apareció en las dos fuentes de seguridad laboral leídas.</li>
+      <li>Si GWIS y los productos públicos de CONAF son gratuitos y con qué licencia se pueden usar.</li>
+      <li>Estado del proyecto de ley después del 3 de noviembre: voto del Senado y texto del veto.</li>
+      <li>EFFIS, INPE Queimadas, Global Forest Watch y NASA Worldview no se leyeron.</li>
+      <li>Los códigos de las 26 comunas de la maqueta se compararon el 14 de noviembre con el archivo de contornos del back y los 26 existen con el mismo nombre. Las coordenadas de los puntos siguen siendo inventadas.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="decisiones">
+  <h2>11. Decisiones que le corresponden al equipo</h2>
+  <ol>
+    <li>Si el motor es un insumo del producto o el producto mismo. Depende de la prueba 0.</li>
+    <li>Cuántos meses de caja se dedican a validar antes de pivotar.</li>
+    <li>Si hay contactos reales en mutualidades y en las SEREMI de salud.</li>
+    <li>Si se pueden usar datos de salud de clientes en un piloto, y bajo qué condiciones de privacidad.</li>
+    <li>Si vender a gobierno sirve pese a su lentitud.</li>
+    <li>Qué extensión del contrato se acuerda con el back: pronóstico, puntos, protocolos y registro.</li>
+    <li>Qué campos de la extensión entrega el back: pronóstico a cinco días, humo, casas junto a vegetación y presión de ignición.</li>
+    <li>Cuándo se hace una consulta legal sobre avisos a personas.</li>
+  </ol>
+</section>
+
+<section id="fuentes" class="fuentes">
+  <h2>12. Fuentes</h2>
+  <h3>Herramientas y mercado</h3>
+  <ol>
+    <li id="r1">CB Insights (2025). The wildfire tech market map. <a href="https://www.cbinsights.com/research/wildfire-tech-market-map/">cbinsights.com/research/wildfire-tech-market-map</a></li>
+    <li id="r2">OroraTech. Wildfire Solution. <a href="https://ororatech.com/all-products/wildfire-solution">ororatech.com/all-products/wildfire-solution</a></li>
+    <li id="r3">Pano AI. Product. <a href="https://www.pano.ai/solution">pano.ai/solution</a></li>
+    <li id="r4">IronFire. Sitio oficial. <a href="https://ironfire.cl/">ironfire.cl</a></li>
+    <li id="r5">TechTarget (2020). Forest fire sensors and AI help detect fires in Chile. <a href="https://www.techtarget.com/news/Forest-fire-sensors-and-AI-help-detect-fires-in-Chile/835677/">techtarget.com, sensores y IA en Chile</a></li>
+    <li id="r6">Technosylva. Sitio oficial. <a href="https://www.technosylva.com/">technosylva.com</a></li>
+    <li id="r7">Instituto Interamericano para la Investigación del Cambio Global (IAI). Perfil profesional de un jefe de sección de CONAF. <a href="https://www.iai.int/admin/site/sites/default/files/uploads/Bioprofile-Jorge-Saavedra.pdf">iai.int, perfil profesional</a></li>
+    <li id="r8">CONAF. Situación actual y pronóstico de incendios. <a href="https://www.conaf.cl/incendios/situacion-actual-y-pronostico-de-incendios/">conaf.cl, situación actual y pronóstico</a></li>
+    <li id="r9">CONAF (2024). Análisis Nacional de Riesgo de Incendios Forestales. <a href="https://www.conaf.cl/incendios/analisis-nacional-de-riesgo-de-incendios-forestales/">conaf.cl, análisis nacional de riesgo</a></li>
+    <li id="r10">CONAF. Prevención y mitigación. <a href="https://www.conaf.cl/incendios-forestales/prevencion/">conaf.cl, prevención</a></li>
+    <li id="r11">Boletín meteorológico de riesgo para incendios, mayo de 2026 (reproduce el criterio de Botón Rojo). <a href="https://www.munipuchuncavi.cl/pdf/citsu/7.pdf">munipuchuncavi.cl, boletín 7</a></li>
+    <li id="r12">NASA Earthdata. FIRMS FAQ. <a href="https://earthdata.nasa.gov/data/tools/firms/faq">earthdata.nasa.gov/data/tools/firms/faq</a></li>
+    <li id="r13">GWIS, Copernicus. Fire Danger Forecast. <a href="https://gwis.jrc.ec.europa.eu/about-gwis/technical-background/fire-danger-forecast">gwis.jrc.ec.europa.eu, fire danger forecast</a></li>
+  </ol>
+  <h3>Modelos y datos de humo y fuego</h3>
+  <ol start="14">
+    <li id="r14">ECMWF. CAMS, Global atmospheric composition forecast data documentation. <a href="https://confluence.ecmwf.int/display/CKB/CAMS%3A+Global+atmospheric+composition+forecast+data+documentation">confluence.ecmwf.int, documentación del pronóstico global CAMS</a></li>
+    <li id="r15">Atmospheric Chemistry and Physics (2018). Using the Fire Weather Index to improve the estimation of fire emissions from FRP observations. <a href="https://acp.copernicus.org/articles/18/5359/2018/acp-18-5359-2018.html">acp.copernicus.org, artículo de 2018</a></li>
+    <li id="r16">Copernicus (2017). Wildfire emissions and atmospheric composition forecasts, presentación. <a href="https://igacproject.org/sites/default/files/2018-01/14_Copernicus.pdf">igacproject.org, presentación 14</a></li>
+    <li id="r17">arXiv (2024). Are Hourly PM2.5 Forecasts Sufficiently Accurate to Plan Your Day? <a href="https://arxiv.org/pdf/2409.05866">arxiv.org/pdf/2409.05866</a></li>
+    <li id="r18">Atmospheric Chemistry and Physics (2021). Evaluation and intercomparison of wildfire smoke forecasts, incendio Williams Flats 2019. <a href="https://acp.copernicus.org/articles/21/14427/2021/acp-21-14427-2021.html">acp.copernicus.org, artículo de 2021</a></li>
+    <li id="r19">Nature Communications (2025). Global data-driven prediction of fire activity. <a href="https://www.nature.com/articles/s41467-025-58097-7">nature.com/articles/s41467-025-58097-7</a></li>
+    <li id="r20">ECMWF (2025). Scientists present new ML tool for improved fire prediction. <a href="https://www.ecmwf.int/en/about/media-centre/news/2025/scientists-present-new-ml-tool-improved-fire-prediction">ecmwf.int, nota de prensa de 2025</a></li>
+    <li id="r21">ECMWF (2026). Build your own probability of fire model. <a href="https://www.ecmwf.int/en/about/media-centre/science-blog/2026/build-your-own-probability-fire-model">ecmwf.int, blog científico de 2026</a></li>
+  </ol>
+  <h3>Salud</h3>
+  <ol start="22">
+    <li id="r22">Evaluación del sistema de predicción de asma de Columbia Británica, temporada 2018 (2021). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7994359">pmc.ncbi.nlm.nih.gov/articles/PMC7994359</a></li>
+    <li id="r23">Annual Review of Medicine (2023). Health Effects of Wildfire Smoke Exposure. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12183787/">pmc.ncbi.nlm.nih.gov/articles/PMC12183787</a></li>
+    <li id="r24">Prehospital and Disaster Medicine (2022). A Literature Review on the Impact of Wildfires on Emergency Departments. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9470518">pmc.ncbi.nlm.nih.gov/articles/PMC9470518</a></li>
+    <li id="r25">Sustainable Development and Planning XIII (2024). Incendios y consultas respiratorias en Biobío. <a href="https://www.witpress.com/Secure/elibrary/papers/SDP24/SDP24065FU1.pdf">witpress.com, SDP24065FU1</a></li>
+    <li id="r26">Revista Médica de Chile 145 (2017). Estudio con atenciones diarias de urgencia del DEIS y calidad del aire del SINCA. <a href="https://revistamedicadechile.cl/index.php/rmedica/article/download/5731/3551/77165">revistamedicadechile.cl, artículo 5731</a></li>
+    <li id="r27">Ministerio de Salud (2024). Campaña de verano y preparación del sector ante incendios. <a href="https://www.minsal.cl/?p=97445">minsal.cl, nota 97445</a></li>
+    <li id="r28">JAMA Network Open (2024). Evacuation and Health Care Outcomes Among Assisted Living Residents After Hurricane Irma. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11053374">pmc.ncbi.nlm.nih.gov/articles/PMC11053374</a></li>
+  </ol>
+  <h3>Obligaciones, contexto y mercado en Chile</h3>
+  <ol start="29">
+    <li id="r29">SUSESO (2025). Medidas de los organismos administradores ante incendios forestales. <a href="https://www.suseso.gob.cl/605/w3-article-747373.html">suseso.gob.cl/605/w3-article-747373.html</a></li>
+    <li id="r30">Cal/OSHA. Wildfire Smoke Emergency Standard, sección 5141.1. <a href="https://dir.ca.gov/dosh/doshreg/Protection-from-Wildfire-Smoke/Wildfire-smoke-emergency-standard.html">dir.ca.gov, norma de humo de incendios</a></li>
+    <li id="r31">Presidencia de Chile (2023). Mensaje del proyecto de ley de incendios forestales y rurales, Boletín 16.335-14. <a href="https://www.diarioconstitucional.cl/wp-content/uploads/2024/02/16335-14-icendios.pdf">diarioconstitucional.cl, boletín 16.335-14</a></li>
+    <li id="r32">El Desconcierto (3 de noviembre de 2026). Veto a la Ley de Incendios. <a href="https://eldesconcierto.cl/actualidad/veto-ley-incendios-gobierno-busca-compensar-duenos-predios-medidas-preventivas-n5463724">eldesconcierto.cl, veto a la ley</a></li>
+    <li id="r33">El Desconcierto (23 de septiembre de 2026). La ley no regirá el próximo verano. <a href="https://eldesconcierto.cl/medio-ambiente/ley-incendios-no-podra-regir-chile-el-proximo-verano-extremo-marcado-el-nino-n5462489">eldesconcierto.cl, ley y verano 2026-2027</a></li>
+    <li id="r34">Consejo para la Transparencia (2025). Informe sobre planes ante desastres, con datos de SENAPRED a agosto de 2024. <a href="https://www.consejotransparencia.cl/wp-content/uploads/2025/06/Informe-Planes-ante-Desastres.pdf">consejotransparencia.cl, informe de planes ante desastres</a></li>
+    <li id="r35">SEC (2023). Circular sobre franjas de seguridad, Diario Oficial. <a href="https://www.diariooficial.interior.gob.cl/publicaciones/2023/12/27/43735/01/2427479.pdf">diariooficial.interior.gob.cl, circular de diciembre de 2023</a></li>
+    <li id="r36">Diario Constitucional (2026). Corte de Santiago confirma multa de 150 UTM a Enel por falta de poda. <a href="https://www.diarioconstitucional.cl/2026/05/27/corte-de-santiago-confirma-multa-de-150-utm-a-enel-por-falta-de-poda-en-redes-electricas/">diarioconstitucional.cl, multa a Enel</a></li>
+    <li id="r37">CNN Chile. CGE condenada en primera instancia tras incendio forestal. <a href="https://www.cnnchile.com/pais/empresa-electrica-cge-fue-condenada-en-primera-instancia-al-pago-de-mas-de-1-700-millones-tras-incendio-forestal/">cnnchile.com, condena a CGE</a></li>
+    <li id="r38">Mediabanco (2025). Enel Distribución despejó cerca de 70 mil árboles. <a href="https://www.mediabanco.com/?p=317684">mediabanco.com, nota 317684</a></li>
+    <li id="r39">Insurance Journal, de Bloomberg (2025). Massive Wildfire Liabilities Push Utilities to Use AI to Stop Blazes. <a href="https://www.insurancejournal.com/news/national/2025/11/25/849004.htm">insurancejournal.com, nota de noviembre de 2025</a></li>
+    <li id="r40">BetaKit (2025). What the buyers of wildfire tech actually need. <a href="https://betakit.com/wildfire-the-buyers-perspective/">betakit.com, compradores de tecnología de incendios</a></li>
+    <li id="r41">Meteored, con cifras de CONAF (temporada 2022-23). <a href="https://www.meteored.cl/noticias/actualidad/reciente-temporada-31-de-los-incendios-forestales-fueron-intencionales-en-chile.html">meteored.cl, causas de incendios</a></li>
+    <li id="r42">Cuadernos de Investigación Geográfica 51(2) (2025). Wildfire occurrence in Chile. <a href="https://publicaciones.unirioja.es/ojs/index.php/cig/article/download/6792/4705/23514">publicaciones.unirioja.es, artículo 6792</a></li>
+    <li id="r43">CIPER Chile (2026), columna de opinión. Incendios forestales en Chile: cuando lo previsible se vuelve mortal. <a href="https://www.ciperchile.cl/2026/01/19/incendios-forestales-en-chile-cuando-lo-previsible-se-vuelve-mortal/">ciperchile.cl, columna de enero de 2026</a></li>
+    <li id="r44">CIPER Chile (2024), columna de opinión. Incendios: El fracaso del SAE y un llamado a la acción. <a href="https://www.ciperchile.cl/2024/03/10/incendios-el-fracaso-del-sae/">ciperchile.cl, columna de marzo de 2024</a></li>
+  </ol>
+  <h3>Acción anticipada, carbono, seguros y fracaso de startups</h3>
+  <ol start="45">
+    <li id="r45">International Journal of Wildland Fire (2025), con autores de Technosylva y CAL FIRE. <a href="https://www.nwfirescience.org/sites/default/files/publications/wf24160.pdf">nwfirescience.org, wf24160</a></li>
+    <li id="r46">Anticipation Hub (2022). Anticipatory action triggers, forecast-based financing. <a href="https://www.anticipation-hub.org/Documents/Briefing_Sheets_and_Fact_Sheets/Anticipatory_action_triggers_forecast-based-financing_FINAL.pdf">anticipation-hub.org, triggers</a></li>
+    <li id="r47">Anticipation Hub (2025). An approach that works. <a href="https://www.anticipation-hub.org/Documents/Briefing/An_approach_that_works_FINAL.pdf">anticipation-hub.org, an approach that works</a></li>
+    <li id="r48">Universidad de California, Santa Bárbara (2026). Carbon markets underestimate the risks U.S. forests face from climate change. <a href="https://news.ucsb.edu/2026/022582/carbon-markets-underestimate-risks-us-forests-face-climate-change">news.ucsb.edu, nota de 2026</a></li>
+    <li id="r49">actuary.info (2026). Parametric Covers Fill Secondary Peril Layers, RBC Credit Unsettled. <a href="https://actuary.info/insights/parametric-secondary-perils-reinsurance-basis-risk-actuarial">actuary.info, seguros paramétricos</a></li>
+    <li id="r50">Angel Capital Association, adaptado de CB Insights (2017). Top 20 Reasons Startups Fail. <a href="https://angelcapitalassociation.org/data/Secure/Leadership%20Workshop%20Library/2017-leadership-workshop/20CausesofFailureScorecard.pdf?rev=EE89">angelcapitalassociation.org, causas de fracaso</a></li>
+    <li id="r51">Wikipedia. Pre-mortem. <a href="https://www.Wikipedia.org/wiki/Premortem">wikipedia.org, premortem</a></li>
+    <li id="r52">Copernicus. Fire Emissions Watch. <a href="https://atmosphere.copernicus.eu/fire-emissions-watch-global-wildfire-emission-data-your-fingertips">atmosphere.copernicus.eu, Fire Emissions Watch</a></li>
+    <li id="r53">DIPRES (15 de mayo de 2024). Listo para ser ley: Cámara de Diputadas y Diputados despacha proyecto que crea un Fondo Transitorio para la Reconstrucción. <a href="https://www.dipres.gob.cl/598/articles-333057_doc_pdf1.pdf">dipres.gob.cl, comunicado del fondo de reconstrucción</a></li>
+    <li id="r54">Ministerio del Interior (17 de febrero de 2025). Gobierno homenajea a brigadistas forestales y destaca fortalecimiento de recursos para enfrentar incendios. <a href="https://interior.gob.cl/noticias/2025/02/17/gobierno-homenajea-a-brigadistas-forestales-y-destaca-fortalecimiento-de-recursos-para-enfrentar-incendios/">interior.gob.cl, nota del 17 de febrero de 2025</a></li>
+    <li id="r55">Clapes UC (7 de febrero de 2024). Incendios Forestales 2024: Perspectivas. Informe preliminar, leído en la copia de un expediente del Ministerio del Medio Ambiente. <a href="https://expedientes.mma.gob.cl/storage/2025/06/05/expedientes/pdf/doc_7_20250605200924.pdf">expedientes.mma.gob.cl, informe de Clapes UC</a></li>
+    <li id="r56">Banco Mundial (2012). A Cost Effective Solution to Reduce Disaster Losses in Developing Countries: Hydro-Meteorological Services, Early Warning, and Evacuation. Policy Research Working Paper 6058. <a href="https://documents1.worldbank.org/curated/en/190261468181486694/text/WPS6058.txt">documents1.worldbank.org, WPS6058</a></li>
+    <li id="r57">Science of the Total Environment 610-611 (2018). The health impacts and economic value of wildland fire episodes in the U.S.: 2008-2012. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6117838">pmc.ncbi.nlm.nih.gov/articles/PMC6117838</a></li>
+  </ol>
+</section>
+
+</main>
+
+<footer class="pie">
+  <p>La maqueta de Preaviso usa datos inventados y ningún número suyo es un pronóstico real.</p>
+</footer>
+
+</div>
+</body>
+</html>

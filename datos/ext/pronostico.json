@@ -1,0 +1,3155 @@
+{
+ "extension": "propuesta, no está en el contrato 0.2",
+ "ejemplo": true,
+ "calculado_utc": "2026-11-14T03:00:00Z",
+ "nota": "Días 1 y 2 vienen del motor propio. Días 3 a 5 son tendencia de fuentes externas.",
+ "coef_salud_pct_por_ug": 0.36,
+ "items": [
+  {
+   "region_id": "05101",
+   "nombre": "Valparaíso",
+   "region": "Valparaíso",
+   "lat": -33.05,
+   "lon": -71.62,
+   "poblacion": 296000,
+   "interfaz": 0.62,
+   "ignicion": {
+    "lineas": 0.58,
+    "caminos": 0.9,
+    "edificaciones": 0.62
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.289,
+     "nivel": "alto",
+     "confianza": "alta",
+     "pm25_humo": 67.8,
+     "urgencias_resp_base": 65,
+     "urgencias_resp_extra_pct": 24.4,
+     "urgencias_resp_extra": 15.9,
+     "aporte": {
+      "clima": 0.42,
+      "combustible": 0.3,
+      "igniciones": 0.28
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.381,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 91.4,
+     "urgencias_resp_base": 65,
+     "urgencias_resp_extra_pct": 32.9,
+     "urgencias_resp_extra": 21.4,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.28,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.275,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 40.0,
+     "urgencias_resp_base": 65,
+     "urgencias_resp_extra_pct": 14.4,
+     "urgencias_resp_extra": 9.4,
+     "aporte": {
+      "clima": 0.43,
+      "combustible": 0.3,
+      "igniciones": 0.27
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.216,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 43.9,
+     "urgencias_resp_base": 65,
+     "urgencias_resp_extra_pct": 15.8,
+     "urgencias_resp_extra": 10.3,
+     "aporte": {
+      "clima": 0.38,
+      "combustible": 0.32,
+      "igniciones": 0.3
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.127,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 8.5,
+     "urgencias_resp_base": 65,
+     "urgencias_resp_extra_pct": 3.1,
+     "urgencias_resp_extra": 2.0,
+     "aporte": {
+      "clima": 0.34,
+      "combustible": 0.34,
+      "igniciones": 0.32
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "05109",
+   "nombre": "Viña del Mar",
+   "region": "Valparaíso",
+   "lat": -33.02,
+   "lon": -71.52,
+   "poblacion": 334000,
+   "interfaz": 0.66,
+   "ignicion": {
+    "lineas": 0.56,
+    "caminos": 1,
+    "edificaciones": 0.76
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.324,
+     "nivel": "muy_alto",
+     "confianza": "alta",
+     "pm25_humo": 74.1,
+     "urgencias_resp_base": 73,
+     "urgencias_resp_extra_pct": 26.7,
+     "urgencias_resp_extra": 19.5,
+     "aporte": {
+      "clima": 0.41,
+      "combustible": 0.3,
+      "igniciones": 0.29
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.392,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 77.7,
+     "urgencias_resp_base": 73,
+     "urgencias_resp_extra_pct": 28.0,
+     "urgencias_resp_extra": 20.4,
+     "aporte": {
+      "clima": 0.44,
+      "combustible": 0.28,
+      "igniciones": 0.28
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.31,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 60.4,
+     "urgencias_resp_base": 73,
+     "urgencias_resp_extra_pct": 21.7,
+     "urgencias_resp_extra": 15.8,
+     "aporte": {
+      "clima": 0.42,
+      "combustible": 0.3,
+      "igniciones": 0.28
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.225,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 32.0,
+     "urgencias_resp_base": 73,
+     "urgencias_resp_extra_pct": 11.5,
+     "urgencias_resp_extra": 8.4,
+     "aporte": {
+      "clima": 0.37,
+      "combustible": 0.32,
+      "igniciones": 0.31
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.15,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 21.3,
+     "urgencias_resp_base": 73,
+     "urgencias_resp_extra_pct": 7.7,
+     "urgencias_resp_extra": 5.6,
+     "aporte": {
+      "clima": 0.32,
+      "combustible": 0.35,
+      "igniciones": 0.33
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "05801",
+   "nombre": "Quilpué",
+   "region": "Valparaíso",
+   "lat": -33.06,
+   "lon": -71.42,
+   "poblacion": 152000,
+   "interfaz": 0.63,
+   "ignicion": {
+    "lineas": 0.43,
+    "caminos": 0.66,
+    "edificaciones": 0.68
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.333,
+     "nivel": "muy_alto",
+     "confianza": "alta",
+     "pm25_humo": 59.1,
+     "urgencias_resp_base": 33,
+     "urgencias_resp_extra_pct": 21.3,
+     "urgencias_resp_extra": 7.0,
+     "aporte": {
+      "clima": 0.42,
+      "combustible": 0.32,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.423,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 117.0,
+     "urgencias_resp_base": 33,
+     "urgencias_resp_extra_pct": 42.1,
+     "urgencias_resp_extra": 13.9,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.3,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.323,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 55.4,
+     "urgencias_resp_base": 33,
+     "urgencias_resp_extra_pct": 19.9,
+     "urgencias_resp_extra": 6.6,
+     "aporte": {
+      "clima": 0.43,
+      "combustible": 0.32,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.249,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 41.3,
+     "urgencias_resp_base": 33,
+     "urgencias_resp_extra_pct": 14.9,
+     "urgencias_resp_extra": 4.9,
+     "aporte": {
+      "clima": 0.38,
+      "combustible": 0.35,
+      "igniciones": 0.27
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.168,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 28.1,
+     "urgencias_resp_base": 33,
+     "urgencias_resp_extra_pct": 10.1,
+     "urgencias_resp_extra": 3.3,
+     "aporte": {
+      "clima": 0.34,
+      "combustible": 0.37,
+      "igniciones": 0.29
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "05804",
+   "nombre": "Villa Alemana",
+   "region": "Valparaíso",
+   "lat": -33.04,
+   "lon": -71.33,
+   "poblacion": 127000,
+   "interfaz": 0.48,
+   "ignicion": {
+    "lineas": 0.47,
+    "caminos": 0.55,
+    "edificaciones": 0.47
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.236,
+     "nivel": "alto",
+     "confianza": "alta",
+     "pm25_humo": 50.4,
+     "urgencias_resp_base": 28,
+     "urgencias_resp_extra_pct": 18.1,
+     "urgencias_resp_extra": 5.1,
+     "aporte": {
+      "clima": 0.45,
+      "combustible": 0.31,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.325,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 50.1,
+     "urgencias_resp_base": 28,
+     "urgencias_resp_extra_pct": 18.0,
+     "urgencias_resp_extra": 5.0,
+     "aporte": {
+      "clima": 0.49,
+      "combustible": 0.29,
+      "igniciones": 0.22
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.298,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 60.9,
+     "urgencias_resp_base": 28,
+     "urgencias_resp_extra_pct": 21.9,
+     "urgencias_resp_extra": 6.1,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.3,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.169,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 31.8,
+     "urgencias_resp_base": 28,
+     "urgencias_resp_extra_pct": 11.4,
+     "urgencias_resp_extra": 3.2,
+     "aporte": {
+      "clima": 0.41,
+      "combustible": 0.33,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.112,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 20.6,
+     "urgencias_resp_base": 28,
+     "urgencias_resp_extra_pct": 7.4,
+     "urgencias_resp_extra": 2.1,
+     "aporte": {
+      "clima": 0.36,
+      "combustible": 0.36,
+      "igniciones": 0.28
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "05102",
+   "nombre": "Casablanca",
+   "region": "Valparaíso",
+   "lat": -33.32,
+   "lon": -71.41,
+   "poblacion": 27000,
+   "interfaz": 0.57,
+   "ignicion": {
+    "lineas": 0.58,
+    "caminos": 0.44,
+    "edificaciones": 0.57
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.249,
+     "nivel": "alto",
+     "confianza": "alta",
+     "pm25_humo": 33.1,
+     "urgencias_resp_base": 6,
+     "urgencias_resp_extra_pct": 11.9,
+     "urgencias_resp_extra": 0.7,
+     "aporte": {
+      "clima": 0.45,
+      "combustible": 0.3,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.31,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 87.3,
+     "urgencias_resp_base": 6,
+     "urgencias_resp_extra_pct": 31.4,
+     "urgencias_resp_extra": 1.9,
+     "aporte": {
+      "clima": 0.49,
+      "combustible": 0.28,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.259,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 33.3,
+     "urgencias_resp_base": 6,
+     "urgencias_resp_extra_pct": 12.0,
+     "urgencias_resp_extra": 0.7,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.29,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.211,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 32.4,
+     "urgencias_resp_base": 6,
+     "urgencias_resp_extra_pct": 11.7,
+     "urgencias_resp_extra": 0.7,
+     "aporte": {
+      "clima": 0.41,
+      "combustible": 0.32,
+      "igniciones": 0.27
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.102,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 3.2,
+     "urgencias_resp_base": 6,
+     "urgencias_resp_extra_pct": 1.2,
+     "urgencias_resp_extra": 0.1,
+     "aporte": {
+      "clima": 0.36,
+      "combustible": 0.34,
+      "igniciones": 0.3
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "05601",
+   "nombre": "San Antonio",
+   "region": "Valparaíso",
+   "lat": -33.59,
+   "lon": -71.61,
+   "poblacion": 92000,
+   "interfaz": 0.38,
+   "ignicion": {
+    "lineas": 0.38,
+    "caminos": 0.48,
+    "edificaciones": 0.36
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.191,
+     "nivel": "alto",
+     "confianza": "alta",
+     "pm25_humo": 35.7,
+     "urgencias_resp_base": 20,
+     "urgencias_resp_extra_pct": 12.9,
+     "urgencias_resp_extra": 2.6,
+     "aporte": {
+      "clima": 0.49,
+      "combustible": 0.27,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.21,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 21.1,
+     "urgencias_resp_base": 20,
+     "urgencias_resp_extra_pct": 7.6,
+     "urgencias_resp_extra": 1.5,
+     "aporte": {
+      "clima": 0.53,
+      "combustible": 0.25,
+      "igniciones": 0.22
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.18,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 43.3,
+     "urgencias_resp_base": 20,
+     "urgencias_resp_extra_pct": 15.6,
+     "urgencias_resp_extra": 3.1,
+     "aporte": {
+      "clima": 0.5,
+      "combustible": 0.27,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.116,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 9.6,
+     "urgencias_resp_base": 20,
+     "urgencias_resp_extra_pct": 3.5,
+     "urgencias_resp_extra": 0.7,
+     "aporte": {
+      "clima": 0.45,
+      "combustible": 0.29,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.063,
+     "nivel": "bajo",
+     "confianza": "baja",
+     "pm25_humo": 5.3,
+     "urgencias_resp_base": 20,
+     "urgencias_resp_extra_pct": 1.9,
+     "urgencias_resp_extra": 0.4,
+     "aporte": {
+      "clima": 0.4,
+      "combustible": 0.32,
+      "igniciones": 0.28
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "05501",
+   "nombre": "Quillota",
+   "region": "Valparaíso",
+   "lat": -32.88,
+   "lon": -71.25,
+   "poblacion": 91000,
+   "interfaz": 0.41,
+   "ignicion": {
+    "lineas": 0.47,
+    "caminos": 0.54,
+    "edificaciones": 0.41
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.185,
+     "nivel": "alto",
+     "confianza": "alta",
+     "pm25_humo": 23.9,
+     "urgencias_resp_base": 20,
+     "urgencias_resp_extra_pct": 8.6,
+     "urgencias_resp_extra": 1.7,
+     "aporte": {
+      "clima": 0.48,
+      "combustible": 0.27,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.237,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 30.3,
+     "urgencias_resp_base": 20,
+     "urgencias_resp_extra_pct": 10.9,
+     "urgencias_resp_extra": 2.2,
+     "aporte": {
+      "clima": 0.51,
+      "combustible": 0.26,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.19,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 42.2,
+     "urgencias_resp_base": 20,
+     "urgencias_resp_extra_pct": 15.2,
+     "urgencias_resp_extra": 3.0,
+     "aporte": {
+      "clima": 0.49,
+      "combustible": 0.27,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.121,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 8.3,
+     "urgencias_resp_base": 20,
+     "urgencias_resp_extra_pct": 3.0,
+     "urgencias_resp_extra": 0.6,
+     "aporte": {
+      "clima": 0.44,
+      "combustible": 0.3,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.12,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 13.1,
+     "urgencias_resp_base": 20,
+     "urgencias_resp_extra_pct": 4.7,
+     "urgencias_resp_extra": 0.9,
+     "aporte": {
+      "clima": 0.39,
+      "combustible": 0.32,
+      "igniciones": 0.29
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "05802",
+   "nombre": "Limache",
+   "region": "Valparaíso",
+   "lat": -33.01,
+   "lon": -71.24,
+   "poblacion": 46000,
+   "interfaz": 0.41,
+   "ignicion": {
+    "lineas": 0.63,
+    "caminos": 0.44,
+    "edificaciones": 0.36
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.216,
+     "nivel": "alto",
+     "confianza": "alta",
+     "pm25_humo": 32.1,
+     "urgencias_resp_base": 10,
+     "urgencias_resp_extra_pct": 11.6,
+     "urgencias_resp_extra": 1.2,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.29,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.288,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 44.0,
+     "urgencias_resp_base": 10,
+     "urgencias_resp_extra_pct": 15.8,
+     "urgencias_resp_extra": 1.6,
+     "aporte": {
+      "clima": 0.5,
+      "combustible": 0.27,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.226,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 31.2,
+     "urgencias_resp_base": 10,
+     "urgencias_resp_extra_pct": 11.2,
+     "urgencias_resp_extra": 1.1,
+     "aporte": {
+      "clima": 0.47,
+      "combustible": 0.29,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.166,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 37.2,
+     "urgencias_resp_base": 10,
+     "urgencias_resp_extra_pct": 13.4,
+     "urgencias_resp_extra": 1.3,
+     "aporte": {
+      "clima": 0.42,
+      "combustible": 0.32,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.134,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 14.6,
+     "urgencias_resp_base": 10,
+     "urgencias_resp_extra_pct": 5.3,
+     "urgencias_resp_extra": 0.5,
+     "aporte": {
+      "clima": 0.37,
+      "combustible": 0.34,
+      "igniciones": 0.29
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "13501",
+   "nombre": "Melipilla",
+   "region": "Metropolitana",
+   "lat": -33.69,
+   "lon": -71.21,
+   "poblacion": 124000,
+   "interfaz": 0.56,
+   "ignicion": {
+    "lineas": 0.57,
+    "caminos": 0.56,
+    "edificaciones": 0.54
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.18,
+     "nivel": "medio",
+     "confianza": "alta",
+     "pm25_humo": 40.7,
+     "urgencias_resp_base": 27,
+     "urgencias_resp_extra_pct": 14.7,
+     "urgencias_resp_extra": 4.0,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.28,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.276,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 51.2,
+     "urgencias_resp_base": 27,
+     "urgencias_resp_extra_pct": 18.4,
+     "urgencias_resp_extra": 5.0,
+     "aporte": {
+      "clima": 0.49,
+      "combustible": 0.26,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.196,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 35.1,
+     "urgencias_resp_base": 27,
+     "urgencias_resp_extra_pct": 12.6,
+     "urgencias_resp_extra": 3.4,
+     "aporte": {
+      "clima": 0.47,
+      "combustible": 0.27,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.179,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 44.7,
+     "urgencias_resp_base": 27,
+     "urgencias_resp_extra_pct": 16.1,
+     "urgencias_resp_extra": 4.3,
+     "aporte": {
+      "clima": 0.42,
+      "combustible": 0.3,
+      "igniciones": 0.28
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.076,
+     "nivel": "bajo",
+     "confianza": "baja",
+     "pm25_humo": 4.4,
+     "urgencias_resp_base": 27,
+     "urgencias_resp_extra_pct": 1.6,
+     "urgencias_resp_extra": 0.4,
+     "aporte": {
+      "clima": 0.37,
+      "combustible": 0.32,
+      "igniciones": 0.31
+     },
+     "externas": {
+      "gwis": "bajo",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "13503",
+   "nombre": "Curacaví",
+   "region": "Metropolitana",
+   "lat": -33.4,
+   "lon": -71.13,
+   "poblacion": 33000,
+   "interfaz": 0.38,
+   "ignicion": {
+    "lineas": 0.37,
+    "caminos": 0.36,
+    "edificaciones": 0.4
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.25,
+     "nivel": "alto",
+     "confianza": "alta",
+     "pm25_humo": 51.0,
+     "urgencias_resp_base": 7,
+     "urgencias_resp_extra_pct": 18.4,
+     "urgencias_resp_extra": 1.3,
+     "aporte": {
+      "clima": 0.48,
+      "combustible": 0.3,
+      "igniciones": 0.22
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.261,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 50.9,
+     "urgencias_resp_base": 7,
+     "urgencias_resp_extra_pct": 18.3,
+     "urgencias_resp_extra": 1.3,
+     "aporte": {
+      "clima": 0.51,
+      "combustible": 0.28,
+      "igniciones": 0.21
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.26,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 47.5,
+     "urgencias_resp_base": 7,
+     "urgencias_resp_extra_pct": 17.1,
+     "urgencias_resp_extra": 1.2,
+     "aporte": {
+      "clima": 0.49,
+      "combustible": 0.3,
+      "igniciones": 0.21
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.153,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 27.3,
+     "urgencias_resp_base": 7,
+     "urgencias_resp_extra_pct": 9.8,
+     "urgencias_resp_extra": 0.7,
+     "aporte": {
+      "clima": 0.44,
+      "combustible": 0.33,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "bajo",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.119,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 19.7,
+     "urgencias_resp_base": 7,
+     "urgencias_resp_extra_pct": 7.1,
+     "urgencias_resp_extra": 0.5,
+     "aporte": {
+      "clima": 0.39,
+      "combustible": 0.35,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "bajo",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "06101",
+   "nombre": "Rancagua",
+   "region": "O'Higgins",
+   "lat": -34.17,
+   "lon": -70.74,
+   "poblacion": 241000,
+   "interfaz": 0.41,
+   "ignicion": {
+    "lineas": 0.16,
+    "caminos": 0.89,
+    "edificaciones": 0.37
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.075,
+     "nivel": "bajo",
+     "confianza": "alta",
+     "pm25_humo": 2.1,
+     "urgencias_resp_base": 53,
+     "urgencias_resp_extra_pct": 0.8,
+     "urgencias_resp_extra": 0.4,
+     "aporte": {
+      "clima": 0.42,
+      "combustible": 0.28,
+      "igniciones": 0.3
+     },
+     "externas": {
+      "gwis": "bajo",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.103,
+     "nivel": "medio",
+     "confianza": "media",
+     "pm25_humo": 9.5,
+     "urgencias_resp_base": 53,
+     "urgencias_resp_extra_pct": 3.4,
+     "urgencias_resp_extra": 1.8,
+     "aporte": {
+      "clima": 0.5,
+      "combustible": 0.24,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.118,
+     "nivel": "medio",
+     "confianza": "media",
+     "pm25_humo": 24.9,
+     "urgencias_resp_base": 53,
+     "urgencias_resp_extra_pct": 9.0,
+     "urgencias_resp_extra": 4.8,
+     "aporte": {
+      "clima": 0.54,
+      "combustible": 0.22,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.098,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 10.5,
+     "urgencias_resp_base": 53,
+     "urgencias_resp_extra_pct": 3.8,
+     "urgencias_resp_extra": 2.0,
+     "aporte": {
+      "clima": 0.51,
+      "combustible": 0.23,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.103,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 3.5,
+     "urgencias_resp_base": 53,
+     "urgencias_resp_extra_pct": 1.3,
+     "urgencias_resp_extra": 0.7,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.26,
+      "igniciones": 0.28
+     },
+     "externas": {
+      "gwis": "bajo",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "06201",
+   "nombre": "Pichilemu",
+   "region": "O'Higgins",
+   "lat": -34.39,
+   "lon": -72.0,
+   "poblacion": 17000,
+   "interfaz": 0.39,
+   "ignicion": {
+    "lineas": 0.51,
+    "caminos": 0.39,
+    "edificaciones": 0.43
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.121,
+     "nivel": "medio",
+     "confianza": "alta",
+     "pm25_humo": 16.1,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 5.8,
+     "urgencias_resp_extra": 0.2,
+     "aporte": {
+      "clima": 0.39,
+      "combustible": 0.33,
+      "igniciones": 0.28
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.209,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 47.6,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 17.1,
+     "urgencias_resp_extra": 0.7,
+     "aporte": {
+      "clima": 0.47,
+      "combustible": 0.29,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.237,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 34.5,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 12.4,
+     "urgencias_resp_extra": 0.5,
+     "aporte": {
+      "clima": 0.51,
+      "combustible": 0.27,
+      "igniciones": 0.22
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.205,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 23.5,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 8.5,
+     "urgencias_resp_extra": 0.3,
+     "aporte": {
+      "clima": 0.48,
+      "combustible": 0.28,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.16,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 34.9,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 12.6,
+     "urgencias_resp_extra": 0.5,
+     "aporte": {
+      "clima": 0.43,
+      "combustible": 0.31,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "06204",
+   "nombre": "Marchigüe",
+   "region": "O'Higgins",
+   "lat": -34.4,
+   "lon": -71.61,
+   "poblacion": 7500,
+   "interfaz": 0.55,
+   "ignicion": {
+    "lineas": 0.65,
+    "caminos": 0.28,
+    "edificaciones": 0.63
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.117,
+     "nivel": "medio",
+     "confianza": "alta",
+     "pm25_humo": 5.8,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 2.1,
+     "urgencias_resp_extra": 0.1,
+     "aporte": {
+      "clima": 0.36,
+      "combustible": 0.35,
+      "igniciones": 0.29
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.236,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 39.6,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 14.3,
+     "urgencias_resp_extra": 0.6,
+     "aporte": {
+      "clima": 0.45,
+      "combustible": 0.31,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.343,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 92.6,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 33.3,
+     "urgencias_resp_extra": 1.3,
+     "aporte": {
+      "clima": 0.48,
+      "combustible": 0.29,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.282,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 66.5,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 23.9,
+     "urgencias_resp_extra": 1.0,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.3,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.224,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 41.1,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 14.8,
+     "urgencias_resp_extra": 0.6,
+     "aporte": {
+      "clima": 0.41,
+      "combustible": 0.33,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "06205",
+   "nombre": "Navidad",
+   "region": "O'Higgins",
+   "lat": -33.95,
+   "lon": -71.83,
+   "poblacion": 6800,
+   "interfaz": 0.49,
+   "ignicion": {
+    "lineas": 0.43,
+    "caminos": 0.32,
+    "edificaciones": 0.46
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.253,
+     "nivel": "alto",
+     "confianza": "alta",
+     "pm25_humo": 39.1,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 14.1,
+     "urgencias_resp_extra": 0.6,
+     "aporte": {
+      "clima": 0.47,
+      "combustible": 0.31,
+      "igniciones": 0.22
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.327,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 79.1,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 28.5,
+     "urgencias_resp_extra": 1.1,
+     "aporte": {
+      "clima": 0.5,
+      "combustible": 0.29,
+      "igniciones": 0.21
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.258,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 54.1,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 19.5,
+     "urgencias_resp_extra": 0.8,
+     "aporte": {
+      "clima": 0.48,
+      "combustible": 0.3,
+      "igniciones": 0.22
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.201,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 23.6,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 8.5,
+     "urgencias_resp_extra": 0.3,
+     "aporte": {
+      "clima": 0.43,
+      "combustible": 0.33,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.144,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 17.5,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 6.3,
+     "urgencias_resp_extra": 0.3,
+     "aporte": {
+      "clima": 0.38,
+      "combustible": 0.36,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "07301",
+   "nombre": "Curicó",
+   "region": "Maule",
+   "lat": -34.98,
+   "lon": -71.24,
+   "poblacion": 149000,
+   "interfaz": 0.43,
+   "ignicion": {
+    "lineas": 0.28,
+    "caminos": 0.7,
+    "edificaciones": 0.37
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.051,
+     "nivel": "bajo",
+     "confianza": "alta",
+     "pm25_humo": 2.0,
+     "urgencias_resp_base": 33,
+     "urgencias_resp_extra_pct": 0.7,
+     "urgencias_resp_extra": 0.2,
+     "aporte": {
+      "clima": 0.41,
+      "combustible": 0.29,
+      "igniciones": 0.3
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.112,
+     "nivel": "medio",
+     "confianza": "media",
+     "pm25_humo": 17.4,
+     "urgencias_resp_base": 33,
+     "urgencias_resp_extra_pct": 6.3,
+     "urgencias_resp_extra": 2.1,
+     "aporte": {
+      "clima": 0.5,
+      "combustible": 0.25,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.178,
+     "nivel": "medio",
+     "confianza": "media",
+     "pm25_humo": 21.5,
+     "urgencias_resp_base": 33,
+     "urgencias_resp_extra_pct": 7.7,
+     "urgencias_resp_extra": 2.5,
+     "aporte": {
+      "clima": 0.53,
+      "combustible": 0.23,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.143,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 14.9,
+     "urgencias_resp_base": 33,
+     "urgencias_resp_extra_pct": 5.4,
+     "urgencias_resp_extra": 1.8,
+     "aporte": {
+      "clima": 0.51,
+      "combustible": 0.24,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.103,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 7.9,
+     "urgencias_resp_base": 33,
+     "urgencias_resp_extra_pct": 2.8,
+     "urgencias_resp_extra": 0.9,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.27,
+      "igniciones": 0.27
+     },
+     "externas": {
+      "gwis": "bajo",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "07101",
+   "nombre": "Talca",
+   "region": "Maule",
+   "lat": -35.43,
+   "lon": -71.66,
+   "poblacion": 220000,
+   "interfaz": 0.41,
+   "ignicion": {
+    "lineas": 0.21,
+    "caminos": 0.89,
+    "edificaciones": 0.41
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.046,
+     "nivel": "bajo",
+     "confianza": "alta",
+     "pm25_humo": 2.0,
+     "urgencias_resp_base": 48,
+     "urgencias_resp_extra_pct": 0.7,
+     "urgencias_resp_extra": 0.3,
+     "aporte": {
+      "clima": 0.41,
+      "combustible": 0.28,
+      "igniciones": 0.31
+     },
+     "externas": {
+      "gwis": "bajo",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.127,
+     "nivel": "medio",
+     "confianza": "media",
+     "pm25_humo": 26.3,
+     "urgencias_resp_base": 48,
+     "urgencias_resp_extra_pct": 9.5,
+     "urgencias_resp_extra": 4.6,
+     "aporte": {
+      "clima": 0.49,
+      "combustible": 0.24,
+      "igniciones": 0.27
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.139,
+     "nivel": "medio",
+     "confianza": "media",
+     "pm25_humo": 17.9,
+     "urgencias_resp_base": 48,
+     "urgencias_resp_extra_pct": 6.4,
+     "urgencias_resp_extra": 3.1,
+     "aporte": {
+      "clima": 0.53,
+      "combustible": 0.23,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.149,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 32.7,
+     "urgencias_resp_base": 48,
+     "urgencias_resp_extra_pct": 11.8,
+     "urgencias_resp_extra": 5.7,
+     "aporte": {
+      "clima": 0.5,
+      "combustible": 0.24,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.098,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 15.1,
+     "urgencias_resp_base": 48,
+     "urgencias_resp_extra_pct": 5.4,
+     "urgencias_resp_extra": 2.6,
+     "aporte": {
+      "clima": 0.45,
+      "combustible": 0.26,
+      "igniciones": 0.29
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "07102",
+   "nombre": "Constitución",
+   "region": "Maule",
+   "lat": -35.33,
+   "lon": -72.41,
+   "poblacion": 46000,
+   "interfaz": 0.5,
+   "ignicion": {
+    "lineas": 0.53,
+    "caminos": 0.4,
+    "edificaciones": 0.52
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.129,
+     "nivel": "medio",
+     "confianza": "alta",
+     "pm25_humo": 21.6,
+     "urgencias_resp_base": 10,
+     "urgencias_resp_extra_pct": 7.8,
+     "urgencias_resp_extra": 0.8,
+     "aporte": {
+      "clima": 0.36,
+      "combustible": 0.37,
+      "igniciones": 0.27
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.264,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 56.7,
+     "urgencias_resp_base": 10,
+     "urgencias_resp_extra_pct": 20.4,
+     "urgencias_resp_extra": 2.0,
+     "aporte": {
+      "clima": 0.45,
+      "combustible": 0.32,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.361,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 47.4,
+     "urgencias_resp_base": 10,
+     "urgencias_resp_extra_pct": 17.1,
+     "urgencias_resp_extra": 1.7,
+     "aporte": {
+      "clima": 0.48,
+      "combustible": 0.3,
+      "igniciones": 0.22
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.295,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 61.0,
+     "urgencias_resp_base": 10,
+     "urgencias_resp_extra_pct": 22.0,
+     "urgencias_resp_extra": 2.2,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.31,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.232,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 53.0,
+     "urgencias_resp_base": 10,
+     "urgencias_resp_extra_pct": 19.1,
+     "urgencias_resp_extra": 1.9,
+     "aporte": {
+      "clima": 0.41,
+      "combustible": 0.34,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": true
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "07201",
+   "nombre": "Cauquenes",
+   "region": "Maule",
+   "lat": -35.97,
+   "lon": -72.32,
+   "poblacion": 41000,
+   "interfaz": 0.47,
+   "ignicion": {
+    "lineas": 0.46,
+    "caminos": 0.38,
+    "edificaciones": 0.45
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.153,
+     "nivel": "medio",
+     "confianza": "alta",
+     "pm25_humo": 33.0,
+     "urgencias_resp_base": 9,
+     "urgencias_resp_extra_pct": 11.9,
+     "urgencias_resp_extra": 1.1,
+     "aporte": {
+      "clima": 0.38,
+      "combustible": 0.35,
+      "igniciones": 0.27
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.233,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 59.3,
+     "urgencias_resp_base": 9,
+     "urgencias_resp_extra_pct": 21.3,
+     "urgencias_resp_extra": 1.9,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.31,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.295,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 76.3,
+     "urgencias_resp_base": 9,
+     "urgencias_resp_extra_pct": 27.5,
+     "urgencias_resp_extra": 2.5,
+     "aporte": {
+      "clima": 0.5,
+      "combustible": 0.29,
+      "igniciones": 0.21
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.232,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 31.3,
+     "urgencias_resp_base": 9,
+     "urgencias_resp_extra_pct": 11.3,
+     "urgencias_resp_extra": 1.0,
+     "aporte": {
+      "clima": 0.47,
+      "combustible": 0.3,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.21,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 33.1,
+     "urgencias_resp_base": 9,
+     "urgencias_resp_extra_pct": 11.9,
+     "urgencias_resp_extra": 1.1,
+     "aporte": {
+      "clima": 0.42,
+      "combustible": 0.33,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "16101",
+   "nombre": "Chillán",
+   "region": "Ñuble",
+   "lat": -36.61,
+   "lon": -72.1,
+   "poblacion": 185000,
+   "interfaz": 0.43,
+   "ignicion": {
+    "lineas": 0.3,
+    "caminos": 0.77,
+    "edificaciones": 0.44
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.081,
+     "nivel": "medio",
+     "confianza": "alta",
+     "pm25_humo": 3.5,
+     "urgencias_resp_base": 41,
+     "urgencias_resp_extra_pct": 1.3,
+     "urgencias_resp_extra": 0.5,
+     "aporte": {
+      "clima": 0.39,
+      "combustible": 0.31,
+      "igniciones": 0.3
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.061,
+     "nivel": "bajo",
+     "confianza": "media",
+     "pm25_humo": 2.0,
+     "urgencias_resp_base": 41,
+     "urgencias_resp_extra_pct": 0.7,
+     "urgencias_resp_extra": 0.3,
+     "aporte": {
+      "clima": 0.39,
+      "combustible": 0.31,
+      "igniciones": 0.3
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.185,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 26.8,
+     "urgencias_resp_base": 41,
+     "urgencias_resp_extra_pct": 9.6,
+     "urgencias_resp_extra": 3.9,
+     "aporte": {
+      "clima": 0.48,
+      "combustible": 0.26,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.215,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 22.9,
+     "urgencias_resp_base": 41,
+     "urgencias_resp_extra_pct": 8.2,
+     "urgencias_resp_extra": 3.4,
+     "aporte": {
+      "clima": 0.51,
+      "combustible": 0.25,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.208,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 20.5,
+     "urgencias_resp_base": 41,
+     "urgencias_resp_extra_pct": 7.4,
+     "urgencias_resp_extra": 3.0,
+     "aporte": {
+      "clima": 0.49,
+      "combustible": 0.26,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "16201",
+   "nombre": "Quirihue",
+   "region": "Ñuble",
+   "lat": -36.28,
+   "lon": -72.54,
+   "poblacion": 12000,
+   "interfaz": 0.41,
+   "ignicion": {
+    "lineas": 0.76,
+    "caminos": 0.4,
+    "edificaciones": 0.38
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.109,
+     "nivel": "medio",
+     "confianza": "alta",
+     "pm25_humo": 10.6,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 3.8,
+     "urgencias_resp_extra": 0.2,
+     "aporte": {
+      "clima": 0.36,
+      "combustible": 0.35,
+      "igniciones": 0.29
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.279,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 60.8,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 21.9,
+     "urgencias_resp_extra": 0.9,
+     "aporte": {
+      "clima": 0.45,
+      "combustible": 0.31,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.3,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 78.3,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 28.2,
+     "urgencias_resp_extra": 1.1,
+     "aporte": {
+      "clima": 0.48,
+      "combustible": 0.29,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.286,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 59.3,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 21.3,
+     "urgencias_resp_extra": 0.9,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.3,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.177,
+     "nivel": "medio",
+     "confianza": "baja",
+     "pm25_humo": 19.3,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 6.9,
+     "urgencias_resp_extra": 0.3,
+     "aporte": {
+      "clima": 0.41,
+      "combustible": 0.33,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "08111",
+   "nombre": "Tomé",
+   "region": "Biobío",
+   "lat": -36.62,
+   "lon": -72.96,
+   "poblacion": 55000,
+   "interfaz": 0.65,
+   "ignicion": {
+    "lineas": 0.66,
+    "caminos": 0.52,
+    "edificaciones": 0.72
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.119,
+     "nivel": "medio",
+     "confianza": "alta",
+     "pm25_humo": 22.7,
+     "urgencias_resp_base": 12,
+     "urgencias_resp_extra_pct": 8.2,
+     "urgencias_resp_extra": 1.0,
+     "aporte": {
+      "clima": 0.35,
+      "combustible": 0.35,
+      "igniciones": 0.3
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.167,
+     "nivel": "medio",
+     "confianza": "media",
+     "pm25_humo": 19.3,
+     "urgencias_resp_base": 12,
+     "urgencias_resp_extra_pct": 6.9,
+     "urgencias_resp_extra": 0.8,
+     "aporte": {
+      "clima": 0.35,
+      "combustible": 0.35,
+      "igniciones": 0.3
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.302,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 85.5,
+     "urgencias_resp_base": 12,
+     "urgencias_resp_extra_pct": 30.8,
+     "urgencias_resp_extra": 3.7,
+     "aporte": {
+      "clima": 0.43,
+      "combustible": 0.31,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.358,
+     "nivel": "muy_alto",
+     "confianza": "baja",
+     "pm25_humo": 66.4,
+     "urgencias_resp_base": 12,
+     "urgencias_resp_extra_pct": 23.9,
+     "urgencias_resp_extra": 2.9,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.29,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.294,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 39.3,
+     "urgencias_resp_base": 12,
+     "urgencias_resp_extra_pct": 14.1,
+     "urgencias_resp_extra": 1.7,
+     "aporte": {
+      "clima": 0.44,
+      "combustible": 0.3,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "08101",
+   "nombre": "Concepción",
+   "region": "Biobío",
+   "lat": -36.83,
+   "lon": -73.05,
+   "poblacion": 223000,
+   "interfaz": 0.54,
+   "ignicion": {
+    "lineas": 0.32,
+    "caminos": 0.8,
+    "edificaciones": 0.61
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.138,
+     "nivel": "medio",
+     "confianza": "alta",
+     "pm25_humo": 31.2,
+     "urgencias_resp_base": 49,
+     "urgencias_resp_extra_pct": 11.2,
+     "urgencias_resp_extra": 5.5,
+     "aporte": {
+      "clima": 0.37,
+      "combustible": 0.32,
+      "igniciones": 0.31
+     },
+     "externas": {
+      "gwis": "bajo",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.131,
+     "nivel": "medio",
+     "confianza": "media",
+     "pm25_humo": 20.3,
+     "urgencias_resp_base": 49,
+     "urgencias_resp_extra_pct": 7.3,
+     "urgencias_resp_extra": 3.6,
+     "aporte": {
+      "clima": 0.37,
+      "combustible": 0.32,
+      "igniciones": 0.31
+     },
+     "externas": {
+      "gwis": "bajo",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.227,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 49.6,
+     "urgencias_resp_base": 49,
+     "urgencias_resp_extra_pct": 17.9,
+     "urgencias_resp_extra": 8.8,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.28,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.262,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 50.7,
+     "urgencias_resp_base": 49,
+     "urgencias_resp_extra_pct": 18.3,
+     "urgencias_resp_extra": 9.0,
+     "aporte": {
+      "clima": 0.49,
+      "combustible": 0.26,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.244,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 37.5,
+     "urgencias_resp_base": 49,
+     "urgencias_resp_extra_pct": 13.5,
+     "urgencias_resp_extra": 6.6,
+     "aporte": {
+      "clima": 0.47,
+      "combustible": 0.27,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "08109",
+   "nombre": "Santa Juana",
+   "region": "Biobío",
+   "lat": -37.17,
+   "lon": -72.94,
+   "poblacion": 14000,
+   "interfaz": 0.68,
+   "ignicion": {
+    "lineas": 0.59,
+    "caminos": 0.28,
+    "edificaciones": 0.74
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.182,
+     "nivel": "alto",
+     "confianza": "alta",
+     "pm25_humo": 40.9,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 14.7,
+     "urgencias_resp_extra": 0.6,
+     "aporte": {
+      "clima": 0.34,
+      "combustible": 0.38,
+      "igniciones": 0.28
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.162,
+     "nivel": "medio",
+     "confianza": "media",
+     "pm25_humo": 16.2,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 5.8,
+     "urgencias_resp_extra": 0.2,
+     "aporte": {
+      "clima": 0.34,
+      "combustible": 0.38,
+      "igniciones": 0.28
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.352,
+     "nivel": "muy_alto",
+     "confianza": "media",
+     "pm25_humo": 60.8,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 21.9,
+     "urgencias_resp_extra": 0.9,
+     "aporte": {
+      "clima": 0.42,
+      "combustible": 0.34,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.438,
+     "nivel": "muy_alto",
+     "confianza": "baja",
+     "pm25_humo": 90.6,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 32.6,
+     "urgencias_resp_extra": 1.3,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.32,
+      "igniciones": 0.22
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.351,
+     "nivel": "muy_alto",
+     "confianza": "baja",
+     "pm25_humo": 44.9,
+     "urgencias_resp_base": 4,
+     "urgencias_resp_extra_pct": 16.2,
+     "urgencias_resp_extra": 0.6,
+     "aporte": {
+      "clima": 0.43,
+      "combustible": 0.33,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "08306",
+   "nombre": "Nacimiento",
+   "region": "Biobío",
+   "lat": -37.5,
+   "lon": -72.67,
+   "poblacion": 26000,
+   "interfaz": 0.49,
+   "ignicion": {
+    "lineas": 0.53,
+    "caminos": 0.32,
+    "edificaciones": 0.54
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.155,
+     "nivel": "medio",
+     "confianza": "alta",
+     "pm25_humo": 36.5,
+     "urgencias_resp_base": 6,
+     "urgencias_resp_extra_pct": 13.1,
+     "urgencias_resp_extra": 0.8,
+     "aporte": {
+      "clima": 0.36,
+      "combustible": 0.38,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.165,
+     "nivel": "medio",
+     "confianza": "media",
+     "pm25_humo": 16.8,
+     "urgencias_resp_base": 6,
+     "urgencias_resp_extra_pct": 6.0,
+     "urgencias_resp_extra": 0.4,
+     "aporte": {
+      "clima": 0.36,
+      "combustible": 0.38,
+      "igniciones": 0.26
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.281,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 64.0,
+     "urgencias_resp_base": 6,
+     "urgencias_resp_extra_pct": 23.0,
+     "urgencias_resp_extra": 1.4,
+     "aporte": {
+      "clima": 0.44,
+      "combustible": 0.33,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.371,
+     "nivel": "muy_alto",
+     "confianza": "baja",
+     "pm25_humo": 50.4,
+     "urgencias_resp_base": 6,
+     "urgencias_resp_extra_pct": 18.1,
+     "urgencias_resp_extra": 1.1,
+     "aporte": {
+      "clima": 0.48,
+      "combustible": 0.31,
+      "igniciones": 0.21
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.321,
+     "nivel": "muy_alto",
+     "confianza": "baja",
+     "pm25_humo": 46.1,
+     "urgencias_resp_base": 6,
+     "urgencias_resp_extra_pct": 16.6,
+     "urgencias_resp_extra": 1.0,
+     "aporte": {
+      "clima": 0.45,
+      "combustible": 0.32,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "muy_alto",
+      "boton_rojo": true
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "08301",
+   "nombre": "Los Ángeles",
+   "region": "Biobío",
+   "lat": -37.47,
+   "lon": -72.35,
+   "poblacion": 202000,
+   "interfaz": 0.48,
+   "ignicion": {
+    "lineas": 0.35,
+    "caminos": 0.82,
+    "edificaciones": 0.51
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.124,
+     "nivel": "medio",
+     "confianza": "alta",
+     "pm25_humo": 6.8,
+     "urgencias_resp_base": 44,
+     "urgencias_resp_extra_pct": 2.4,
+     "urgencias_resp_extra": 1.1,
+     "aporte": {
+      "clima": 0.38,
+      "combustible": 0.31,
+      "igniciones": 0.31
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.078,
+     "nivel": "bajo",
+     "confianza": "media",
+     "pm25_humo": 5.3,
+     "urgencias_resp_base": 44,
+     "urgencias_resp_extra_pct": 1.9,
+     "urgencias_resp_extra": 0.8,
+     "aporte": {
+      "clima": 0.38,
+      "combustible": 0.31,
+      "igniciones": 0.31
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.186,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 29.6,
+     "urgencias_resp_base": 44,
+     "urgencias_resp_extra_pct": 10.7,
+     "urgencias_resp_extra": 4.7,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.27,
+      "igniciones": 0.27
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.244,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 60.2,
+     "urgencias_resp_base": 44,
+     "urgencias_resp_extra_pct": 21.7,
+     "urgencias_resp_extra": 9.5,
+     "aporte": {
+      "clima": 0.5,
+      "combustible": 0.25,
+      "igniciones": 0.25
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.188,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 26.9,
+     "urgencias_resp_base": 44,
+     "urgencias_resp_extra_pct": 9.7,
+     "urgencias_resp_extra": 4.3,
+     "aporte": {
+      "clima": 0.47,
+      "combustible": 0.26,
+      "igniciones": 0.27
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    }
+   ]
+  },
+  {
+   "region_id": "08202",
+   "nombre": "Arauco",
+   "region": "Biobío",
+   "lat": -37.25,
+   "lon": -73.32,
+   "poblacion": 36000,
+   "interfaz": 0.53,
+   "ignicion": {
+    "lineas": 0.51,
+    "caminos": 0.45,
+    "edificaciones": 0.57
+   },
+   "dias": [
+    {
+     "fecha": "2026-11-15",
+     "dia": 1,
+     "fuente_foco": "motor",
+     "prob_foco": 0.162,
+     "nivel": "medio",
+     "confianza": "alta",
+     "pm25_humo": 20.9,
+     "urgencias_resp_base": 8,
+     "urgencias_resp_extra_pct": 7.5,
+     "urgencias_resp_extra": 0.6,
+     "aporte": {
+      "clima": 0.37,
+      "combustible": 0.35,
+      "igniciones": 0.28
+     },
+     "externas": {
+      "gwis": "medio",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-16",
+     "dia": 2,
+     "fuente_foco": "motor",
+     "prob_foco": 0.115,
+     "nivel": "medio",
+     "confianza": "media",
+     "pm25_humo": 10.9,
+     "urgencias_resp_base": 8,
+     "urgencias_resp_extra_pct": 3.9,
+     "urgencias_resp_extra": 0.3,
+     "aporte": {
+      "clima": 0.37,
+      "combustible": 0.35,
+      "igniciones": 0.28
+     },
+     "externas": {
+      "gwis": "bajo",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-17",
+     "dia": 3,
+     "fuente_foco": "externa",
+     "prob_foco": 0.286,
+     "nivel": "alto",
+     "confianza": "media",
+     "pm25_humo": 33.6,
+     "urgencias_resp_base": 8,
+     "urgencias_resp_extra_pct": 12.1,
+     "urgencias_resp_extra": 1.0,
+     "aporte": {
+      "clima": 0.45,
+      "combustible": 0.31,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    },
+    {
+     "fecha": "2026-11-18",
+     "dia": 4,
+     "fuente_foco": "externa",
+     "prob_foco": 0.326,
+     "nivel": "muy_alto",
+     "confianza": "baja",
+     "pm25_humo": 58.6,
+     "urgencias_resp_base": 8,
+     "urgencias_resp_extra_pct": 21.1,
+     "urgencias_resp_extra": 1.7,
+     "aporte": {
+      "clima": 0.48,
+      "combustible": 0.29,
+      "igniciones": 0.23
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": true
+     }
+    },
+    {
+     "fecha": "2026-11-19",
+     "dia": 5,
+     "fuente_foco": "externa",
+     "prob_foco": 0.26,
+     "nivel": "alto",
+     "confianza": "baja",
+     "pm25_humo": 43.5,
+     "urgencias_resp_base": 8,
+     "urgencias_resp_extra_pct": 15.7,
+     "urgencias_resp_extra": 1.3,
+     "aporte": {
+      "clima": 0.46,
+      "combustible": 0.3,
+      "igniciones": 0.24
+     },
+     "externas": {
+      "gwis": "alto",
+      "boton_rojo": false
+     }
+    }
+   ]
+  }
+ ]
+}
