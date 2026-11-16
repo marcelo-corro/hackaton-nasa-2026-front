@@ -6,7 +6,7 @@
 const q = new URLSearchParams(location.search);
 const guardado = (clave) => { try { return localStorage.getItem(clave); } catch { return null; } };
 
-export const URL_BACK = "https://marcelo-corro.github.io/aivital-incendios-datos/";
+export const URL_BACK = "https://marcelo-corro.github.io/hackaton-nasa-2026-datos/";
 const fuente = q.get("fuente") || guardado("preaviso.fuente") || "back";
 // En el teléfono la app trae la página dentro y pide los datos de ejemplo a un servidor: se guarda en los ajustes de la app.
 // La app de Android se compila con la dirección del servidor de la organización aquí (scripts/compilar_apk.sh).

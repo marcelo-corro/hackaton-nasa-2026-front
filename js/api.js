@@ -139,7 +139,7 @@ export const api = {
     return leerJSON(CONFIG.BASE_EXT + "contornos-chile.geojson", "default");
   },
 
-  // ---- Contrato 0.2 (back: https://marcelo-corro.github.io/aivital-incendios-datos) ----
+  // ---- Contrato 0.2 (back: https://marcelo-corro.github.io/hackaton-nasa-2026-datos) ----
   manifest,
   // Los contornos reales pesan 2 MB: se dejan en la caché del navegador.
   regiones: async () => leerJSON(await ruta("regiones"), "default"),

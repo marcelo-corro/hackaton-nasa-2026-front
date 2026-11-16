@@ -5,7 +5,7 @@ Lo que el front necesita que el back publique para la plataforma de Preaviso. Ho
 `"ejemplo": false`, el aviso de "datos de ejemplo" desaparece solo.
 
 ## Dónde se leen
-- Base configurable: `BASE_PREDICCION` en `web/js/config.js` (por defecto `https://marcelo-corro.github.io/aivital-incendios-datos/prediccion/`; se cambia con `?pred=https://.../`).
+- Base configurable: `BASE_PREDICCION` en `web/js/config.js` (por defecto `https://marcelo-corro.github.io/hackaton-nasa-2026-datos/prediccion/`; se cambia con `?pred=https://.../`).
 - Si la petición falla, el front usa la copia local `web/datos/ext/`. Mismos nombres de archivo en las dos partes.
 - Si tampoco está en la copia local (comunas sin archivo de ejemplo), el front arma un detalle sintético en el navegador (`web/js/sintetico.js`) con esta misma forma y `"ejemplo": true`.
 - Los contornos siguen siendo `regiones.geojson` del contrato 0.2 (con `region_id`, `nombre`, `region`).
