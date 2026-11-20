@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/* Modo oscuro por clase en <html> (la elige el usuario o el sistema; ver root.tsx). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --fondo: #f5f4f0;
+  --superficie: #ffffff;
+  --superficie-2: #efede8;
+  --borde: #e3e0d9;
+  --tinta: #191b1d;
+  --tinta-suave: #5a5e63;
+  --tinta-tenue: #8a8d91;
+  --marca: #1d6a87;
+  --marca-suave: #dcecf2;
+
+  /* Riesgo: del pasto a la brasa. "suave" es el fondo, "fuerte" el texto sobre ese fondo. */
+  --bajo: #8fbf96;
+  --bajo-suave: #e6f2e7;
+  --bajo-fuerte: #285a31;
+  --medio: #f2c14e;
+  --medio-suave: #fcf1d3;
+  --medio-fuerte: #6f4d00;
+  --alto: #f07c2b;
+  --alto-suave: #fde4d1;
+  --alto-fuerte: #84360a;
+  --muyalto: #c8281e;
+  --muyalto-suave: #f8d9d6;
+  --muyalto-fuerte: #76110b;
+  --fuego: #7c3aed;
+}
+
+.dark {
+  --fondo: #0e1012;
+  --superficie: #16191c;
+  --superficie-2: #1d2125;
+  --borde: #2a2e33;
+  --tinta: #ecebe7;
+  --tinta-suave: #a7aaae;
+  --tinta-tenue: #6f7378;
+  --marca: #62b6d6;
+  --marca-suave: #15303b;
+
+  --bajo-suave: #17291a;
+  --bajo-fuerte: #a9d8af;
+  --medio-suave: #2e2408;
+  --medio-fuerte: #f5d27f;
+  --alto-suave: #35190a;
+  --alto-fuerte: #f8a868;
+  --muyalto-suave: #3a0f0c;
+  --muyalto-fuerte: #f4877f;
+  --fuego: #a78bfa;
+}
+
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  --color-fondo: var(--fondo);
+  --color-superficie: var(--superficie);
+  --color-superficie-2: var(--superficie-2);
+  --color-borde: var(--borde);
+  --color-tinta: var(--tinta);
+  --color-tinta-suave: var(--tinta-suave);
+  --color-tinta-tenue: var(--tinta-tenue);
+  --color-marca: var(--marca);
+  --color-marca-suave: var(--marca-suave);
+  --color-fuego: var(--fuego);
+
+  --color-bajo: var(--bajo);
+  --color-bajo-suave: var(--bajo-suave);
+  --color-bajo-fuerte: var(--bajo-fuerte);
+  --color-medio: var(--medio);
+  --color-medio-suave: var(--medio-suave);
+  --color-medio-fuerte: var(--medio-fuerte);
+  --color-alto: var(--alto);
+  --color-alto-suave: var(--alto-suave);
+  --color-alto-fuerte: var(--alto-fuerte);
+  --color-muyalto: var(--muyalto);
+  --color-muyalto-suave: var(--muyalto-suave);
+  --color-muyalto-fuerte: var(--muyalto-fuerte);
+}
+
+html {
+  background: var(--fondo);
+  color: var(--tinta);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+.cifra {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+@keyframes pulso {
+  0% { transform: scale(0.6); opacity: 0.7; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+.pulso::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: currentColor;
+  animation: pulso 1.8s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulso::after { animation: none; }
+}
