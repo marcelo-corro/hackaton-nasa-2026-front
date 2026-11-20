@@ -102,6 +102,7 @@ export type Activos = z.infer<typeof Activos>;
 const TextoFuente = z.object({ texto: z.string(), fuente: z.string().nullable() });
 
 export const Recomendaciones = z.object({
+  rasgos: z.record(z.string(), z.string()),
   condiciones: z.record(z.string(), TextoFuente),
   recomendaciones: z.record(z.string(), TextoFuente),
   fuentes: z.record(z.string(), z.object({ nombre: z.string(), url: z.string() })),
@@ -111,6 +112,13 @@ export type Recomendaciones = z.infer<typeof Recomendaciones>;
 export const Manifest = z.object({
   contrato: z.string(),
   generado_utc: z.string(),
+  sectores: z
+    .object({
+      codigo_region: z.string(),
+      regiones: z.array(z.string()),
+      modelo_b: z.object({ nota: z.string() }).optional(),
+    })
+    .optional(),
   datos: z
     .object({
       valido_para: z.string(),

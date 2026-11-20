@@ -5,7 +5,14 @@ import { buscarComunas, regionCorta } from "~/lib/comunas";
 import { useRiesgo } from "~/lib/datos";
 import { cn, COLOR_NIVEL, NIVELES } from "~/lib/formato";
 
-export function Buscador({ compacto = false, autoFocus = false }: { compacto?: boolean; autoFocus?: boolean }) {
+type Props = {
+  compacto?: boolean;
+  autoFocus?: boolean;
+  /** Si se pasa, elegir una comuna llama a esta función en vez de abrir su ficha (por ejemplo, en el mapa). */
+  alElegir?: (id: string) => void;
+};
+
+export function Buscador({ compacto = false, autoFocus = false, alElegir }: Props) {
   const [texto, setTexto] = useState("");
   const [activo, setActivo] = useState(0);
   const [abierto, setAbierto] = useState(false);
@@ -21,7 +28,9 @@ export function Buscador({ compacto = false, autoFocus = false }: { compacto?: b
     setTexto("");
     setAbierto(false);
     entrada.current?.blur();
-    navegar(`/comuna/${slug}`);
+    const c = resultados.find((r) => r.slug === slug);
+    if (alElegir && c) alElegir(c.id);
+    else navegar(`/comuna/${slug}`);
   };
 
   const teclas = (e: React.KeyboardEvent) => {

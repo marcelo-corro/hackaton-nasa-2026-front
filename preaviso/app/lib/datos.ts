@@ -59,6 +59,27 @@ export const useRecomendaciones = () =>
     staleTime: Infinity,
   });
 
+export type PropsSector = {
+  sector_id: string;
+  percentil_en_comuna: number;
+  prob_incendio_grande: number | null;
+  rasgos: string[];
+  dias_con_fuego: number;
+};
+
+/** Sectores de 1 km de una comuna del piloto (solo las de manifest.sectores.regiones). */
+export const useSectores = (id: string | null) =>
+  useQuery({
+    queryKey: ["sectores", id],
+    queryFn: async () => {
+      const resp = await fetch(new URL(`sectores/${id}.geojson`, URL_DATOS));
+      if (!resp.ok) throw new Error(`No se pudo leer sectores/${id}.geojson (${resp.status})`);
+      return (await resp.json()) as FeatureCollection<Polygon | MultiPolygon, PropsSector>;
+    },
+    enabled: !!id,
+    staleTime: FRESCO,
+  });
+
 export type PropsComuna = { region_id: string; nombre: string; region: string };
 export type Geometrias = FeatureCollection<Polygon | MultiPolygon, PropsComuna>;
 

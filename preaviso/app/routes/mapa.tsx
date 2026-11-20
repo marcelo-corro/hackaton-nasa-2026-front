@@ -1,11 +1,12 @@
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, Box, Navigation2, Square, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router";
 import { Esqueleto, PuntoFuego } from "~/componentes/Basicos";
 import { Encabezado } from "~/componentes/Encabezado";
+import { RAMPA_PERCENTIL } from "~/componentes/mapa/capas";
 import { comunaPorId, regionCorta } from "~/lib/comunas";
-import { useActivos, useComunas, useRiesgo } from "~/lib/datos";
+import { useActivos, useComunas, useManifest, useRiesgo } from "~/lib/datos";
 import type { Horizonte } from "~/lib/esquemas";
 import { cn, COLOR_NIVEL, fecha, fechaBreve, HORIZONTES, NIVELES, porcentaje } from "~/lib/formato";
 import type { Route } from "./+types/mapa";
@@ -34,6 +35,15 @@ export default function Mapa() {
   const { data: riesgo } = useRiesgo(horizonte);
   const { data: activos } = useActivos();
   const { data: comunas } = useComunas();
+  const { data: manifest } = useManifest();
+  const [vista3d, setVista3d] = useState(false);
+
+  // Sectores de 1 km: solo para las comunas del piloto (Región de Valparaíso).
+  const conSectores = !!seleccion && !!manifest?.sectores?.regiones.includes(seleccion);
+  const sectoresDe = conSectores ? seleccion : null;
+  useEffect(() => {
+    if (!conSectores) setVista3d(false);
+  }, [conSectores]);
 
   const elegir = (id: string | null) => {
     const p = new URLSearchParams(params);
@@ -61,10 +71,17 @@ export default function Mapa() {
 
   return (
     <div className="flex h-dvh flex-col">
-      <Encabezado />
+      <Encabezado alElegirComuna={elegir} />
       <div className="relative flex-1 overflow-hidden">
         <Suspense fallback={<Esqueleto className="size-full rounded-none" />}>
-          <MapaChile horizonte={horizonte} seleccion={seleccion} onSeleccion={elegir} margen={margen} />
+          <MapaChile
+            horizonte={horizonte}
+            seleccion={seleccion}
+            onSeleccion={elegir}
+            sectoresDe={sectoresDe}
+            vista3d={vista3d}
+            margen={margen}
+          />
         </Suspense>
 
         {/* Horizonte */}
@@ -93,6 +110,20 @@ export default function Mapa() {
                 : ""}
             </span>
           </div>
+          {conSectores && (
+            <button
+              type="button"
+              onClick={() => setVista3d((v) => !v)}
+              aria-pressed={vista3d}
+              className={cn(
+                "ml-2 flex items-center gap-1.5 rounded-2xl border border-borde px-3 text-sm font-medium shadow-lg shadow-black/5 backdrop-blur-md transition",
+                vista3d ? "bg-tinta text-fondo" : "bg-superficie/90 text-tinta-suave hover:text-tinta",
+              )}
+            >
+              {vista3d ? <Square className="size-4" /> : <Box className="size-4" />}
+              {vista3d ? "2D" : "3D"}
+            </button>
+          )}
         </div>
 
         {/* Prioridades (escritorio) */}
@@ -130,7 +161,7 @@ export default function Mapa() {
                 );
               })}
             </ol>
-            <Leyenda />
+            <Leyenda nota={activos?.nota} />
           </aside>
         )}
 
@@ -199,6 +230,26 @@ export default function Mapa() {
                 </div>
               )}
 
+              {conSectores && (
+                <div className="mt-5 rounded-2xl bg-superficie-2 p-4 text-xs text-tinta-suave">
+                  <p className="text-sm font-semibold text-tinta">Sectores de 1 km</p>
+                  <p className="mt-1">
+                    Dónde es más probable que caiga el fuego dentro de la comuna, si lo hay. No predice dónde empieza.
+                  </p>
+                  <div className="mt-3 h-2 rounded-full" style={{ background: RAMPA_PERCENTIL }} />
+                  <div className="mt-1 flex justify-between">
+                    <span>Menos probable</span>
+                    <span>Más probable</span>
+                  </div>
+                  {manifest?.sectores?.modelo_b?.nota && (
+                    <p className="mt-3 leading-relaxed text-tinta-tenue">{manifest.sectores.modelo_b.nota}</p>
+                  )}
+                  <p className="mt-2 text-tinta-tenue">
+                    {vista3d ? "En 3D, la altura también muestra el orden." : "Prueba la vista 3D (botón de arriba)."}
+                  </p>
+                </div>
+              )}
+
               <Link
                 to={`/comuna/${sel.slug}`}
                 className="mt-5 flex items-center justify-center gap-2 rounded-2xl bg-tinta px-4 py-3 text-sm font-semibold text-fondo transition hover:opacity-90"
@@ -213,7 +264,7 @@ export default function Mapa() {
   );
 }
 
-function Leyenda() {
+function Leyenda({ nota }: { nota?: string }) {
   return (
     <div className="border-t border-borde/70 p-4 text-xs text-tinta-suave">
       <div className="flex flex-wrap gap-x-3 gap-y-1.5">
@@ -224,10 +275,23 @@ function Leyenda() {
           </span>
         ))}
       </div>
-      <p className="mt-2.5 flex items-center gap-1.5">
-        <span className="size-2.5 rounded-full bg-fuego" /> Incendio activo; al acercar, zona probable de avance (~70 % y
-        ~85 %)
-      </p>
+      <ul className="mt-2.5 space-y-1.5">
+        <li className="flex items-center gap-2">
+          <PuntoFuego className="size-2" /> Incendio activo (focos en 3 días)
+        </li>
+        <li className="flex items-center gap-2">
+          <span className="size-2.5 rounded-full border border-fuego bg-fuego/20" /> Zona probable de avance (al acercar)
+        </li>
+        <li className="flex items-center gap-2">
+          <Navigation2 className="size-3 fill-fuego text-fuego" /> Viento fuerte: hacia dónde sopla
+        </li>
+      </ul>
+      {nota && (
+        <details className="mt-2.5">
+          <summary className="cursor-pointer text-tinta-tenue hover:text-tinta">Qué tan confiable es</summary>
+          <p className="mt-1.5 leading-relaxed text-tinta-tenue">{nota}</p>
+        </details>
+      )}
     </div>
   );
 }

@@ -4,7 +4,13 @@ import { cn } from "~/lib/formato";
 import { useTema } from "~/lib/tema";
 import { Buscador } from "./Buscador";
 
-export function Encabezado({ conBuscador = true }: { conBuscador?: boolean }) {
+export function Encabezado({
+  conBuscador = true,
+  alElegirComuna,
+}: {
+  conBuscador?: boolean;
+  alElegirComuna?: (id: string) => void;
+}) {
   const [tema, cambiarTema] = useTema();
   return (
     <header className="sticky top-0 z-30 border-b border-borde/70 bg-fondo/80 backdrop-blur-md">
@@ -16,7 +22,9 @@ export function Encabezado({ conBuscador = true }: { conBuscador?: boolean }) {
           <span className="text-[17px] font-semibold tracking-tight">Preaviso</span>
         </Link>
 
-        <div className="mx-auto w-full max-w-sm">{conBuscador && <Buscador compacto />}</div>
+        <div className="mx-auto w-full max-w-sm">
+          {conBuscador && <Buscador compacto alElegir={alElegirComuna} />}
+        </div>
 
         <nav className="flex shrink-0 items-center gap-1">
           <NavLink
