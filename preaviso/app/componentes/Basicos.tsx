@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import type { Nivel } from "~/lib/esquemas";
 import { cn, COLOR_NIVEL, NIVELES } from "~/lib/formato";
 
@@ -58,7 +59,12 @@ export function PiePagina() {
         <a className="underline hover:text-tinta" href="https://open-meteo.com/">
           Open-Meteo.com
         </a>
-        ; límites comunales de la Biblioteca del Congreso Nacional. Proyecto NASA Space Apps Challenge 2026.{" "}
+        ; límites comunales de la Biblioteca del Congreso Nacional. Proyecto NASA Space Apps Challenge 2026, desafío
+        «Harmonization of MODIS and VIIRS Hot Spots».{" "}
+        <Link className="underline hover:text-tinta" to="/quienes-somos">
+          Quiénes somos
+        </Link>{" "}
+        ·{" "}
         <a className="underline hover:text-tinta" href="https://github.com/marcelo-corro/hackaton-nasa-2026-back">
           Metodología y código
         </a>{" "}

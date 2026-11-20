@@ -14,5 +14,5 @@ const comunas = JSON.parse(readFileSync(new URL("./app/lib/comunas-indice.json",
 export default {
   ssr: false,
   basename: base,
-  prerender: ["/", "/mapa", ...comunas.map((c) => `/comuna/${c.slug}`)],
+  prerender: ["/", "/mapa", "/quienes-somos", ...comunas.map((c) => `/comuna/${c.slug}`)],
 } satisfies Config;

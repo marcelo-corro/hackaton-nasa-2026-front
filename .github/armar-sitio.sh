@@ -43,7 +43,7 @@ tar -C "$RAIZ" --exclude=./.git --exclude=./.github --exclude=./preaviso --exclu
 touch "$SALIDA/.nojekyll"
 
 paginas="$(find "$SALIDA" -path "$SALIDA/$ANTERIOR" -prune -o -name index.html -print | wc -l | tr -d ' ')"
-[ "$paginas" -ge 347 ] || { echo "Solo $paginas páginas del front nuevo (se esperaban 347: inicio, mapa y 345 comunas)" >&2; exit 1; }
+[ "$paginas" -ge 348 ] || { echo "Solo $paginas páginas del front nuevo (se esperaban 348: inicio, mapa, quiénes somos y 345 comunas)" >&2; exit 1; }
 for f in 404.html plataforma.html producto.html movil.html "$ANTERIOR/index.html" "$ANTERIOR/plataforma.html"; do
   [ -f "$SALIDA/$f" ] || { echo "Falta $f en el sitio armado" >&2; exit 1; }
 done

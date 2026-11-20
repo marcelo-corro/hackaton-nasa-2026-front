@@ -39,6 +39,17 @@ export function Encabezado({
             <IconoMapa className="size-4" aria-hidden />
             <span className="hidden sm:inline">Mapa</span>
           </NavLink>
+          <NavLink
+            to="/quienes-somos"
+            className={({ isActive }) =>
+              cn(
+                "hidden items-center rounded-lg px-2.5 py-1.5 text-sm font-medium text-tinta-suave transition hover:bg-superficie-2 hover:text-tinta md:flex",
+                isActive && "bg-superficie-2 text-tinta",
+              )
+            }
+          >
+            Quiénes somos
+          </NavLink>
           <button
             type="button"
             onClick={() => cambiarTema(tema === "oscuro" ? "claro" : "oscuro")}

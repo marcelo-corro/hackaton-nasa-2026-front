@@ -40,7 +40,7 @@ jobs:
         working-directory: preaviso
         run: npm run typecheck
 
-      - name: Compilar el front nuevo (347 páginas)
+      - name: Compilar el front nuevo (348 páginas)
         working-directory: preaviso
         run: npm run build
 

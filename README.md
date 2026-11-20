@@ -28,9 +28,9 @@ push.
 
 ## Publicación
 
-Cada push a `main` corre `.github/workflows/publicar.yml`: compila `preaviso/` (347 páginas: inicio, mapa y una por
-comuna) y `.github/armar-sitio.sh` arma el sitio con el front nuevo en la raíz y la primera versión en `/v1/`. Pages
-tiene que estar con fuente "GitHub Actions". Para probar el sitio armado localmente:
+Cada push a `main` corre `.github/workflows/publicar.yml`: compila `preaviso/` (348 páginas: inicio, mapa, quiénes
+somos y una por comuna) y `.github/armar-sitio.sh` arma el sitio con el front nuevo en la raíz y la primera versión en
+`/v1/`. Pages tiene que estar con fuente "GitHub Actions". Para probar el sitio armado localmente:
 
 ```bash
 cd preaviso && npm ci && BASE_PATH=/hackaton-nasa-2026-front/ npm run build && cd ..
@@ -39,3 +39,37 @@ BASE_PATH=/hackaton-nasa-2026-front/ bash .github/armar-sitio.sh /ruta/temporal/
 
 y servir `/ruta/temporal` con cualquier servidor estático (en Git Bash de Windows, anteponer `MSYS_NO_PATHCONV=1` a
 la compilación).
+
+## Equipo
+
+Proyecto del NASA Space Apps Challenge 2026 (sede Santiago), desafío *Harmonization of MODIS and VIIRS Hot Spots*.
+Por orden alfabético de apellido:
+
+| Integrante | Rol | GitHub |
+|---|---|---|
+| Marcelo Corro | Software y datos · coordinación técnica | [marcelo-corro](https://github.com/marcelo-corro) |
+| José De Los Santos | Interfaz y presentación | [RemLover68](https://github.com/RemLover68) |
+| Katherine González | Investigación | — |
+| Sebastián Ríos | Investigación | — |
+| David Serrudo | Software y datos | [Daavidasc](https://github.com/Daavidasc) |
+
+| Área | Integrantes |
+|---|---|
+| Datos y modelos (back) | Marcelo Corro, David Serrudo |
+| Sitio web (front) | Marcelo Corro, David Serrudo, José De Los Santos |
+| Investigación (fuentes de datos y respaldo de las recomendaciones) | Katherine González, Sebastián Ríos |
+| Presentación | José De Los Santos |
+
+La primera versión de la interfaz, la que hoy está en `/v1/`, la hizo José De Los Santos en su repo
+[RemLover68/aivital-nasa-2026-front](https://github.com/RemLover68/aivital-nasa-2026-front); este es el repo oficial
+del sitio. Los roles no son fijos: cada integrante puede sumarse a otras áreas para aprender y aportar. El detalle
+de cada cambio al código está en el historial de commits y en
+[Contributors](https://github.com/marcelo-corro/hackaton-nasa-2026-front/graphs/contributors). Más sobre el equipo
+y la historia del proyecto en [Quiénes somos](https://marcelo-corro.github.io/hackaton-nasa-2026-front/quienes-somos).
+
+## Licencia
+
+El código está bajo licencia [MIT](LICENSE), con «Copyright (c) 2026 Los autores de Preaviso»: las personas de la
+sección [Equipo](#equipo) y quienes se sumen después. `vendor/leaflet/` conserva su propia licencia (BSD 2-Clause).
+Los datos que muestra el sitio vienen del [repo de datos](https://github.com/marcelo-corro/hackaton-nasa-2026-datos)
+(CC BY 4.0, con sus fuentes), y los mapas base de OpenFreeMap y OpenStreetMap, con su atribución en el mapa.
