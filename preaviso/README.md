@@ -1,4 +1,6 @@
-# Preaviso · front nuevo (beta)
+# Preaviso · front nuevo
+
+Publicado en la raíz del sitio: https://marcelo-corro.github.io/hackaton-nasa-2026-front/ (antes en `/beta/`).
 
 Riesgo de incendio por comuna (24 h, 48 h y 7 días) e incendios activos en Chile. Lee los datos que publica el
 back en <https://marcelo-corro.github.io/hackaton-nasa-2026-datos/> (contrato v0.8) al cargar la página: el sitio
@@ -27,8 +29,12 @@ npm run preview      # sirve build/client en http://localhost:5181
 npm run indice       # regenera app/lib/comunas-indice.json desde regiones.geojson
 ```
 
-Para publicar en una subcarpeta (GitHub Pages), compilar con `BASE_PATH=/hackaton-nasa-2026-front/beta/`. En Git
+Para publicar en una subcarpeta (GitHub Pages), compilar con `BASE_PATH=/hackaton-nasa-2026-front/`. En Git
 Bash de Windows anteponer `MSYS_NO_PATHCONV=1` (si no, convierte la ruta en `C:/Program Files/Git/...`).
+
+`public/` tiene, además del ícono, las páginas que mantienen los enlaces viejos: `404.html` (lleva `/beta/...` a la
+raíz y muestra "no encontramos esta página" para lo demás), `plataforma.html`, `producto.html` y `movil.html` (de la
+primera versión del sitio, que sigue en `/v1/`).
 
 ## Notas
 - `app/lib/esquemas.ts` describe el contrato; si el back cambia la forma de un archivo, la vista muestra un error

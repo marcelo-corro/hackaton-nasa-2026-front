@@ -57,6 +57,11 @@ export function PiePagina() {
         Nacional. Proyecto NASA Space Apps Challenge 2026.{" "}
         <a className="underline hover:text-tinta" href="https://github.com/marcelo-corro/hackaton-nasa-2026-back">
           Metodología y código
+        </a>{" "}
+        ·{" "}
+        {/* La primera versión del sitio queda publicada en /v1/ (ver .github/armar-sitio.sh); no es una ruta de la app. */}
+        <a className="underline hover:text-tinta" href={`${import.meta.env.BASE_URL}v1/`}>
+          Primera versión del sitio
         </a>
         .
       </p>

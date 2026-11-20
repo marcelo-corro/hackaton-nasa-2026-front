@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Página no encontrada · Preaviso</title>
+<!-- GitHub Pages muestra esta página para cualquier dirección que no existe (por eso todo va dentro del archivo). Las
+     direcciones del front nuevo cuando estaba en /beta/ (hasta el 20-11-2026) llevan a la misma página en la raíz. -->
+<script>
+  (function () {
+    var m = location.pathname.match(/^(\/(?:[^/]+\/)?)beta(?:\/(.*))?$/);
+    if (m) location.replace(m[1] + (m[2] || "") + location.search + location.hash);
+  })();
+</script>
+<style>body{margin:15vh auto;max-width:34rem;padding:0 1rem;font:16px/1.5 system-ui,sans-serif;background:#0e1012;color:#ecebe7}h1{font-size:1.5rem}a{color:#62b6d6}</style>
+</head>
+<body>
+<h1>No encontramos esta página</h1>
+<p>Puede que la dirección esté mal escrita o que la página ya no exista.</p>
+<p><a id="inicio" href="/hackaton-nasa-2026-front/">Ir al inicio de Preaviso</a></p>
+<script>
+  // En GitHub Pages de un repo, el sitio vive bajo /<nombre del repo>/.
+  var repo = location.pathname.split("/")[1];
+  if (repo && location.hostname.endsWith("github.io")) document.getElementById("inicio").href = "/" + repo + "/";
+</script>
+</body>
+</html>

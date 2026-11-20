@@ -1,5 +1,5 @@
-# Publica el sitio en GitHub Pages en cada push a main: el sitio actual en la raíz y el front nuevo
-# (preaviso/, React) en /beta/. Requiere Pages con fuente "GitHub Actions" (Settings → Pages).
+# Publica el sitio en GitHub Pages en cada push a main: el front nuevo (preaviso/, React) en la raíz y la primera
+# versión del sitio en /v1/. Requiere Pages con fuente "GitHub Actions" (Settings → Pages).
 # Los datos no se compilan aquí: el front los lee al cargar desde hackaton-nasa-2026-datos.
 name: Publicar sitio
 
@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      BASE_PATH: /${{ github.event.repository.name }}/beta/
+      BASE_PATH: /${{ github.event.repository.name }}/
     steps:
       - uses: actions/checkout@v7
 
@@ -40,11 +40,11 @@ jobs:
         working-directory: preaviso
         run: npm run typecheck
 
-      - name: Compilar el front nuevo (348 páginas)
+      - name: Compilar el front nuevo (347 páginas)
         working-directory: preaviso
         run: npm run build
 
-      - name: Armar el sitio (actual en la raíz, nuevo en /beta/)
+      - name: Armar el sitio (nuevo en la raíz, primera versión en /v1/)
         run: bash .github/armar-sitio.sh "$RUNNER_TEMP/sitio"
 
       - uses: actions/configure-pages@v6
@@ -58,7 +58,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.despliegue.outputs.page_url }}beta/
+      url: ${{ steps.despliegue.outputs.page_url }}
     steps:
       - id: despliegue
         uses: actions/deploy-pages@v5
