@@ -6,8 +6,9 @@ import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration }
 import type { Route } from "./+types/root";
 import "./app.css";
 
-// Se aplica antes de pintar para que no parpadee: tema guardado por el usuario o el del sistema.
-const TEMA_INICIAL = `try{var t=localStorage.getItem("tema");if(t==="oscuro"||(!t&&matchMedia("(prefers-color-scheme: dark)").matches))document.documentElement.classList.add("dark")}catch(e){}`;
+// Se aplica antes de pintar para que no parpadee: oscuro por defecto, claro solo si el usuario lo eligió con el botón
+// del encabezado (queda guardado). También ajusta el color de la barra del navegador en el celular.
+const TEMA_INICIAL = `try{if(localStorage.getItem("tema")==="claro")document.querySelector('meta[name="theme-color"]').content="#f5f4f0";else document.documentElement.classList.add("dark")}catch(e){document.documentElement.classList.add("dark")}`;
 
 export const meta: Route.MetaFunction = () => [
   { title: "Preaviso · Riesgo de incendio en tu comuna" },
@@ -24,8 +25,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta name="theme-color" content="#f5f4f0" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#0e1012" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#0e1012" suppressHydrationWarning />
         <script dangerouslySetInnerHTML={{ __html: TEMA_INICIAL }} />
         <Meta />
         <Links />

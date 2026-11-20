@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Modo oscuro por clase en <html> (la elige el usuario o el sistema; ver root.tsx). */
+/* Modo oscuro por clase en <html>: es el predeterminado; el usuario puede pasar a claro (ver root.tsx). */
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
