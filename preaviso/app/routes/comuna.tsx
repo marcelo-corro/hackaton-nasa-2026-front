@@ -17,6 +17,7 @@ import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router";
 import { ChipNivel, Esqueleto, PiePagina, PuntoFuego, Tarjeta, TituloSeccion } from "~/componentes/Basicos";
 import { Encabezado } from "~/componentes/Encabezado";
+import { useEnCliente } from "~/lib/cliente";
 import { comunaPorSlug } from "~/lib/comunas";
 import { useActivos, useComunas, useManifest, useRecomendaciones, useRiesgo } from "~/lib/datos";
 import type { Horizonte } from "~/lib/esquemas";
@@ -27,7 +28,16 @@ const MapaComuna = lazy(() => import("~/componentes/mapa/MapaComuna"));
 
 export const meta: Route.MetaFunction = ({ params }) => {
   const c = comunaPorSlug(params.slug);
-  return [{ title: c ? `${c.nombre} · Riesgo de incendio · Preaviso` : "Comuna no encontrada · Preaviso" }];
+  if (!c) return [{ title: "Comuna no encontrada · Preaviso" }];
+  const titulo = `${c.nombre} · Riesgo de incendio · Preaviso`;
+  const descripcion = `Riesgo de incendio en ${c.nombre} (${c.region}) para mañana, 48 horas y 7 días, incendios activos detectados por satélite y qué hacer.`;
+  return [
+    { title: titulo },
+    { name: "description", content: descripcion },
+    { property: "og:title", content: titulo },
+    { property: "og:description", content: descripcion },
+    { property: "og:type", content: "website" },
+  ];
 };
 
 // Qué dato del clima resalta cada condición que publica el back.
@@ -49,6 +59,7 @@ export default function Comuna() {
   const { data: manifest } = useManifest();
   const { data: r7 } = useRiesgo("168");
   const [horizonteRec, setHorizonteRec] = useState<Horizonte>("24");
+  const enCliente = useEnCliente();
 
   const datos = useMemo(() => comunas?.comunas.find((c) => c.region_id === indice?.id), [comunas, indice]);
   const incendios = useMemo(
@@ -299,9 +310,13 @@ export default function Comuna() {
           <aside className="space-y-4">
             <div className="overflow-hidden rounded-3xl border border-borde/80 bg-superficie">
               <div className="h-72 lg:h-80">
-                <Suspense fallback={<Esqueleto className="h-full rounded-none" />}>
-                  <MapaComuna id={indice.id} caja={indice.caja} nivel={nivel24} />
-                </Suspense>
+                {enCliente ? (
+                  <Suspense fallback={<Esqueleto className="h-full rounded-none" />}>
+                    <MapaComuna id={indice.id} caja={indice.caja} nivel={nivel24} />
+                  </Suspense>
+                ) : (
+                  <Esqueleto className="h-full rounded-none" />
+                )}
               </div>
               <Link
                 to={`/mapa?comuna=${indice.id}`}

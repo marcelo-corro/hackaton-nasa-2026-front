@@ -1,0 +1,64 @@
+# Publica el sitio en GitHub Pages en cada push a main: el sitio actual en la raíz y el front nuevo
+# (preaviso/, React) en /beta/. Requiere Pages con fuente "GitHub Actions" (Settings → Pages).
+# Los datos no se compilan aquí: el front los lee al cargar desde hackaton-nasa-2026-datos.
+name: Publicar sitio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  compilar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      BASE_PATH: /${{ github.event.repository.name }}/beta/
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: preaviso/package-lock.json
+
+      - name: Librerías
+        working-directory: preaviso
+        run: npm ci
+
+      - name: Revisión de tipos
+        working-directory: preaviso
+        run: npm run typecheck
+
+      - name: Compilar el front nuevo (348 páginas)
+        working-directory: preaviso
+        run: npm run build
+
+      - name: Armar el sitio (actual en la raíz, nuevo en /beta/)
+        run: bash .github/armar-sitio.sh "$RUNNER_TEMP/sitio"
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: ${{ runner.temp }}/sitio
+
+  publicar:
+    needs: compilar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}beta/
+    steps:
+      - id: despliegue
+        uses: actions/deploy-pages@v5

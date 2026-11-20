@@ -5,6 +5,7 @@ import { Link, useSearchParams } from "react-router";
 import { Esqueleto, PuntoFuego } from "~/componentes/Basicos";
 import { Encabezado } from "~/componentes/Encabezado";
 import { RAMPA_PERCENTIL } from "~/componentes/mapa/capas";
+import { useEnCliente } from "~/lib/cliente";
 import { comunaPorId, regionCorta } from "~/lib/comunas";
 import { useActivos, useComunas, useManifest, useRiesgo } from "~/lib/datos";
 import type { Horizonte } from "~/lib/esquemas";
@@ -30,7 +31,9 @@ function useEscritorio() {
 export default function Mapa() {
   const [params, setParams] = useSearchParams();
   const [horizonte, setHorizonte] = useState<Horizonte>("24");
-  const seleccion = params.get("comuna");
+  const enCliente = useEnCliente();
+  // La página se genera sin "?comuna=": se lee recién después de hidratar, para que el HTML calce.
+  const seleccion = enCliente ? params.get("comuna") : null;
   const escritorio = useEscritorio();
   const { data: riesgo } = useRiesgo(horizonte);
   const { data: activos } = useActivos();
@@ -73,16 +76,20 @@ export default function Mapa() {
     <div className="flex h-dvh flex-col">
       <Encabezado alElegirComuna={elegir} />
       <div className="relative flex-1 overflow-hidden">
-        <Suspense fallback={<Esqueleto className="size-full rounded-none" />}>
-          <MapaChile
-            horizonte={horizonte}
-            seleccion={seleccion}
-            onSeleccion={elegir}
-            sectoresDe={sectoresDe}
-            vista3d={vista3d}
-            margen={margen}
-          />
-        </Suspense>
+        {enCliente ? (
+          <Suspense fallback={<Esqueleto className="size-full rounded-none" />}>
+            <MapaChile
+              horizonte={horizonte}
+              seleccion={seleccion}
+              onSeleccion={elegir}
+              sectoresDe={sectoresDe}
+              vista3d={vista3d}
+              margen={margen}
+            />
+          </Suspense>
+        ) : (
+          <Esqueleto className="size-full rounded-none" />
+        )}
 
         {/* Horizonte */}
         <div className="absolute left-2 right-2 top-3 z-20 flex justify-center md:left-4 md:right-auto md:justify-start">
