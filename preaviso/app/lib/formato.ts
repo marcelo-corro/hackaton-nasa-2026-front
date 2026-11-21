@@ -15,9 +15,14 @@ const sumarDias = (iso: string, d: number) => {
   return f;
 };
 
+const nombreMes = new Intl.DateTimeFormat("es-CL", { month: "long", timeZone: "UTC" });
+
 export const fecha = (iso: string) => fechaLarga.format(aFecha(iso));
 export const fechaBreve = (iso: string) => fechaCorta.format(aFecha(iso)).replace(".", "");
 export const dia = (iso: string) => diaSemana.format(aFecha(iso));
+export const mes = (iso: string) => nombreMes.format(aFecha(iso));
+/** La fecha (AAAA-MM-DD) d días después. */
+export const despues = (iso: string, d: number) => sumarDias(iso, d).toISOString().slice(0, 10);
 
 export const porcentaje = (p: number) =>
   `${(p * 100).toLocaleString("es-CL", { maximumFractionDigits: p < 0.1 ? 1 : 0 })} %`;
@@ -65,6 +70,26 @@ export function cuandoFrase(iso: string): string {
   if (dif === 0) return "hoy";
   if (dif === 1) return "mañana";
   return `el ${dia(iso)} ${fecha(iso)}`;
+}
+
+/** Para usar dentro de una frase, con la fecha: "hoy, sábado 21 de noviembre" o "el sábado 21 de noviembre". */
+export function cuandoConFecha(iso: string): string {
+  const c = cuandoFrase(iso);
+  return c === "hoy" || c === "mañana" ? `${c}, ${dia(iso)} ${fecha(iso)}` : c;
+}
+
+/**
+ * Cómo se compara la probabilidad de foco del día con lo normal: la parte de los días de ese mes con focos en la
+ * comuna (2012-2026, en %; es la climatología contra la que se mide el modelo).
+ */
+export function frenteALoNormal(prob: number, normalPct: number): string {
+  const normal = normalPct / 100;
+  if (normal < 0.005) return prob < 0.005 ? "parecido a lo normal" : "sobre lo normal";
+  const veces = prob / normal;
+  if (veces >= 1.95) return `${veces.toLocaleString("es-CL", { maximumFractionDigits: veces < 10 ? 1 : 0 })} veces lo normal`;
+  if (veces >= 1.25) return "sobre lo normal";
+  if (veces > 0.8) return "parecido a lo normal";
+  return "bajo lo normal";
 }
 
 /** "Hoy", "Mañana" o el día de la semana, según la fecha de Chile del visitante. */

@@ -21,7 +21,20 @@ import { useEnCliente } from "~/lib/cliente";
 import { comunaPorSlug } from "~/lib/comunas";
 import { useActivos, useComunas, useManifest, useRecomendaciones, useRiesgo } from "~/lib/datos";
 import type { Horizonte } from "~/lib/esquemas";
-import { cn, COLOR_NIVEL, diaCompleto, fecha, fechaBreve, HORIZONTES, NIVELES, porcentaje } from "~/lib/formato";
+import {
+  cn,
+  COLOR_NIVEL,
+  cuandoConFecha,
+  cuandoFrase,
+  despues,
+  fecha,
+  fechaBreve,
+  frenteALoNormal,
+  HORIZONTES,
+  mes,
+  NIVELES,
+  porcentaje,
+} from "~/lib/formato";
 import type { Route } from "./+types/comuna";
 
 const MapaComuna = lazy(() => import("~/componentes/mapa/MapaComuna"));
@@ -30,7 +43,7 @@ export const meta: Route.MetaFunction = ({ params }) => {
   const c = comunaPorSlug(params.slug);
   if (!c) return [{ title: "Comuna no encontrada · Preaviso" }];
   const titulo = `${c.nombre} · Riesgo de incendio · Preaviso`;
-  const descripcion = `Riesgo de incendio en ${c.nombre} (${c.region}) para mañana, 48 horas y 7 días, incendios activos detectados por satélite y qué hacer.`;
+  const descripcion = `Pronóstico de riesgo de incendio en ${c.nombre} (${c.region}) a 24 horas, 48 horas y 7 días, incendios activos detectados por satélite y qué hacer.`;
   return [
     { title: titulo },
     { name: "description", content: descripcion },
@@ -109,7 +122,7 @@ export default function Comuna() {
 
         <div className="mt-6 grid gap-4 lg:grid-cols-3">
           <div className="space-y-4 lg:col-span-2">
-            {/* Nivel de mañana: la respuesta a "¿cómo está mi comuna?" */}
+            {/* Pronóstico a 24 h: la respuesta a "¿cómo está mi comuna?" */}
             {isLoading || !datos || !desde ? (
               <Esqueleto className="h-52 rounded-3xl" />
             ) : (
@@ -123,12 +136,23 @@ export default function Comuna() {
                   COLOR_NIVEL[nivel24!].texto,
                 )}
               >
-                <p className="text-sm font-medium opacity-80">{diaCompleto(desde)}</p>
+                <p className="text-sm font-medium opacity-80">Pronóstico para {cuandoConFecha(desde)}</p>
                 <p className="mt-2 text-4xl font-semibold tracking-tight sm:text-5xl">{NIVELES[nivel24!].nombre}</p>
                 <p className="mt-3 max-w-md text-base opacity-90">
                   <span className="cifra font-semibold">{porcentaje(datos.riesgo["24"].prob_foco)}</span> de
-                  probabilidad de que haya al menos un foco de incendio en la comuna.
+                  probabilidad de que los satélites detecten al menos un foco de incendio en la comuna.
                 </p>
+                {datos.pct_dias_con_fuego_mes !== null && (
+                  <p className="mt-2 max-w-md text-sm opacity-80">
+                    En {mes(desde)} lo normal es{" "}
+                    <span className="cifra font-semibold">{porcentaje(datos.pct_dias_con_fuego_mes / 100)}</span> (parte
+                    de los días con focos en la comuna, 2012-2026): {cuandoFrase(desde)} está{" "}
+                    <span className="font-semibold">
+                      {frenteALoNormal(datos.riesgo["24"].prob_foco, datos.pct_dias_con_fuego_mes)}
+                    </span>
+                    .
+                  </p>
+                )}
                 <Escala nivel={nivel24!} />
               </motion.section>
             )}
@@ -156,13 +180,16 @@ export default function Comuna() {
               })}
             </div>
             <p className="px-1 text-xs leading-relaxed text-tinta-tenue">
-              Cada horizonte usa sus propios cortes de nivel: a 7 días las probabilidades siempre son más altas, no las
-              compares con las de mañana. {r7?.orientativo && r7.nota}
+              Cada plazo usa sus propios cortes de nivel: a 7 días las probabilidades siempre son más altas, no las
+              compares con las de 24 h. {r7?.orientativo && r7.nota}
             </p>
 
             {/* Incendios activos */}
             <Tarjeta>
               <TituloSeccion>Incendios activos</TituloSeccion>
+              <p className="-mt-2 mb-4 text-xs text-tinta-tenue">
+                Lo que los satélites ya detectaron en los últimos 3 días; no es un pronóstico.
+              </p>
               {!datos ? (
                 <Esqueleto className="h-14" />
               ) : datos.fuego_activo ? (
@@ -178,7 +205,9 @@ export default function Comuna() {
                         {i.focos_incendio === 1 ? "foco" : "focos"}
                       </p>
                       <p className="mt-1 text-tinta-suave">
-                        Zona probable de avance para mañana: dentro de{" "}
+                        Zona probable de avance{" "}
+                        {activos ? `para ${cuandoFrase(despues(activos.ultimo_dato, 1))}` : "al día siguiente"}: dentro
+                        de{" "}
                         {i.radio_km_70.toLocaleString("es-CL", { maximumFractionDigits: 1 })} km (~70 % de las veces) y{" "}
                         {i.radio_km_85.toLocaleString("es-CL", { maximumFractionDigits: 1 })} km (~85 %).
                       </p>

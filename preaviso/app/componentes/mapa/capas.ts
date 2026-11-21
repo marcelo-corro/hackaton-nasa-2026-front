@@ -116,15 +116,26 @@ export const capas = (tema: Tema) => {
       type: "fill",
       paint: {
         "fill-color": colorNivel as never,
-        // Más transparente al acercarse, para ver caminos y poblados bajo el color.
+        // Más transparente al acercarse, para ver caminos y poblados bajo el color. El riesgo bajo va más tenue, para
+        // que se vea a primera vista dónde el pronóstico es medio o más.
         "fill-opacity": [
           "interpolate",
           ["linear"],
           ["zoom"],
           4,
-          ["case", ["boolean", ["feature-state", "hover"], false], 0.92, oscuro ? 0.66 : 0.74],
+          [
+            "case",
+            ["boolean", ["feature-state", "hover"], false],
+            0.92,
+            ["match", ["get", "nivel"], "bajo", oscuro ? 0.32 : 0.4, oscuro ? 0.8 : 0.85],
+          ],
           10,
-          ["case", ["boolean", ["feature-state", "hover"], false], 0.6, oscuro ? 0.36 : 0.42],
+          [
+            "case",
+            ["boolean", ["feature-state", "hover"], false],
+            0.6,
+            ["match", ["get", "nivel"], "bajo", oscuro ? 0.2 : 0.24, oscuro ? 0.42 : 0.48],
+          ],
         ],
       },
     } satisfies LayerProps,

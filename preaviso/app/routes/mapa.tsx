@@ -9,7 +9,18 @@ import { useEnCliente } from "~/lib/cliente";
 import { comunaPorId, regionCorta } from "~/lib/comunas";
 import { useActivos, useComunas, useManifest, useRiesgo } from "~/lib/datos";
 import type { Horizonte } from "~/lib/esquemas";
-import { cn, COLOR_NIVEL, fecha, fechaBreve, HORIZONTES, NIVELES, porcentaje } from "~/lib/formato";
+import {
+  cn,
+  COLOR_NIVEL,
+  cuandoFrase,
+  fecha,
+  fechaBreve,
+  frenteALoNormal,
+  HORIZONTES,
+  mes,
+  NIVELES,
+  porcentaje,
+} from "~/lib/formato";
 import type { Route } from "./+types/mapa";
 
 const MapaChile = lazy(() => import("~/componentes/mapa/MapaChile"));
@@ -133,14 +144,18 @@ export default function Mapa() {
           )}
         </div>
 
-        {/* Prioridades (escritorio) */}
+        {/* Pronóstico (escritorio): las comunas con más riesgo en el plazo elegido */}
         {escritorio && (
           <aside className="absolute bottom-6 left-4 top-[4.5rem] z-20 flex w-80 flex-col overflow-hidden rounded-3xl border border-borde bg-superficie/92 shadow-xl shadow-black/5 backdrop-blur-md">
             <div className="border-b border-borde/70 p-4">
-              <h2 className="text-[15px] font-semibold">Prioridades</h2>
-              <p className="mt-1 flex items-center gap-2 text-xs text-tinta-suave">
-                <PuntoFuego className="size-2" />
-                {activos ? `${activos.incendios.length} incendios activos (3 días)` : "Cargando…"}
+              <h2 className="text-[15px] font-semibold">
+                Pronóstico de riesgo
+                {riesgo && horizonte === "24" && ` · ${cuandoFrase(riesgo.valido_para)}`}
+                {horizonte !== "24" && ` · ${HORIZONTES.find((h) => h.id === horizonte)?.nombre}`}
+              </h2>
+              <p className="mt-1 text-xs leading-relaxed text-tinta-suave">
+                Comunas en riesgo medio o más, por probabilidad de que los satélites detecten un foco. El color de cada
+                comuna en el mapa es su nivel.
               </p>
             </div>
             <ol className="flex-1 overflow-y-auto p-2">
@@ -168,7 +183,7 @@ export default function Mapa() {
                 );
               })}
             </ol>
-            <Leyenda nota={activos?.nota} />
+            <Leyenda nota={activos?.nota} incendios={activos?.incendios.length} />
           </aside>
         )}
 
@@ -207,10 +222,16 @@ export default function Mapa() {
               {selRiesgo ? (
                 <div className={cn("mt-4 rounded-2xl p-4", COLOR_NIVEL[selRiesgo.nivel].fondo, COLOR_NIVEL[selRiesgo.nivel].texto)}>
                   <p className="text-xs font-medium opacity-80">
-                    {HORIZONTES.find((h) => h.id === horizonte)?.nombre}
+                    Pronóstico · {HORIZONTES.find((h) => h.id === horizonte)?.nombre}
                   </p>
                   <p className="mt-1 text-2xl font-semibold">{NIVELES[selRiesgo.nivel].nombre}</p>
                   <p className="cifra mt-1 text-sm opacity-90">{porcentaje(selRiesgo.prob_foco)} de probabilidad de foco</p>
+                  {horizonte === "24" && riesgo && selDatos && selDatos.pct_dias_con_fuego_mes !== null && (
+                    <p className="mt-1 text-xs opacity-80">
+                      Lo normal en {mes(riesgo.valido_para)}: {porcentaje(selDatos.pct_dias_con_fuego_mes / 100)} ·{" "}
+                      {frenteALoNormal(selRiesgo.prob_foco, selDatos.pct_dias_con_fuego_mes)}
+                    </p>
+                  )}
                 </div>
               ) : (
                 <Esqueleto className="mt-4 h-24" />
@@ -271,9 +292,10 @@ export default function Mapa() {
   );
 }
 
-function Leyenda({ nota }: { nota?: string }) {
+function Leyenda({ nota, incendios }: { nota?: string; incendios?: number }) {
   return (
     <div className="border-t border-borde/70 p-4 text-xs text-tinta-suave">
+      <p className="mb-1.5 font-medium text-tinta">Pronóstico: color de la comuna</p>
       <div className="flex flex-wrap gap-x-3 gap-y-1.5">
         {(["bajo", "medio", "alto", "muy_alto"] as const).map((n) => (
           <span key={n} className="flex items-center gap-1.5">
@@ -282,9 +304,12 @@ function Leyenda({ nota }: { nota?: string }) {
           </span>
         ))}
       </div>
-      <ul className="mt-2.5 space-y-1.5">
+      <p className="mb-1.5 mt-3 font-medium text-tinta">
+        Incendios activos: ya detectados{incendios !== undefined && ` (${incendios} en Chile)`}
+      </p>
+      <ul className="space-y-1.5">
         <li className="flex items-center gap-2">
-          <PuntoFuego className="size-2" /> Incendio activo (focos en 3 días)
+          <PuntoFuego className="size-2" /> Incendio con focos en los últimos 3 días
         </li>
         <li className="flex items-center gap-2">
           <span className="size-2.5 rounded-full border border-fuego bg-fuego/20" /> Zona probable de avance (al acercar)

@@ -15,7 +15,7 @@ export const meta: Route.MetaFunction = () => [
   {
     name: "description",
     content:
-      "Probabilidad de incendio en las 345 comunas de Chile para mañana, 48 horas y 7 días, con incendios activos detectados por satélite.",
+      "Pronóstico de riesgo de incendio en las 345 comunas de Chile a 24 horas, 48 horas y 7 días, con los incendios activos detectados por satélite.",
   },
 ];
 
