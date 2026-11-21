@@ -61,10 +61,20 @@ export const useRecomendaciones = () =>
 
 export type PropsSector = {
   sector_id: string;
+  lat: number;
+  lon: number;
   percentil_en_comuna: number;
+  /** Si hay fuego en la comuna el día siguiente, probabilidad de que caiga en este sector (modelo B). */
+  prob_si_fuego_en_comuna: number | null;
   prob_incendio_grande: number | null;
   rasgos: string[];
+  pct_interfaz: number | null;
+  pct_pastizal: number | null;
+  pct_bosque_matorral: number | null;
+  pct_cultivo: number | null;
+  pendiente_media: number | null;
   dias_con_fuego: number;
+  ultimo_fuego: string | null;
 };
 
 /** Sectores de 1 km de una comuna del piloto (solo las de manifest.sectores.regiones). */

@@ -17,6 +17,7 @@ import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router";
 import { ChipNivel, Esqueleto, PiePagina, PuntoFuego, Tarjeta, TituloSeccion } from "~/componentes/Basicos";
 import { Encabezado } from "~/componentes/Encabezado";
+import { SectoresComuna } from "~/componentes/SectoresComuna";
 import { useEnCliente } from "~/lib/cliente";
 import { comunaPorSlug } from "~/lib/comunas";
 import { useActivos, useComunas, useManifest, useRecomendaciones, useRiesgo } from "~/lib/datos";
@@ -93,6 +94,8 @@ export default function Comuna() {
   }
 
   const nivel24 = datos?.riesgo["24"]?.nivel;
+  // Sectores de 1 km: solo las comunas del piloto (Región de Valparaíso).
+  const conSectores = !!manifest?.sectores?.regiones.includes(indice.id);
   const desde = comunas?.valido_para;
   const destacados = new Set((datos?.clima_ultimo_dia?.condiciones ?? []).map((c) => CONDICION_DATO[c]));
   const listaRecs = datos?.recomendaciones[horizonteRec] ?? [];
@@ -183,6 +186,9 @@ export default function Comuna() {
               Cada plazo usa sus propios cortes de nivel: a 7 días las probabilidades siempre son más altas, no las
               compares con las de 24 h. {r7?.orientativo && r7.nota}
             </p>
+
+            {/* Dónde dentro de la comuna (piloto de sectores) */}
+            {conSectores && <SectoresComuna id={indice.id} nombre={indice.nombre} caja={indice.caja} />}
 
             {/* Incendios activos */}
             <Tarjeta>
@@ -338,15 +344,18 @@ export default function Comuna() {
 
           <aside className="space-y-4">
             <div className="overflow-hidden rounded-3xl border border-borde/80 bg-superficie">
-              <div className="h-72 lg:h-80">
-                {enCliente ? (
-                  <Suspense fallback={<Esqueleto className="h-full rounded-none" />}>
-                    <MapaComuna id={indice.id} caja={indice.caja} nivel={nivel24} />
-                  </Suspense>
-                ) : (
-                  <Esqueleto className="h-full rounded-none" />
-                )}
-              </div>
+              {/* En las comunas con sectores, el mapa va en la sección de sectores */}
+              {!conSectores && (
+                <div className="h-72 lg:h-80">
+                  {enCliente ? (
+                    <Suspense fallback={<Esqueleto className="h-full rounded-none" />}>
+                      <MapaComuna id={indice.id} caja={indice.caja} nivel={nivel24} />
+                    </Suspense>
+                  ) : (
+                    <Esqueleto className="h-full rounded-none" />
+                  )}
+                </div>
+              )}
               <Link
                 to={`/mapa?comuna=${indice.id}`}
                 className="flex items-center justify-between px-5 py-3.5 text-sm font-medium text-marca hover:underline"
