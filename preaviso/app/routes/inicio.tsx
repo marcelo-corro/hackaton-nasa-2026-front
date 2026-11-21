@@ -198,8 +198,8 @@ export default function Inicio() {
               )}
               {activos && (
                 <p className="mt-5 text-xs leading-relaxed text-tinta-tenue">
-                  Focos satelitales VIIRS hasta el {fecha(activos.ultimo_dato)}. Fuera de la Región de Valparaíso pueden
-                  incluir alguna fuente industrial que FIRMS no marca.
+                  Focos satelitales VIIRS hasta el {fecha(activos.ultimo_dato)}, sin las fuentes fijas que se repiten año
+                  tras año en el mismo lugar (industria, minería, volcanes).
                 </p>
               )}
             </Tarjeta>
