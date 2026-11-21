@@ -247,7 +247,19 @@ export default function Comuna() {
                   {datos.clima_ultimo_dia && (
                     <>
                       <p className="mb-3 mt-6 text-xs font-medium text-tinta-suave">
-                        Clima del {fecha(datos.clima_ultimo_dia.fecha_clima)} (último día con datos de NASA POWER)
+                        {datos.clima_ultimo_dia.pronostico ? (
+                          <>
+                            Pronóstico del tiempo para {cuandoConFecha(datos.clima_ultimo_dia.fecha_clima)} (
+                            <a className="underline hover:text-tinta" href="https://open-meteo.com/">
+                              Open-Meteo.com
+                            </a>
+                            )
+                          </>
+                        ) : (
+                          <>
+                            Clima del {fecha(datos.clima_ultimo_dia.fecha_clima)} (último día con datos de NASA POWER)
+                          </>
+                        )}
                       </p>
                       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                         <Dato

@@ -33,6 +33,9 @@ const RiesgoHorizonte = z.object({ prob_foco: z.number(), nivel: Nivel });
 
 const Clima = z.object({
   fecha_clima: z.string(),
+  /** Aditivo (21-11-2026): true si es el pronóstico de Open-Meteo del día que se predice; si no, NASA POWER. */
+  pronostico: z.boolean().optional(),
+  fuente: z.string().optional(),
   tmax: z.number().nullable(),
   tmax_percentil: z.number().nullable().optional(),
   hrmin: z.number().nullable(),
