@@ -53,8 +53,12 @@ export function PiePagina() {
         población. Ante un incendio, llama al 130 (CONAF), 132 (Bomberos) o 133 (Carabineros).
       </p>
       <p className="mt-2">
-        Datos: focos de NASA FIRMS (VIIRS y MODIS) y clima de NASA POWER; límites comunales de la Biblioteca del Congreso
-        Nacional. Proyecto NASA Space Apps Challenge 2026.{" "}
+        Datos: focos de NASA FIRMS (VIIRS y MODIS), clima de NASA POWER y pronóstico del tiempo de{" "}
+        {/* Open-Meteo (CC BY 4.0) pide un enlace visible donde se usan sus datos */}
+        <a className="underline hover:text-tinta" href="https://open-meteo.com/">
+          Open-Meteo.com
+        </a>
+        ; límites comunales de la Biblioteca del Congreso Nacional. Proyecto NASA Space Apps Challenge 2026.{" "}
         <a className="underline hover:text-tinta" href="https://github.com/marcelo-corro/hackaton-nasa-2026-back">
           Metodología y código
         </a>{" "}
