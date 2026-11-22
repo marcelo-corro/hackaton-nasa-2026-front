@@ -6,7 +6,7 @@ zona probable de avance, sectores de 1 km del piloto de la Región de Valparaís
 **https://marcelo-corro.github.io/hackaton-nasa-2026-front/**
 
 - Código del back: https://github.com/marcelo-corro/hackaton-nasa-2026-back
-- Datos (back del equipo, contrato 0.8): https://marcelo-corro.github.io/hackaton-nasa-2026-datos/
+- Datos (back del equipo, contrato 0.9): https://marcelo-corro.github.io/hackaton-nasa-2026-datos/
 
 ## Qué se publica
 
@@ -21,10 +21,13 @@ abre esa comuna en el mapa nuevo, y `producto.html` y `movil.html` llevan a su p
 
 ## Primera versión (`/v1/`)
 
-La raíz de este repo es una copia de `web/` del front de https://github.com/RemLover68/aivital-nasa-2026-front
-(commit 8e4d8ba); no se edita aquí. Para actualizarla, desde `NASA_SpaceApps` con el clon de ese front en
-`revision-front`: `bash aivital-preaviso/actualizar.sh`, revisar `git -C aivital-preaviso status`, y hacer commit y
-push.
+La raíz de este repo (todo salvo `preaviso/`, `.github/`, `actualizar.sh` y este README) es una copia de `web/` del
+repo [RemLover68/aivital-nasa-2026-front](https://github.com/RemLover68/aivital-nasa-2026-front) (commit 8e4d8ba):
+**la versión de José De Los Santos**, que la creó en ese repo, con aportes de Marcelo Corro (conexión con los datos
+reales del back, incendios activos, clima y recomendaciones de las 345 comunas) y de David Serrudo. Se publica aquí en
+`/v1/` tal cual, bajo las condiciones de ese repo (ver [Licencia](#licencia)), y no se edita aquí. Para actualizarla,
+desde `NASA_SpaceApps` con el clon de ese front en `revision-front`: `bash aivital-preaviso/actualizar.sh`, revisar
+`git -C aivital-preaviso status`, y hacer commit y push.
 
 ## Publicación
 
@@ -61,15 +64,20 @@ Por orden alfabético de apellido:
 | Presentación | José De Los Santos |
 
 La primera versión de la interfaz, la que hoy está en `/v1/`, la hizo José De Los Santos en su repo
-[RemLover68/aivital-nasa-2026-front](https://github.com/RemLover68/aivital-nasa-2026-front); este es el repo oficial
-del sitio. Los roles no son fijos: cada integrante puede sumarse a otras áreas para aprender y aportar. El detalle
+[RemLover68/aivital-nasa-2026-front](https://github.com/RemLover68/aivital-nasa-2026-front), con aportes de Marcelo
+Corro y David Serrudo; este es el repo oficial del sitio. Los roles no son fijos: cada integrante puede sumarse a otras áreas para aprender y aportar. El detalle
 de cada cambio al código está en el historial de commits y en
 [Contributors](https://github.com/marcelo-corro/hackaton-nasa-2026-front/graphs/contributors). Más sobre el equipo
 y la historia del proyecto en [Quiénes somos](https://marcelo-corro.github.io/hackaton-nasa-2026-front/quienes-somos).
 
 ## Licencia
 
-El código está bajo licencia [MIT](LICENSE), con «Copyright (c) 2026 Los autores de Preaviso»: las personas de la
-sección [Equipo](#equipo) y quienes se sumen después. `vendor/leaflet/` conserva su propia licencia (BSD 2-Clause).
+Este repo tiene dos partes con condiciones distintas:
+
+| Parte | Qué es | Condiciones |
+|---|---|---|
+| `preaviso/`, `.github/` y `actualizar.sh` | El front nuevo (lo que se publica en la raíz del sitio) y los scripts de publicación | Licencia [MIT](preaviso/LICENSE), con «Copyright (c) 2026 Los autores de Preaviso»: las personas de la sección [Equipo](#equipo) y quienes se sumen después |
+| El resto de la raíz (se publica en `/v1/`) | La primera versión: copia del repo de José De Los Santos (con aportes de Marcelo Corro y David Serrudo) | **Las de su repo de origen**, [RemLover68/aivital-nasa-2026-front](https://github.com/RemLover68/aivital-nasa-2026-front). Ese repo no tiene licencia, así que la MIT de arriba **no** la cubre: por ahora se publica aquí tal cual, como parte del proyecto, y para reutilizarla fuera de él hay que pedirle permiso a José. `vendor/leaflet/` conserva su propia licencia (BSD 2-Clause) |
+
 Los datos que muestra el sitio vienen del [repo de datos](https://github.com/marcelo-corro/hackaton-nasa-2026-datos)
 (CC BY 4.0, con sus fuentes), y los mapas base de OpenFreeMap y OpenStreetMap, con su atribución en el mapa.
