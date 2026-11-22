@@ -1,8 +1,8 @@
-// Forma de los datos que publica el back (contrato v0.8, aivital-incendios-back/contracts/README.md).
+// Forma de los datos que publica el back (contrato v0.9, aivital-incendios-back/contracts/README.md).
 // Los esquemas validan solo lo que el front usa; los campos nuevos (cambios aditivos) se ignoran sin romper.
 import { z } from "zod";
 
-export const CONTRATOS_SOPORTADOS = ["0.8"];
+export const CONTRATOS_SOPORTADOS = ["0.8", "0.9"];
 
 export const Nivel = z.enum(["bajo", "medio", "alto", "muy_alto"]);
 export type Nivel = z.infer<typeof Nivel>;
@@ -115,9 +115,11 @@ export type Recomendaciones = z.infer<typeof Recomendaciones>;
 export const Manifest = z.object({
   contrato: z.string(),
   generado_utc: z.string(),
+  archivos: z.record(z.string(), z.string()).optional(),
   sectores: z
     .object({
       codigo_region: z.string(),
+      codigos_region: z.array(z.string()).optional(), // v0.9: todas las regiones con sectores
       regiones: z.array(z.string()),
       modelo_b: z.object({ nota: z.string() }).optional(),
     })

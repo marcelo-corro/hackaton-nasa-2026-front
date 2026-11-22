@@ -11,6 +11,7 @@ import {
   Riesgo,
   type Horizonte,
 } from "./esquemas";
+import { armarSectores, type Sectores, SectoresDia, SectoresFijo } from "./sectores";
 
 export const URL_DATOS =
   import.meta.env.VITE_URL_DATOS ?? "https://marcelo-corro.github.io/hackaton-nasa-2026-datos/";
@@ -77,18 +78,32 @@ export type PropsSector = {
   ultimo_fuego: string | null;
 };
 
-/** Sectores de 1 km de una comuna del piloto (solo las de manifest.sectores.regiones). */
-export const useSectores = (id: string | null) =>
-  useQuery({
-    queryKey: ["sectores", id],
-    queryFn: async () => {
+/**
+ * Sectores de 1 km de una comuna del piloto (solo las de manifest.sectores.regiones). Desde el contrato v0.9 vienen en
+ * dos archivos compactos (fijo y diario, ver lib/sectores.ts); con datos anteriores, en un GeoJSON por comuna.
+ */
+export const useSectores = (id: string | null) => {
+  const { data: manifest } = useManifest();
+  const archivos = manifest?.archivos;
+  return useQuery({
+    queryKey: ["sectores", id, archivos?.sectores_fijo ?? "geojson"],
+    queryFn: async (): Promise<Sectores> => {
+      if (archivos?.sectores_fijo && archivos.sectores_dia && id) {
+        const ruta = (plantilla: string) => plantilla.replace("{region_id}", id);
+        const [fijo, dia] = await Promise.all([
+          leer(ruta(archivos.sectores_fijo), SectoresFijo),
+          leer(ruta(archivos.sectores_dia), SectoresDia),
+        ]);
+        return armarSectores(fijo, dia);
+      }
       const resp = await fetch(new URL(`sectores/${id}.geojson`, URL_DATOS));
       if (!resp.ok) throw new Error(`No se pudo leer sectores/${id}.geojson (${resp.status})`);
-      return (await resp.json()) as FeatureCollection<Polygon | MultiPolygon, PropsSector>;
+      return (await resp.json()) as Sectores;
     },
-    enabled: !!id,
+    enabled: !!id && !!manifest,
     staleTime: FRESCO,
   });
+};
 
 export type PropsComuna = { region_id: string; nombre: string; region: string };
 export type Geometrias = FeatureCollection<Polygon | MultiPolygon, PropsComuna>;
